@@ -1,0 +1,26 @@
+.verifyOtpInputRow {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.input-container {
+  width: 10px;
+  height: 10px;
+}
+
+
+.inputfield {
+  max-width: 55px;
+  height: 50px;
+  padding: 18px;
+
+}
+
+
+@media only screen and (max-width:500px) {
+  .inputfield {
+    max-width: 40px;
+    padding: 15px;
+  }
+}
