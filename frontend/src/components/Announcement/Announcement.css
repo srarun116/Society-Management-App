@@ -1,0 +1,71 @@
+.main-announcement-wrapper {
+  border: 1px solid rgba(128, 128, 128, 0.314);
+  border-radius: 20px;
+  background-color: white;
+}
+
+.create_announcement_btn {
+  background-image: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  border: none;
+}
+
+.description_label_of_box {
+  color: rgb(27, 6, 6);
+  padding-bottom: 0px;
+  margin-bottom: 1px;
+}
+
+/* Modal */
+
+.custom-delete-modal .modal-dialog {
+  max-width: 400px;
+}
+
+
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+}
+
+
+
+.cancel_announcement_btn {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+}
+
+.no-border {
+  border-bottom: none;
+}
+
+.delete-para {
+  color: grey;
+}
+
+.view_button_titles {
+  color: rgba(128, 128, 128, 0.748);
+}
+
+.custom-view-modal .modal-dialog {
+  max-width: 400px;
+}
+
+.close-icon {
+  font-size: 25px;
+}
+
+.add_note_heading {
+  font-weight: bold;
+}

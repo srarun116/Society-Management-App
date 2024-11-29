@@ -1,0 +1,45 @@
+.complaintPriorityBox {
+  border: 1px solid rgba(128, 128, 128, 0.277);
+  padding: 6px 5px;
+  border-radius: 10px;
+}
+
+.viewPageLabelData {
+  color: rgba(128, 128, 128, 0.704);
+}
+
+.complainerNameViewModal {
+  font-size: 20px;
+
+}
+
+.viewModalComplaintPara {
+  font-size: 15px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.wingDataStyle {
+  padding: 2px 6px;
+  border: 1px solid #5678e911;
+  border-radius: 50%;
+  color: #5678E9;
+  background-color: #5678e911;
+
+}
+
+.statusDataStyle {
+  padding: 2px 6px;
+  border: 1px solid #5678e911;
+  border-radius: 10px;
+  color: #5678E9;
+  background-color: #5678e911;
+}
+
+.PriorityDataStyle {
+  padding: 2px 6px;
+  border: 1px solid #1147f9bb;
+  border-radius: 10px;
+  color: white;
+  background-color: #1147f9bb;
+}

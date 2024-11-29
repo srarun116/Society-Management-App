@@ -1,0 +1,54 @@
+/* Background image styling */
+.profile-background {   
+    height: 300px; /* Adjust the height as per the design */
+    object-fit: cover;
+}
+
+/* Center the profile card */
+.profile-card {
+    position: relative;
+    z-index: 10;
+    top: -190px; /* Adjust based on the image height to make it overlap */
+    margin: auto;
+    width: 100%;
+    max-width: 800px; /* Adjust the max-width as needed */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+
+/* Edit Profile button */
+.edit-profile-btn {
+    position: absolute;
+    top: 175px; /* Adjust the top position to align with the card */
+    right: 233px; /* Adjust for desktop screens */
+    background-color: #FF7F50;
+    border: none;
+    z-index: 1;
+}
+
+.edit-profile-btn:hover {
+    background-color: #FF5722;
+}
+
+/* Responsive Styling */
+
+/* For tablet devices */
+@media (max-width: 991px) {
+  .edit-profile-btn {
+    right: 50px; /* Adjust right positioning on tablet devices */
+    top: 160px; /* Adjust the top position for tablets */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+  .edit-profile-btn {
+    right: 20px;
+    top: 150px;  
+  }
+
+ 
+}

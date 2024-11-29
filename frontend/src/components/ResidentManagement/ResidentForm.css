@@ -1,0 +1,26 @@
+Container styling for the select dropdown
+.form-control{
+    appearance: none; /* Remove default styles for a clean look */
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    border: 2px solid grey ; /* Black border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: right 12px center; /* Position the arrow on the right */
+    background-size: 16px; /* Adjust icon size */
+  }
+  
+  /* Focus and hover effects */
+  .form-control:focus {
+    border-color: rgba(231, 76, 60, 1); /* Highlight border on focus */
+    outline: none;
+  }.membercounting{
+    width: 2000px;
+  }
+  
+  /* Optional: Customize the option text color */
+
+  

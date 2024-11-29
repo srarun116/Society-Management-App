@@ -1,0 +1,147 @@
+.create_note_btn {
+  background-image: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.main-content-wrapper {
+  border: 1px solid rgba(128, 128, 128, 0.314);
+  border-radius: 20px;
+}
+
+.edit_icon_data {
+  float: right;
+  padding: 1px;
+  font-size: 18px;
+  background-color: white;
+  color: rgba(0, 0, 255, 0.796);
+  border-radius: 2px;
+  margin-top: 5px;
+
+
+}
+
+.box-heading {
+  background: #5678E9;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+
+
+}
+
+.entire_box_data {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.512);
+}
+
+.description_label_of_box {
+  color: grey;
+  padding-bottom: 0px;
+  margin-bottom: 1px;
+}
+
+.scheduleDate {
+  float: right;
+  color: black;
+}
+
+.dropdown-menu {
+  width: 50px;
+  max-width: 50px;
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  border-radius: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+}
+
+.dropdown-item {
+  color: black;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  padding: 10px;
+
+
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select {
+  appearance: none;
+  /* Remove default arrow */
+  width: 100%;
+  padding-right: 30px;
+  /* Adjust padding for the icon */
+}
+
+.dropdown-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Ignore clicks */
+  font-size: 12px;
+  /* Adjust size as needed */
+  color: #6c757d;
+  /* Match the color with your theme */
+}
+
+
+/* Model */
+
+.add_note_heading {
+  font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+.required_icon {
+  color: rgba(255, 0, 0, 0.835);
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+
+.modal-container .modal-dialog {
+  max-width: 400px;
+  height: 200px;
+  max-height: 200px;
+}
+
+.save_btn {
+  padding: 10px 0px;
+}
+
+.cancel_btn {
+  padding: 10px 0px;
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(128, 128, 128, 0.657);
+  font-weight: 600;
+}
+
+.cancel_btn:hover {
+  padding: 10px 0px;
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(128, 128, 128, 0.657);
+  font-weight: 600;
+}

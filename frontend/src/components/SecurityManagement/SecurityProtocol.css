@@ -1,0 +1,23 @@
+ .add_protocol_btn {
+  background-image: linear-gradient(90deg, #f73c17fa 0%, #F09619 100%);
+   color: #fff;
+   border: none;
+   border-radius: 10px;
+   font-weight: bold;
+   padding: 8px 16px;
+   display: inline-block;
+   margin-bottom: 20px;
+ }
+
+ .protocol_time_data {
+   background-color: #5678e91b;
+   max-width: 100px;
+   text-align: center;
+   border-radius: 15px;
+   color: rgba(0, 0, 0, 0.842);
+   padding: 2px 15px;
+ }
+
+ .edit_icon_size {
+   color: green;
+ }

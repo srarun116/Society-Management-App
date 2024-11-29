@@ -1,0 +1,265 @@
+.add_expense_btn {
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  border: none;
+  color: white;
+}
+
+
+.add_expense_icon {
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.main-content-wrapper {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.add_expense_heading {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  /* background-color: rgba(173, 216, 230, 0.383); */
+  background-color: #5678e91b;
+  color: black;
+
+
+}
+
+.star_icon_modal {
+  color: red;
+  font-size: 8px;
+
+}
+
+.action_icon {
+  font-size: 22px;
+
+
+}
+
+.action_btn_main {
+  max-height: 52px;
+}
+
+.action_btn {
+  border: none;
+  background-color: rgba(173, 216, 230, 0.21);
+  border-radius: 10px;
+}
+
+.edit_icon_size {
+  color: green;
+
+}
+
+.view_icon {
+  color: blue;
+}
+
+.delete_icon {
+  color: red;
+}
+
+.amount-column {
+  color: forestgreen;
+}
+
+/* Modal  */
+.modal-backdrop {
+  pointer-events: none;
+  z-index: 1040 !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  
+}
+
+.modal {
+  pointer-events: auto;
+  z-index: 1050 !important;
+
+  /* Ensure the modal is above other elements */
+}
+
+
+
+.custom-modal {
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+}
+
+
+
+
+
+
+.custom-modal .modal-header {
+  border-bottom: none;
+  text-align: center;
+}
+
+.custom-modal .modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+
+.file-upload-box {
+  border: 2px dashed #007bff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.save_btn {
+  font-weight: 600;
+  background-image: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  color: white;
+  width: 100%;
+
+}
+
+.save_btn:hover {
+  color: white;
+}
+
+.file-upload-box .upload-instructions {
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.file-upload-box-border {
+  color: black;
+  border: 2px dashed rgba(0, 0, 0, 0.333);
+}
+
+.file-upload-box input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.add_expense_btn {
+  background-color: #ff7f0e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.expense_cancel_btn_modal {
+  width: 100%;
+
+}
+
+.add_expense_btn:hover {
+  background-color: #ff9f42;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  border-left: 0;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-outline-secondary {
+  border-radius: 8px;
+}
+
+
+.custom-modal .modal-dialog {
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+
+/* view Page */
+.modal-title {
+  font-weight: 700;
+}
+
+.viewPageLabel {
+  color: rgba(128, 128, 128, 0.768);
+  font-weight: 500;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+
+}
+
+.view-page-hr {
+  color: rgba(128, 128, 128, 0.716);
+}
+
+.amount-view-deatils {
+  padding: 4px 20px 4px 10px;
+  border-radius: 50px;
+  background-color: rgba(128, 128, 128, 0.245);
+}
+
+.viewpage-hr {
+  color: rgba(128, 128, 128, 0.609);
+  padding: -20px;
+}
+
+
+/* Delete */
+
+.delete_expense_title {
+  font-family: "Poppins", serif;
+}
+
+.delete_para {
+  color: grey;
+  font-size: 17px;
+}
+
+.delete_expense_border {
+  border-bottom: 1px solid grey;
+}
+
+.no-margin-hr {
+  margin: 0;
+  color: rgba(128, 128, 128, 0.547);
+  /* Removes space above and below the <hr> */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 0 15px;
+
+  }
+}

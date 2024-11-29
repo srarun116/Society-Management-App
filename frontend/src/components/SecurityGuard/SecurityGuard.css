@@ -1,0 +1,66 @@
+.security_guard_image {
+  color: #5678E9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.table_image_style {
+  height: 40px;
+  border-radius: 50%;
+  max-width: 80px;
+}
+
+.day-shift-color {
+  color: darkorange;
+  background-color: #f4f4f4;
+  border-radius: 25px;
+  max-width: 100px;
+  margin: 0 auto;
+
+
+}
+
+.night-shift-color {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.711);
+  border-radius: 25px;
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.default_image {
+  background-color: rgba(128, 128, 128, 0.705);
+  color: rgba(128, 128, 128, 0.379);
+}
+
+.gender-male-color {
+  color: #5678E9;
+  background-color: #21a9e429;
+  border-radius: 25px;
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.gender-female-color {
+  color: #FE76A8;
+  background-color: #fe76a823;
+  border-radius: 25px;
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.viewPage_image {
+  height: 80px;
+  border-radius: 50%;
+}
+
+.viewPage_time {
+  color: black;
+  background-color: rgba(128, 128, 128, 0.309);
+  border-radius: 25px;
+  max-width: 100px;
+  margin: 0 auto;
+
+}
