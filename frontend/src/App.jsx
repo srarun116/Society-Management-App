@@ -150,7 +150,12 @@ const App = () => {
     }
 
 
-  ])
+  ]
+  , {
+    future: {
+      v7_startTransition: true, // Enable v7 startTransition behavior
+    },
+  })
 
 
   return <RouterProvider router={router} />

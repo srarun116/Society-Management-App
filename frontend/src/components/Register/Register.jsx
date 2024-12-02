@@ -208,12 +208,12 @@ const Register = () => {
                   <div className="row  px-3 py-0 py-sm-2">
                     <div className="col-12 col-sm-6 ">
                       <label htmlFor='firstName'>First Name <span className='star-color'>*</span> </label>
-                      <input type='text' name='firstName' value={user.firstName} onChange={handleUserData} id='firstName' className='input-field' required placeholder='Enter First Name' />
+                      <input type='text' name='firstName' value={user.firstName} onChange={handleUserData} id='firstName' className='input-field' required placeholder='Enter First Name' autoComplete='off' />
                       {errors.firstName && <p className="error-text">{errors.firstName}</p>}
                     </div>
                     <div className="col-12 col-sm-6 py-2 py-sm-0">
                       <label htmlFor='lastName'>Last Name <span className='star-color'>*</span></label>
-                      <input type='text' name='lastName' value={user.lastName} onChange={handleUserData} id='lastName' className='input-field' required placeholder='Enter Last Name' />
+                      <input type='text' name='lastName' value={user.lastName} onChange={handleUserData} id='lastName' className='input-field' required placeholder='Enter Last Name' autoComplete='off' />
                       {errors.lastName && <p className="error-text">{errors.lastName}</p>}
                     </div>
                   </div>
@@ -221,12 +221,12 @@ const Register = () => {
                   <div className="row  px-3 py-0 py-sm-2">
                     <div className="col-12 col-sm-6">
                       <label htmlFor='email'>Email Address <span className='star-color'>*</span></label>
-                      <input type='email' name='email' value={user.email} onChange={handleUserData} id='email' className='input-field' required placeholder='Enter Email Address' />
+                      <input type='email' name='email' value={user.email} onChange={handleUserData} id='email' className='input-field' required placeholder='Enter Email Address' autoComplete='off'/>
                       {errors.email && <p className="error-text">{errors.email}</p>}
                     </div>
                     <div className="col-12 col-sm-6 py-2 py-sm-0">
                       <label htmlFor='phoneNumber'>Phone Number <span className='star-color'>*</span></label>
-                      <input type='number' name='phoneNumber' value={user.phoneNumber} onChange={handleUserData} className='input-field' id='phoneNumber' required placeholder='91+' />
+                      <input type='number' name='phoneNumber' value={user.phoneNumber} onChange={handleUserData} className='input-field' id='phoneNumber' required placeholder='91+' autoComplete='off'/>
                       {errors.phoneNumber && <p className="error-text">{errors.phoneNumber}</p>}
                     </div>
                   </div>
@@ -234,17 +234,17 @@ const Register = () => {
                   <div className="row  px-3 py-0 py-sm-2">
                     <div className="col-12 col-sm-4 py-2 py-sm-0">
                       <label htmlFor='country'>Country <span className='star-color'>*</span></label>
-                      <input type='text' name='country' value={user.country} onChange={handleUserData} id='country' className='input-field' required placeholder='Enter Name' />
+                      <input type='text' name='country' value={user.country} onChange={handleUserData} id='country' className='input-field' required placeholder='Enter Name'  autoComplete='off'/>
                       {errors.country && <p className="error-text">{errors.country}</p>}
                     </div>
                     <div className="col-12 col-sm-4 py-2 py-sm-0">
                       <label htmlFor='state'>State <span className='star-color'>*</span></label>
-                      <input type='text' name='state' value={user.state} onChange={handleUserData} id='state' className='input-field' required placeholder='Enter Name' />
+                      <input type='text' name='state' value={user.state} onChange={handleUserData} id='state' className='input-field' required placeholder='Enter Name' autoComplete='off'/>
                       {errors.state && <p className="error-text">{errors.state}</p>}
                     </div>
                     <div className="col-12 col-sm-4 py-2 py-sm-0">
                       <label htmlFor='city'>City <span className='star-color'>*</span></label>
-                      <input type='text' name='city' value={user.city} onChange={handleUserData} id='city' className='input-field' required placeholder='Enter Name' />
+                      <input type='text' name='city' value={user.city} onChange={handleUserData} id='city' className='input-field' required placeholder='Enter Name' autoComplete='off'/>
                       {errors.city && <p className="error-text">{errors.city}</p>}
                     </div>
                   </div>
@@ -347,7 +347,7 @@ const Register = () => {
                     <div className="col-12">
                       <label htmlFor='password'>Password <span className='star-color'>*</span></label>
                       <div className='input-field-container' >
-                        <input type={showPassword ? "text" : "password"} value={user.password} onChange={handleUserData} name='password' className='input-field password-input' id='password' required placeholder='Enter Password' />
+                        <input type={showPassword ? "text" : "password"} value={user.password} onChange={handleUserData} name='password' className='input-field password-input' id='password' required placeholder='Enter Password' autoComplete='off' />
                         <span className='toggle-password' onClick={togglePassword}>  {showPassword ? <FaEye /> : < FaEyeSlash />}  </span>
                       </div>
                       {errors.password && <p className="error-text">{errors.password}</p>}
@@ -358,7 +358,7 @@ const Register = () => {
                     <div className="col-12">
                       <label htmlFor='confirmPassword'>Confirm Password <span className='star-color'>*</span></label>
                       <div className='input-field-container' >
-                        <input type={showPassword ? "text" : "password"} value={user.confirmPassword} onChange={handleUserData} name='confirmPassword' className='input-field password-input' id='confirmPassword' required placeholder='Enter Confirm Password' />
+                        <input type={showPassword ? "text" : "password"} value={user.confirmPassword} onChange={handleUserData} name='confirmPassword' className='input-field password-input' id='confirmPassword' required placeholder='Enter Confirm Password' autoComplete='off' />
                         <span className='toggle-password' onClick={togglePassword}>  {showPassword ? <FaEye /> : < FaEyeSlash />}  </span>
                       </div>
                       {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}

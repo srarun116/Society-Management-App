@@ -1,5 +1,5 @@
 .resident-management {
-    padding: 5px 5px;
+    padding: 15px 10px;
   }
   
   .balance-card {
@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    max-width: 350px;
+    
     position: relative;
     height: 75px;
   }
@@ -26,6 +26,9 @@
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
   }
+
+  
+
   
   /* Distinct colors for each card type */
   .balance-card-orange::before {
@@ -73,13 +76,6 @@
     background-color: #f8f9fa;
   }
   
-  /* .btn-primary {
-  background: linear-gradient(90deg, #f97c3b 0%, #fbc30b 100%);
-  color: white;
-  border: none;
-  font-weight: bold;
-  } */
-  
   
   .btn-primary{
     background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
@@ -96,12 +92,12 @@
   }
   
   .complaint-list {
-    height: 300px; /* Set a fixed height */
+    height: 290px; /* Set a fixed height */
     overflow-y: auto; /* Enables vertical scrolling */
   }
   
   .upcoming-activity {
-    height: 300px; /* Set a fixed height */
+    height: 290px; /* Set a fixed height */
     overflow-y: auto; /* Enables vertical scrolling */
   }
   

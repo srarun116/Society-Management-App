@@ -117,7 +117,7 @@ const FacilityManagement = () => {
           <div className="col-12">
             <div className="row d-flex justify-content-between align-items-center">
               <div className="col-lg-2 pt-3 pb-3">
-                <h5 className="fw-700">Facility Management</h5>
+                <h4 className='fw-bold'>Facility Management</h4>
               </div>
               <div className="col-lg-2 d-flex justify-content-end align-items-center">
                 <button className="pt-2 pb-2 px-3 create_note_btn" onClick={handleCreateBox}>Create Facility</button>

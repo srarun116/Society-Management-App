@@ -15,10 +15,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-router.post('/', upload.single('aadhaarCard'), createSecurityGuard);
-router.get('/',  getAllSecurityGuards);
-router.get('/:id',  getSecurityGuardById);
-router.put('/:id', upload.single('aadhaarCard'), updateSecurityGuard);
-router.delete('/:id',  deleteSecurityGuard);
+router.post('/', protect, isAdmin, upload.single('aadhaarCard'), createSecurityGuard);
+router.get('/', protect, isAdmin, getAllSecurityGuards);
+router.get('/:id', protect, isAdmin, getSecurityGuardById);
+router.put('/:id',protect, isAdmin, upload.single('aadhaarCard'), updateSecurityGuard);
+router.delete('/:id',protect, isAdmin,  deleteSecurityGuard);
 
 module.exports = router;

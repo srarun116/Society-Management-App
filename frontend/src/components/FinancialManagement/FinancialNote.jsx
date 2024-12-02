@@ -23,7 +23,11 @@ const FinancialNote = () => {
   // Function to fetch announcement
   const fetchNote = async () => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(API_URL , {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      });
       setBoxes(response.data);
     } catch (error) {
       console.error("Error fetching Notes:", error);
@@ -67,15 +71,22 @@ const FinancialNote = () => {
     e.preventDefault();
 
      try {
+       
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      };
+
       if (editIndex !== null) {
         // Update the existing note
-        const response = await axios.put(`${API_URL}/${boxes[editIndex]._id}`, newNote);
+        const response = await axios.put(`${API_URL}/${boxes[editIndex]._id}`, newNote , config);
         const updatedBoxes = [...boxes];
         updatedBoxes[editIndex] = response.data;
         setBoxes(updatedBoxes);
       } else {
         // Add a new note
-        const response = await axios.post(API_URL, newNote);
+        const response = await axios.post(API_URL, newNote , config);
         setBoxes([...boxes, response.data]);
       }
 
@@ -100,8 +111,15 @@ const FinancialNote = () => {
 
   const confirmDelete = async () => {
     try {
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`, 
+        },
+      };
+
       const deleteId = boxes[deleteIndex]._id; // Use the correct box ID
-      await axios.delete(`${API_URL}/${deleteId}`);
+      await axios.delete(`${API_URL}/${deleteId}` , config);
       setBoxes(boxes.filter((_, index) => index !== deleteIndex));
 
         // Re-fetch data to ensure state sync
@@ -119,16 +137,16 @@ const FinancialNote = () => {
       <div className="container-fluid main-content-wrapper">
         <div className="row">
           <div className="col-12">
-            <div className="row d-flex justify-content-between align-items-center">
+            <div className="row d-flex justify-content-between align-items-center px-2">
               <div className="col-lg-2 pt-3 pb-3">
-                <h5 className="fw-700">Note</h5>
+                <h4 className="fw-bold">Note</h4>
               </div>
               <div className="col-lg-2 d-flex justify-content-end align-items-center">
                 <button className="pt-2 pb-2 px-3 create_note_btn" onClick={handleCreateBox}>Create Note</button>
               </div>
             </div>
 
-            <div className="row  mb-2">
+            <div className="row  mb-2 px-2">
               {boxes.map((box, index) => (
                 <div className="col-3 mt-3" key={index}>
                   <div className="px-2 entire_box_data">

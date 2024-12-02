@@ -25,19 +25,24 @@ const Announcement = () => {
 
   const API_URL = 'http://localhost:4000/api/announcements';
 
-  // Function to fetch announcement
+  
+
   const fetchAnnouncements = async () => {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(API_URL, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      });
+
       setBoxes(response.data);
     } catch (error) {
       console.error("Error fetching announcements:", error);
     }
   };
 
-  
 
-  useEffect(() => { 
+  useEffect(() => {
     fetchAnnouncements();
   }, []);
 
@@ -47,7 +52,7 @@ const Announcement = () => {
     const formattedHour = hour % 12 || 12; // Convert 0 to 12 for 12-hour format
     const meridiem = isPM ? "PM" : "AM";
     return `${formattedHour}:${minute.toString().padStart(2, "0")} ${meridiem}`;
-};
+  };
 
   const toggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
@@ -58,39 +63,46 @@ const Announcement = () => {
     setNewNote((prevNote) => ({ ...prevNote, [name]: value }));
   };
 
-    // Create or edit announcement
-    const handleSaveNote = async (e) => {
-      e.preventDefault();
+  // Create or edit announcement
+  const handleSaveNote = async (e) => {
+    e.preventDefault();
 
-      console.log('Saving announcement:', newNote);
-      try {
-        if (editIndex !== null) {
-          // Editing an announcement
-          const response = await axios.put(`${API_URL}/${boxes[editIndex]._id}`, newNote);
-          const updatedBoxes = [...boxes];
-          updatedBoxes[editIndex] = response.data;
-          setBoxes(updatedBoxes);
-        } else {
-          // Creating a new announcement
-          const response = await axios.post(API_URL, newNote);
-          setBoxes([...boxes, response.data]);
-        }
+    console.log('Saving announcement:', newNote);
+    try {
 
-        // Re-fetch data to ensure state sync
-           await fetchAnnouncements();
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      };
 
-        setShowModal(false);
-        setNewNote({ title: '', description: '', date: '', time: '' });
-        setEditIndex(null);
-      } catch (error) {
-        console.error("Error saving announcement:", error);
+      if (editIndex !== null) {
+        // Editing an announcement
+        const response = await axios.put(`${API_URL}/${boxes[editIndex]._id}`, newNote , config);
+        const updatedBoxes = [...boxes];
+        updatedBoxes[editIndex] = response.data;
+        setBoxes(updatedBoxes);
+      } else {
+        // Creating a new announcement
+        const response = await axios.post(API_URL, newNote , config);
+        setBoxes([...boxes, response.data]);
       }
-    };
 
-   
-  
+      // Re-fetch data to ensure state sync
+      await fetchAnnouncements();
 
-      // Open create announcement modal
+      setShowModal(false);
+      setNewNote({ title: '', description: '', date: '', time: '' });
+      setEditIndex(null);
+    } catch (error) {
+      console.error("Error saving announcement:", error);
+    }
+  };
+
+
+
+
+  // Open create announcement modal
   const handleCreateBox = () => {
     setNewNote({ title: '', description: '', date: '', time: '' });
     setEditIndex(null);
@@ -108,7 +120,7 @@ const Announcement = () => {
     setShowModal(true); // Open the modal
   };
 
- 
+
 
   // Delete announcement
   const handleDeleteBox = (id) => {
@@ -118,13 +130,20 @@ const Announcement = () => {
 
   const confirmDelete = async () => {
     try {
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`, 
+        },
+      };
+
       const deleteId = boxes[deleteIndex]._id; // Use the correct box ID
-      await axios.delete(`${API_URL}/${deleteId}`);
+      await axios.delete(`${API_URL}/${deleteId}` , config);
       setBoxes(boxes.filter((_, index) => index !== deleteIndex));
 
-        // Re-fetch data to ensure state sync
-        await fetchAnnouncements();
-        
+      // Re-fetch data to ensure state sync
+      await fetchAnnouncements();
+
       setShowDeleteModal(false);
     } catch (error) {
       console.error("Error deleting announcement:", error);
@@ -150,7 +169,7 @@ const Announcement = () => {
             {/* Header start */}
             <div className="row  d-flex justify-content-between align-items-cente">
               <div className="col-lg-2 pt-3 pb-3">
-                <h5 className="fw-700">Announcement</h5>
+                <h4 className='fw-bold'>Announcement</h4>
               </div>
               <div className="col-lg-2 d-flex justify-content-end align-items-center">
                 <button className="pt-2 pb-2 px-3 create_announcement_btn" onClick={handleCreateBox} >Create Announcement</button>

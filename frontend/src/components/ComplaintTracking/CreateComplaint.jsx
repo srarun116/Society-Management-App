@@ -161,9 +161,9 @@ const CreateComplaint = () => {
         <div className="row">
           <div className="col-12">
 
-            <div className="row mx-2 d-flex justify-content-between align-items-center">
+            <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
               <div className="col-lg-2 pt-3 pb-3">
-                <h5>Create Complaint</h5>
+                <h4 className='fw-bold'>Create Complaint</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3 ">
@@ -183,13 +183,13 @@ const CreateComplaint = () => {
 
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start">Complainer Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start">Complaint Name</h6></div>
-              <div className="col-3 py-2"><h6 className="text-start">Discription</h6></div>
-              <div className="col-1 py-2"><h6 className="text-start">Unit Number</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center">Priority</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center">statue</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Complainer Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Complaint Name</h6></div>
+              <div className="col-3 py-2"><h6 className="text-start fw-bold">Discription</h6></div>
+              <div className="col-1 py-2"><h6 className="text-start fw-bold">Unit Number</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center fw-bold">Priority</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center fw-bold">statue</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
             </div>
 
             {createComplaint.map((complaint, index) => (

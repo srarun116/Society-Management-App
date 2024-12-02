@@ -483,7 +483,11 @@ const SecurityGuard = () => {
   // Function to fetch security guards
   const fetchSecurityGuard = async () => {
     try {
-        const response = await axios.get(API_URL);
+        const response = await axios.get(API_URL , {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+          },
+        });
         setGuard(response.data);
     } catch (error) {
         console.error("Error fetching Security Guard:", error);
@@ -494,14 +498,27 @@ useEffect(() => {
     fetchSecurityGuard(); // Fetch data on component mount
 }, []);
 
-    // Format Time 
-    const formatTime = (time) => {
-      const [hour, minute] = time.split(":").map(Number);
-      const isPM = hour >= 12;
-      const formattedHour = hour % 12 || 12; // Convert 0 to 12 for 12-hour format
-      const meridiem = isPM ? "PM" : "AM";
-      return `${formattedHour}:${minute.toString().padStart(2, "0")} ${meridiem}`;
-    };
+   
+
+    function formatTime(time) {
+      if (!time || typeof time !== "string") {
+        console.error("Invalid time input:", time);
+        return "Invalid time"; // or handle it appropriately
+      }
+      
+      // Proceed if time is a valid string
+      const parts = time.split(":"); 
+      if (parts.length < 2) {
+        return "Invalid time"; // Handle invalid formats
+      }
+    
+      const [hours, minutes] = parts;
+      const formattedHours = parseInt(hours, 10) % 12 || 12; // Convert to 12-hour format
+      const period = parseInt(hours, 10) >= 12 ? "PM" : "AM";
+    
+      return `${formattedHours}:${minutes} ${period}`;
+    }
+    
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -513,15 +530,23 @@ useEffect(() => {
     e.preventDefault();
 
     try {
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      };
+
+
       if (isEditing) {
          // Editing an Security Guard
-         const response = await axios.put(`${API_URL}/${guard[currentGuardIndex]._id}`, form);
+         const response = await axios.put(`${API_URL}/${guard[currentGuardIndex]._id}`, form , config);
         const updatedGuard = [...guard];
         updatedGuard[currentGuardIndex] = response.data;
         setGuard(updatedGuard);
       } else {
          // Creating a new Security Guard
-         const response = await axios.post(API_URL, form);
+         const response = await axios.post(API_URL, form , config);
          setGuard(prevGuard => [...prevGuard, response.data]);
       }
 
@@ -600,8 +625,15 @@ const formatDateYear = (dateString) => {
 
   const handleDeleteConfirm = async () => {
     try {
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`, 
+        },
+      };
+
         const deleteId = guard[deleteIndex]._id; // Get the correct ID from the selected guard
-        const response = await axios.delete(`${API_URL}/${deleteId}`);
+        const response = await axios.delete(`${API_URL}/${deleteId}` , config);
 
         // Log success
         console.log("Security Guard deleted successfully:", response.data);
@@ -634,9 +666,9 @@ const formatDateYear = (dateString) => {
         <div className="row">
           <div className="col-12">
 
-            <div className="row mx-2 d-flex justify-content-between align-items-center">
-              <div className="col-lg-2 pt-3 pb-3">
-                <h5>Security Guard Details</h5>
+            <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
+              <div className="col-lg-3 pt-3 fw-bold pb-3">
+                <h4 className='fw-bold'>Security Guard Details</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3">
@@ -659,13 +691,13 @@ const formatDateYear = (dateString) => {
             </div>
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start">Security Guard Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Phone Number</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Select Shift</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start">Shift Date</h6></div>
-              <div className="col-1 py-2"><h6 className="text-start">Shift Time</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center">Gender</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Security Guard Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Phone Number</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Select Shift</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Shift Date</h6></div>
+              <div className="col-1 py-2"><h6 className="text-start fw-bold">Shift Time</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center fw-bold">Gender</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
             </div>
 
             {guard.map((guard, index) => (
@@ -678,7 +710,7 @@ const formatDateYear = (dateString) => {
                   </p>
                 </div>
                 <div className="col-2 py-2 d-flex justify-content-start my-2 "><p>{moment(guard.date).format('DD/MM/YYYY')}</p></div>
-                <div className="col-1 py-2 my-2"><p>{formatTime(guard.time)}</p></div>
+                <div className="col-1 py-2 my-2"><p> {guard.time ? formatTime(guard.time) : "No time available"}</p></div>
                 <div className="col-1 py-2 my-2">
                   <p className={`text-center  ${guard.gender === 'male' ? 'gender-male-color' : 'gender-female-color'}`}>
                     {guard.gender === 'male' ? (<span> <IoPersonSharp /> Male  </span>) : (<span><MdPerson2 /> Female  </span>)}

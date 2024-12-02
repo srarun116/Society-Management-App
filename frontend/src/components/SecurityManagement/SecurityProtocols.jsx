@@ -25,7 +25,11 @@ const SecurityProtocols = () => {
     // Function to fetch security guards
     const fetchSecurityProtocol = async () => {
       try {
-          const response = await axios.get(API_URL);
+          const response = await axios.get(API_URL , {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+            },
+          });
           setProtocol(response.data);
       } catch (error) {
           console.error("Error fetching Security Guard:", error);
@@ -53,15 +57,22 @@ const SecurityProtocols = () => {
   const handleSave = async(e) => {
     e.preventDefault();
     try {
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      };
+
       if (isEditing) {
         // Editing an Security Protocol
-        const response = await axios.put(`${API_URL}/${protocol[currentProtocolIndex]._id}`, form);
+        const response = await axios.put(`${API_URL}/${protocol[currentProtocolIndex]._id}`, form , config);
         const updatedProtocol = [...protocol];
         updatedProtocol[currentProtocolIndex] = response.data;
         setProtocol(updatedProtocol);
       } else {
          // Creating a new Security Protocol
-         const response = await axios.post(API_URL, form);
+         const response = await axios.post(API_URL, form , config);
          setProtocol(prevProtocol => [...prevProtocol, response.data]);
         
       }
@@ -126,8 +137,15 @@ const SecurityProtocols = () => {
   const handleDeleteConfirm = async() => {
 
     try {
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`, 
+        },
+      };
+
       const deleteId = protocol[deleteIndex]._id; // Get the correct ID from the selected security protocol
-      const response = await axios.delete(`${API_URL}/${deleteId}`);
+      const response = await axios.delete(`${API_URL}/${deleteId}` , config);
 
        // Log success
        console.log("Security Protocol deleted successfully:", response.data);
@@ -156,9 +174,9 @@ const SecurityProtocols = () => {
         <div className="row">
           <div className="col-12">
 
-            <div className="row mx-2 d-flex justify-content-between align-items-center">
+            <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
               <div className="col-lg-2 pt-3 pb-3">
-                <h5>Security Protocols</h5>
+                <h4 className='fw-bold'>Security Protocols</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3 ">
@@ -177,11 +195,11 @@ const SecurityProtocols = () => {
             </div>
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start">Title</h6></div>
-              <div className="col-4 py-2"><h6 className="text-start">Description</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Date</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Time</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Title</h6></div>
+              <div className="col-4 py-2"><h6 className="text-start fw-bold">Description</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Date</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Time</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
             </div>
 
             {protocol.map((protocol, index) => (

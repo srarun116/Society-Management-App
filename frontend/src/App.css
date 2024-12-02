@@ -26,3 +26,19 @@
   height: 41px;
   border-radius: 10px;
 }
+::-webkit-scrollbar {
+  width: 5px;
+ 
+  max-height: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202224b7;
+  border-radius: 10px;
+}

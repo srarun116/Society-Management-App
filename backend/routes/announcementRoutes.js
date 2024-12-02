@@ -4,10 +4,10 @@ const {createAnnouncement, getAllAnnouncements, updateAnnouncement, getAnnouncem
 
 const { protect, isAdmin } = require('../middlewares/authMiddleware');
 
-router.post('/',  createAnnouncement);
+router.post('/', protect, isAdmin, createAnnouncement);
 router.get('/',   getAllAnnouncements);
-router.put('/:id',   updateAnnouncement);
-router.get('/:id',  getAnnouncementById);
-router.delete('/:id',  deleteAnnouncement);
+router.put('/:id', protect, isAdmin,  updateAnnouncement);
+router.get('/:id', protect, isAdmin, getAnnouncementById);
+router.delete('/:id', protect, isAdmin,  deleteAnnouncement);
 
 module.exports = router;

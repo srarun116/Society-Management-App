@@ -44,7 +44,7 @@ const Sidebar = ({ toggleSidebar }) => {
         <div className="col-md-12 mt-2 d-flex align-items-center justify-content-center flex-column">
           <img src='/Images/logo.png' height={70} className='pt-2' alt="Logo" />
         </div>
-        <hr />
+        <hr className='sidebar_logo_hr'/>
 
       <div className='d-flex justify-content-start flex-column '>  
        <div className='d-flex flex-column'>  
@@ -62,7 +62,7 @@ const Sidebar = ({ toggleSidebar }) => {
 
         <div className="col-md-11 mt-2 mb-2  sidebar_link mx-auto financial_management_main">
           <div onClick={toggleFinancialDropdown} style={{ cursor: 'pointer' }}>
-            <p className='ps-2 '><RiMoneyDollarBoxFill className='me-2 fs-4 font_color' />Financial Management </p>
+            <p className='ps-2 dropdown_title'><RiMoneyDollarBoxFill className='me-2 fs-4 font_color' />Financial Management </p>
           </div>
           {/* Dropdown for Financial Management */}
           <Collapse in={isFinancialOpen} className='dropdown-main'>
@@ -88,7 +88,7 @@ const Sidebar = ({ toggleSidebar }) => {
 
         <div className="col-md-11 mt-2 mb-2  sidebar_link mx-auto financial_management_main">
           <div onClick={toggleComplaintDropdown} style={{ cursor: 'pointer' }}>
-            <p className='ps-2 '><TbMessage2Cancel className='me-2 fs-4 font_color' /> Complaint Tracking </p>
+            <p className='ps-2 dropdown_title '><TbMessage2Cancel className='me-2 fs-4 font_color' /> Complaint Tracking </p>
           </div>
 
           {/* Dropdown for Complaint Tracking */}
@@ -106,7 +106,7 @@ const Sidebar = ({ toggleSidebar }) => {
 
         <div className="col-md-11 mt-2 mb-2  sidebar_link mx-auto financial_management_main">
           <div onClick={toggleSecurityDropdown} style={{ cursor: 'pointer' }}>
-            <p className='ps-2 '><AiFillSecurityScan className='me-2 fs-4 font_color' /> Security Management </p>
+            <p className='ps-2 dropdown_title'><AiFillSecurityScan className='me-2 fs-4 font_color' /> Security Management </p>
           </div>
           {/* Dropdown for security Management */}
           <Collapse in={isSecurityOpen} className='dropdown-main'>

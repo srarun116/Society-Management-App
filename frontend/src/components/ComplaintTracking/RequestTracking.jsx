@@ -172,9 +172,9 @@ const RequestTracking = () => {
         <div className="row">
           <div className="col-12">
 
-            <div className="row mx-2 d-flex justify-content-between align-items-center">
-              <div className="col-lg-2 pt-3 pb-3">
-                <h5>Create Request</h5>
+            <div className="row mx-2 d-flex justify-content-between align-items-center mb-1">
+              <div className="col-lg-2 pt-2 pb-3">
+                <h4  fw-bold>Create Request</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3 ">
@@ -194,14 +194,14 @@ const RequestTracking = () => {
 
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start">Requester Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start">Request Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start">Description</h6></div>
-              <div className="col-1 py-2"><h6 className="text-start"> Request Date</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center">Unit Number</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center">Priority</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center">statue</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Requester Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Request Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start fw-bold">Description</h6></div>
+              <div className="col-1 py-2"><h6 className="text-start fw-bold"> Request Date</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center fw-bold">Unit Number</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center fw-bold">Priority</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center fw-bold">statue</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
             </div>
 
             {createRequest.map((complaint, index) => (

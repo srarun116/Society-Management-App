@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import BalanceChart from '../BalanceChart/BalanceChart';
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { FaAngleDown, FaStarOfLife } from "react-icons/fa";
-import { FiX } from 'react-icons/fi';
 import "./Dashboard.css"
 import axios from 'axios';
 import moment from 'moment';
@@ -132,14 +131,25 @@ const Dashboard = () => {
   const API_URL_ACTIVITY = 'http://localhost:4000/api/announcements';
 
   // Function to fetch announcement
+  // const fetchAnnouncements = async () => {
+  //   try {
+  //     const response = await axios.get(API_URL_ACTIVITY);
+  //     setActivity(response.data);
+  //   } catch (error) {
+  //     console.error("Error fetching announcements:", error);
+  //   }
+  // };
+
   const fetchAnnouncements = async () => {
     try {
       const response = await axios.get(API_URL_ACTIVITY);
+
       setActivity(response.data);
     } catch (error) {
       console.error("Error fetching announcements:", error);
     }
   };
+
 
   useEffect(() => {
     fetchAnnouncements();
@@ -277,7 +287,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className="container-fluid resident-management">
+    <div className="container-fluid resident-management ">
       {/* Top Balance Cards */}
       <div className="row ">
         <div className="col-lg-3 mb-3 ">
@@ -298,8 +308,8 @@ const Dashboard = () => {
               <p className="mb-0 text-muted  mt-3">Total Income</p>
               <p className="balance-amount">₹ 55,000</p>
             </div>
-            <div className="icon-container">
-              <img src="src/Images/Group2.png" alt="Income icon" />
+            <div className="icon-container ">
+              <img src="src/Images/Group2.png" alt="Income icon"  />
             </div>
           </div>
         </div>
@@ -331,7 +341,7 @@ const Dashboard = () => {
       {/* Balance Chart and Sidebar Panels */}
       <div className="row mb-2">
         <div className="col-lg-6 ">
-          <div className="card balance-chart">
+          <div className="card balance-chart" style={{ maxHeight: "430px" }}>
             <BalanceChart />
           </div>
         </div>
@@ -342,7 +352,7 @@ const Dashboard = () => {
             <div className="col-lg-6">
               <div className="card border rounded" style={{ maxHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center p-2">
-                  <h5 style={{ fontSize: "20px" }}>Important Numbers</h5>
+                  <h5 style={{ fontSize: "20px" , fontWeight: "bold" }}>Important Numbers</h5>
                   <button
                     className="btn btn-primary"
                     data-bs-toggle="modal"
@@ -400,10 +410,10 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              {/* Updated Add Create Complaint Modal */}
+              {/* Updated Add Create Number Modal */}
               <div className="modal  fade" id="addCreateNumberModal" tabIndex="-1" aria-labelledby="addCreateNumberModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
-                  <div className="modal-content custom-modal">
+                  <div className="modal-content custom-modal" style={{backgroundColor: "white" , color: "black" , maxWidth: "400px" }}>
                     <div className="modal-header">
                       <h4 className="modal-title m-0" id="addCreateNumberModalLabel">
                         {isNumberEditing ? 'Edit Number' : 'Create Number'}
@@ -512,7 +522,7 @@ const Dashboard = () => {
             <div className="col-lg-6">
               <div className="card pending-maintenance" style={{ maxHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center">
-                  <h5 style={{ fontSize: "17px" }}>Pending Maintenances</h5>
+                  <h5 style={{ fontSize: "17px" , fontWeight: "bold" }}>Pending Maintenances</h5>
                   <span className='text-primary'>View all</span>
                 </div>
                 <div className="card-body scrollable-card">
@@ -556,19 +566,19 @@ const Dashboard = () => {
         <div className="col-9 ">
           <div className="border rounded complaint-list p-3 bg-white">
             <div className="d-flex justify-content-between align-items-center ">
-              <h5>Complaint List</h5>
+              <h5 className='fw-bold'>Complaint List</h5>
               <button className="btn border">Month <i className="fas fa-angle-down"></i></button>
             </div>
             <div className="table-responsive mt-2">
               <table className="table rounded-table">
                 <thead>
                   <tr>
-                    <th className=' text-start' style={{ backgroundColor: "#5678e91b" }}>Complainer Name</th>
-                    <th className=' text-center' style={{ backgroundColor: "#5678e91b" }}>Complaint Name</th>
-                    <th style={{ backgroundColor: "#5678e91b" }}>Date</th>
-                    <th style={{ backgroundColor: "#5678e91b" }}>Priority</th>
-                    <th style={{ backgroundColor: "#5678e91b" }}>Complain Status</th>
-                    <th style={{ backgroundColor: "#5678e91b" }}>Action</th>
+                    <th className=' text-start' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complainer Name</th>
+                    <th className=' text-center' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complaint Name</th>
+                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Date</th>
+                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Priority</th>
+                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complain Status</th>
+                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -684,7 +694,7 @@ const Dashboard = () => {
               <div className="modal-body">
                 <form onSubmit={handleSave}> {/* Add onSubmit here */}
                   <div className="mb-3">
-                    <label htmlFor="complainerName" className="form-label">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="complainerName" className="form-label ">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="complainerName" autoComplete='off' placeholder="Enter Name" value={form.complainerName} onChange={handleInputChange} required />
                   </div>
                   <div className="mb-3">
@@ -895,7 +905,7 @@ const Dashboard = () => {
         <div className="col-lg-3">
           <div className="card upcoming-activity">
             <div className="card-header d-flex justify-content-between align-items-center">
-              <h5 style={{ fontSize: "16px" }}>Upcoming Activity</h5>
+              <h5 style={{ fontSize: "18px" , fontWeight: "bold" }}>Upcoming Activity</h5>
               <button className='btn border' style={{ maxWidth: "90px", fontSize: "14px" }}>Month <FaAngleDown /></button>
             </div>
             <div className="card-body scrollable-card">
