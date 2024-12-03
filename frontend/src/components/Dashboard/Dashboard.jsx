@@ -200,6 +200,14 @@ const Dashboard = () => {
   const handleNumberSave = async (e) => {
     e.preventDefault();
 
+    // Validate input fields
+    const { fullName, phoneNumber, work } = numberForm;
+
+    if (!fullName || !phoneNumber || !work) {
+        alert("All fields are required. Please fill in full name, phone number, and work.");
+        return; // Stop further execution if validation fails
+    }
+
     try {
       if (isNumberEditing) {
         // Editing a Create Number
@@ -208,6 +216,8 @@ const Dashboard = () => {
         updatedCreateNumber[currentCreateNumberIndex] = response.data;
         setCreateNumber(updatedCreateNumber);
       } else {
+
+
         // Creating a new Create Complaints
         const response = await axios.post('http://localhost:4000/api/important-number', numberForm);
 
@@ -294,7 +304,7 @@ const Dashboard = () => {
           <div className="balance-card balance-card-orange">
             <div className="balance-info">
               <p className="mb-0 text-muted mt-3">Total Balance</p>
-              <p className="balance-amount">₹ 2,22,520</p>
+              <p className="balance-amount-price">₹ 2,22,520</p>
             </div>
             <div className="icon-container">
               <img src="src/Images/Group1.png" alt="Balance icon" />
@@ -306,7 +316,7 @@ const Dashboard = () => {
           <div className="balance-card balance-card-green">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Income</p>
-              <p className="balance-amount">₹ 55,000</p>
+              <p className="balance-amount-price">₹ 55,000</p>
             </div>
             <div className="icon-container ">
               <img src="src/Images/Group2.png" alt="Income icon"  />
@@ -318,7 +328,7 @@ const Dashboard = () => {
           <div className="balance-card balance-card-blue">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Expense</p>
-              <p className="balance-amount">₹ 20,550</p>
+              <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
               <img src="src/Images/Group3.png" alt="Expense icon" />
@@ -330,7 +340,7 @@ const Dashboard = () => {
           <div className="balance-card balance-card-pink">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Unit</p>
-              <p className="balance-amount">₹ 20,550</p>
+              <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
               <img src="src/Images/Group4.png" alt="Unit icon" />
@@ -380,7 +390,7 @@ const Dashboard = () => {
                             Phone: <span className="text-secondary fw-normal"> {number.phoneNumber} </span>
                           </h5>
                           <h5 style={{ fontSize: "13px" }}>
-                            Work: <span className="text-secondary fw-normal"> {number.work} </span>
+                            Work: <span className="text-secondary fw-normal "> {number.work} </span>
                           </h5>
                         </div>
                         <div className="col-lg-4">

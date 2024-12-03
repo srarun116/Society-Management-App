@@ -1,45 +1,47 @@
 
-
-
-// import React from 'react';
-// import './Header.css';
-// import { RxHamburgerMenu } from "react-icons/rx";
-
-
-// const Header = ({ toggleSidebar }) => {
-//   return (
-//     <>
-//       <div className="row d-flex justify-content-between align-items-center pt-3 pb-3 mb-3  header_background_color">
-//         {/* Hamburger icon for small screens */}
-//         <div className="col-auto d-lg-none">
-//           <button className="btn" onClick={toggleSidebar}>
-//             <RxHamburgerMenu />       {/* Bootstrap icon for hamburger menu */}
-//           </button>
-//         </div>
-
-//         {/* Search bar and user profile (Visible across all screen sizes) */}
-//         <div className="col  pt-1">
-//           <h3>Header</h3>
-//         </div>
-//         <div className="col-auto">
-//           <i className="bi bi-person-circle"></i> {/* User icon */}
-//         </div>
-//       </div>
-
-//     </>
-//   );
-// };
-
-// export default Header;
-
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import './Header.css';
+import axios from 'axios';
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 import { FiSearch } from "react-icons/fi";
 
 const Header = ({ toggleSidebar }) => {
+
+  const [profile, setProfile] = useState({
+    firstName: '',
+    lastName: '',
+    role: ''
+  });
+  
+  const API_URL = 'http://localhost:4000/api/userProfile';
+
+  // Fetch user profile on component mount
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const token = localStorage.getItem('accessToken');
+        console.log(token)
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const { data } = await axios.get(API_URL, config);
+        setProfile({
+          firstName: data.firstName || '',
+          lastName: data.lastName || '',
+          role: data.role || ''
+         
+        });
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    };
+    fetchProfile();
+  }, []);
+
   const [notifications, setNotifications] = useState([
     {
       title: "Maintenance (A-101)",
@@ -223,13 +225,15 @@ const Header = ({ toggleSidebar }) => {
                     />
                     {/* Profile Name and Role (Large Screen Only) */}
                     <div className="d-none d-md-block">
-                      <span>Moni Roy</span>
+                      <span>{profile.firstName} {profile.lastName} </span>
                       <br />
-                      <small className="text-muted">Admin</small>
+                      <small className="text-muted">{profile.role}</small>
                     </div>
                   </button>
                 </Link>
               </div>
+
+              
             </div>
           </div>
         </nav>

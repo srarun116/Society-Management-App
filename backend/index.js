@@ -14,6 +14,7 @@ const expenseRoutes = require('./routes/expenses');
 const otherIncomeRoutes = require('./routes/otherIncomeRoutes');
 const residentRoutes = require('./routes/residentManagement');
 const importantNumberRoutes = require('./routes/importantNumberRoutes');
+const profileRoutes = require('./routes/profile');
 const path = require('path');
 
 
@@ -47,6 +48,7 @@ app.use('/api/expenses', expenseRoutes);
 app.use('/api/other-income', otherIncomeRoutes);
 app.use('/api/resident-management', residentRoutes);
 app.use('/api/important-number', importantNumberRoutes);
+app.use('/api/userProfile', profileRoutes);
 
 // Error
 app.use((error, req, res, next)=> {

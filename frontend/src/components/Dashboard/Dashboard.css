@@ -56,6 +56,11 @@
     font-size: 1.8rem;
     font-weight: bold;
   }
+  .balance-amount-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: black;
+  }
   
   .icon-container img {
     width: 40px;
@@ -245,3 +250,9 @@
   #Red {
     accent-color: #fd6208 ;
   }
+
+
+
+
+
+
