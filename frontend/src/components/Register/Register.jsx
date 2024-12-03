@@ -325,23 +325,6 @@ const Register = () => {
                     </div>
 
                   </div>
-                  <div className="row px-3 py-0 py-sm-2">
-                      <div className="col-12">
-                         <label htmlFor="role">Select Role <span className="star-color">*</span></label>
-                              <select
-                                  name="role"
-                                  value={user.role}
-                                  onChange={handleUserData}
-                                  className="input-field text-secondary"
-                                  required>
-                                      <option value="" >Select Role</option>
-                                      <option value="resident">Resident</option>
-                                      <option value="society-manager">Society Manager</option>
-                                      <option value="security">Security</option>
-                               </select>
-                              {errors.role && <p className="error-text">{errors.role}</p>}
-                       </div>
-                  </div>
 
                   <div className="row  px-3 py-0 py-sm-2">
                     <div className="col-12">
