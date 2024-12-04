@@ -70,7 +70,7 @@ export default function Rm() {
 
   const handleSave = () => {
     if (selectedStatus === "Occupied" && agreeChecked) {
-      navigate("/addresidents");
+      navigate("/admin/addresidents");
     } else if (selectedStatus === "Vacate") {
       setShowVacateModal(true);
     }
@@ -185,7 +185,7 @@ export default function Rm() {
                   {/* Full Name */}
                   <div className="col-2 d-flex align-items-center">
                     <img
-                      src="src/Images/profileimg.png"
+                      src="/Images/Profileimg.png"
                       alt="avatar"
                       className="rounded-circle profileimg me-2"
                     />

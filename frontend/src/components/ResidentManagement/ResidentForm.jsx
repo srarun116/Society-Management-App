@@ -124,7 +124,7 @@ const ResidentForm = () => {
               Owner
             </button>
           </Link>
-          <Link to="/TenantForm">
+          <Link to="/admin/TenantForm">
             <button
               style={{
                 width: "135px",
@@ -153,7 +153,7 @@ const ResidentForm = () => {
                 onClick={() => handleFileUploadClick("profilePhoto")}
               >
                 <img
-                  src="src/Images/Frame.png"
+                  src="/src/Images/Frame.png"
                   className="img-thumbnail rounded-circle"
                   alt="Profile"
                 />
@@ -288,7 +288,7 @@ const ResidentForm = () => {
                   onClick={() => handleFileUploadClick(name)}
                 >
                   <img
-                    src="src/Images/image1.png"
+                    src="/src/Images/image1.png"
                     alt="Upload"
                     className="upload-image"
                   />

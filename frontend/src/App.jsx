@@ -38,31 +38,31 @@ const App = () => {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/admin",
       element: <Layout />,
       children: [
         {
-          path: "/",
+          path: "/admin",
           element: <Dashboard />,
         },
         {
-          path: "/ResidentManagement",
+          path: "ResidentManagement",
           element: <Rm />,
         },
         {
-          path: "/addresidents",
+          path: "addresidents",
           element: <ResidentForm />
         },
         {
-          path: "/TenantForm",
+          path: "TenantForm",
           element: <TenantForm />
         }, {
-          path: "/ownerForm",
+          path: "ownerForm",
           element: <ResidentForm />
         }
         ,
         {
-          path: "/FinancialManagement",
+          path: "FinancialManagement",
           element: <FinanceManagement />,
           children: [
             {
@@ -80,11 +80,11 @@ const App = () => {
           ]
         },
         {
-          path: "/FacilityManagement",
+          path: "FacilityManagement",
           element: <FacilityManagement />,
         },
         {
-          path: "/ComplaintTracking",
+          path: "ComplaintTracking",
           element: <ComplaintTracking />,
           children: [
             {
@@ -98,7 +98,7 @@ const App = () => {
           ]
         },
         {
-          path: "/SecurityManagement",
+          path: "SecurityManagement",
           element: <SecurityManagement />,
           children: [
             {
@@ -112,16 +112,16 @@ const App = () => {
           ]
         },
         {
-          path: "/SecurityGuard",
+          path: "SecurityGuard",
           element: <SecurityGuard />,
         },
         {
-          path: "/Announcement",
+          path: "Announcement",
           element: <Announcement />,
 
         },
         {
-          path: "/EditProfile",
+          path: "EditProfile",
           element: <EditProfile/>,
         },
 
@@ -129,7 +129,7 @@ const App = () => {
 
     },
     {
-      path: "/register",
+      path: "/",
       element: <Register />
     },
     {

@@ -307,7 +307,7 @@ const Dashboard = () => {
               <p className="balance-amount-price">₹ 2,22,520</p>
             </div>
             <div className="icon-container">
-              <img src="src/Images/Group1.png" alt="Balance icon" />
+              <img src="/src/Images/Group1.png" alt="Balance icon" />
             </div>
           </div>
         </div>
@@ -319,7 +319,7 @@ const Dashboard = () => {
               <p className="balance-amount-price">₹ 55,000</p>
             </div>
             <div className="icon-container ">
-              <img src="src/Images/Group2.png" alt="Income icon"  />
+              <img src="/src/Images/Group2.png" alt="Income icon"  />
             </div>
           </div>
         </div>
@@ -331,7 +331,7 @@ const Dashboard = () => {
               <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
-              <img src="src/Images/Group3.png" alt="Expense icon" />
+              <img src="/src/Images/Group3.png" alt="Expense icon" />
             </div>
           </div>
         </div>
@@ -343,7 +343,7 @@ const Dashboard = () => {
               <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
-              <img src="src/Images/Group4.png" alt="Unit icon" />
+              <img src="/src/Images/Group4.png" alt="Unit icon" />
             </div>
           </div>
         </div>
@@ -398,7 +398,7 @@ const Dashboard = () => {
                             className="delete-number me-2"
                             role="button"
                             tabIndex="0"
-                            src="src/Images/delet.png"
+                            src="/src/Images/delet.png"
                             alt="delete"
                             onClick={() => handleNumberDeleteClick(index)}
                             data-bs-toggle="modal"
@@ -407,7 +407,7 @@ const Dashboard = () => {
                           <img className="edit-number"
                             role="button"
                             tabIndex="0"
-                            src="src/Images/edit.png"
+                            src="/src/Images/edit.png"
                             alt="edit"
                             onClick={() => handleNumberEdit(index)}
                             data-bs-toggle="modal"
@@ -540,7 +540,7 @@ const Dashboard = () => {
                   {[...Array(10)].map((_, index) => (
                     <div className="maintenance-item d-flex bd-highlight mt-1 align-items-center border-bottom" key={index}>
                       <div className="bd-highlight rounded  mb-1">
-                        <img src="src\Images\image2.png" alt="maintenance" style={{ height: "40px" }} />
+                        <img src="\src\Images\image2.png" alt="maintenance" style={{ height: "40px" }} />
                       </div>
                       <div className="ps-2 bd-highlight">
                         <h5 style={{ fontSize: "13px" }}>Roger Lubin</h5>
@@ -605,7 +605,7 @@ const Dashboard = () => {
                         <button className="btn-action mb-2">
                           <img
                             className="edit-Complaint"
-                            src="src/Images/edit.png"
+                            src="/src/Images/edit.png"
                             alt="Edit"
                             onClick={() => handleEdit(index)}
                             data-bs-toggle="modal"
@@ -613,7 +613,7 @@ const Dashboard = () => {
                           />
                         </button>
                         <button className="btn-action">
-                          <img src="src/Images/view.png"
+                          <img src="/src/Images/view.png"
                             alt="View"
                             onClick={() => handleView(index)}
                             data-bs-toggle="modal"
@@ -621,7 +621,7 @@ const Dashboard = () => {
                           />
                         </button>
                         <button className="btn-action">
-                          <img src="src/Images/delet.png"
+                          <img src="/src/Images/delet.png"
                             alt="Delete"
                             onClick={() => handleDeleteClick(index)}
                             data-bs-toggle="modal"
@@ -923,7 +923,7 @@ const Dashboard = () => {
               {activity.map((activity, index) => (
                 <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" key={index} >
                   <div className=" bd-highlight rounded">
-                    <img src="src\Images\Group5.png" alt="activity" style={{ height: "40px" }} />
+                    <img src="\src\Images\Group5.png" alt="activity" style={{ height: "40px" }} />
                   </div>
                   <div className="p-2 bd-highlight">
                     <h5 style={{ fontSize: "14px" }}>{activity.title}</h5>

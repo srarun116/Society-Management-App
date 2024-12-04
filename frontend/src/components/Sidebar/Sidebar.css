@@ -1,4 +1,4 @@
- a , .dropdown_title{
+ /* a , .dropdown_title{
    text-decoration: none;
    color: black;
    font-weight: 600;
@@ -57,9 +57,8 @@
 
  .active-link {
    background-color: #f0f0f0;
-   /* Adjust this to your desired background color */
    color: #333;
-   /* Adjust text color if needed */
+   
  }
 
  .active-gradient {
@@ -78,4 +77,154 @@
    a p {
      font-size: 14px;
    }
- }
+ } */
+
+ a , .dropdown_title{
+  text-decoration: none;
+  color: #4F4F4F;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.sidebar_logo_hr{
+ border: .5px solid rgba(128, 128, 128, 0.623);
+}
+.sidebar_link {
+  padding-top: 12px;
+}
+
+.dropdown_icon {
+  font-size: 23px;
+  color: black;
+  font-weight: 600;
+}
+.logout-style{
+ color: #E74C3C;
+}
+
+.financial_management_main:hover .dropdown_icon {
+  color: white;
+}
+
+.sidebar_link:hover {
+  background-image: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  padding-top: 12px;
+  border-radius: 10px;
+  color: white;
+}
+
+.sidebar_link:hover a {
+  color: white;
+}
+
+
+
+
+.sidebar_link:hover .font_color {
+  color: white;
+}
+
+/* Default styles */
+.font_color {
+ color: dimgray;
+}
+
+.font_color1 {
+ color: dimgray !important;
+
+
+}
+
+/* Hover effect */
+.font_color:hover {
+ color: rgb(255, 255, 255) !important;
+}
+
+.font_color1:hover {
+ color: rgb(0, 0, 0) !important;
+}
+
+/* Active styles */
+.font_color_active {
+ color: black !important; /* Text changes to black */
+}
+
+.border-left-active {
+ border-left: 3px solid black; /* Border appears when active */
+ padding-left: 8px; /* Spacing for border alignment */
+
+}
+/* Default styles for inactive links */
+/* Common NavLink Styles */
+.nav-link {
+ display: block;
+ text-decoration: none;
+ transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+/* Default styles for inactive links */
+.default-link {
+ color: dimgray;
+ border-left: 3px solid lightgray; /* Light gray border for inactive state */
+ padding-left: 15px; /* Align text with the border */
+ transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+
+
+/* Active Link Styles */
+.active-link {
+ color: black !important; /* Set text color to black */
+ border-left: 3px solid black; /* Add black border */
+ padding-left: 15px; /* Ensure text is aligned with border */
+}
+
+/* Menu Item Styling */
+.menu-item {
+ margin: 0;
+ padding: 5px 20px; /* Add vertical spacing between items */
+ font-size: 17px;
+ font-weight: 500; /* Slightly bold text for better readability */
+ color: #4F4F4F;
+ border-radius: 2px;
+}
+.menu-item:hover {
+  background-color: rgba(128, 128, 128, 0.041);
+}
+
+.active-gradient {
+  background: linear-gradient(90deg, rgba(255, 94, 0, 1) 0%, rgba(255, 154, 0, 1) 100%);
+  color: #fff;
+}
+
+.dropdown-main {
+  margin-left: 15px;
+  z-index: 999999999;
+ 
+}
+/* Paragraph styling */
+.sub-link {
+ margin: 0; /* Remove default paragraph margins */
+}
+
+.arrow {
+ width: 20px; /* Set size of the arrow */
+ height: 20px;
+ transform: rotate(-0deg); /* Default (down) arrow rotation */
+ transition: transform 0.2s ease-in-out; /* Smooth transition for rotation */
+}
+
+.arrow.up {
+ transform: rotate(-180deg) !important; /* Rotate to show the up arrow */
+}
+
+.active-gradient {
+ background: linear-gradient(90deg, rgba(255, 94, 0, 1) 0%, rgba(255, 154, 0, 1) 100%);
+ color: #fff;
+}
+
+@media only screen and (min-width:768px) and (max-width:1050px) {
+  a p {
+    font-size: 14px;
+  }
+}

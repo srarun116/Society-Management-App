@@ -47,7 +47,7 @@ const Login = () => {
       if (result?.status) {
         toast.success(result?.message)
         localStorage.setItem("accessToken", result?.token);
-        navigate("/");
+        navigate("/admin");
       }
 
 
@@ -137,7 +137,7 @@ const Login = () => {
 
                   <div className="row">
                     <div className="col-12">
-                      <p className='text-center'>Don't have an acoount ? <NavLink to="/register" className='go_to_register'>  <span > Registration </span> </NavLink></p>
+                      <p className='text-center'>Don't have an acoount ? <NavLink to="/" className='go_to_register'>  <span > Registration </span> </NavLink></p>
                     </div>
                   </div>
 

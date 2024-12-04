@@ -102,8 +102,8 @@ const TenantForm = () => {
         <div className="container-fluid form-container" style={{ backgroundColor: "#eff4f9" }}>
             <div className="row justify-content-center ">
                 <div className=" " style={{ width: "100%" }}>
-                <Link to="/ownerForm"><button  style={{width:"135px", height:"49px", borderRadius:"10px" , fontSize:"16px", fontWeight:"500"}} className="rounded-top text-dark bg-white border-top-only btn">Owner</button></Link>
-               <Link to="/TenantForm"><button style={{width:"135px", height:"49px", borderRadius:"10px" , fontSize:"16px", fontWeight:"500"}} className="mainColor2 rounded-top border-top-only btn">Tenant</button></Link>
+                <Link to="/admin/ownerForm"><button  style={{width:"135px", height:"49px", borderRadius:"10px" , fontSize:"16px", fontWeight:"500"}} className="rounded-top text-dark bg-white border-top-only btn">Owner</button></Link>
+               <Link to="/admin/TenantForm"><button style={{width:"135px", height:"49px", borderRadius:"10px" , fontSize:"16px", fontWeight:"500"}} className="mainColor2 rounded-top border-top-only btn">Tenant</button></Link>
 
                <div  style={{width:"", marginLeft:"2px"}} className="row mb-3 bg-white rounded shadow p-4">
                                     <div className="col-md-4">
@@ -124,7 +124,7 @@ const TenantForm = () => {
                         {/* Left Image */}
                         <div className="col-lg-2 d-flex flex-column align-items-center">
                             <div className="image" onClick={() => handleFileUploadClick('profilePhoto')}>
-                                <img src="src/Images/Frame.png" className="img-thumbnail rounded-circle" alt="Profile" />
+                                <img src="/src/Images/Frame.png" className="img-thumbnail rounded-circle" alt="Profile" />
                                 <input
                                     type="file"
                                     accept="image/*"
@@ -236,7 +236,7 @@ const TenantForm = () => {
                             <div className="col-md-3" key={name}>
                                 <label>{label}</label>
                                 <div className="upload text-center" onClick={() => handleFileUploadClick(name)}>
-                                    <img src="src/Images/image1.png" alt="Upload" className="upload-image" />
+                                    <img src="/src/Images/image1.png" alt="Upload" className="upload-image" />
                                     <h6 className="text-primary mt-2">Upload a file or drag and drop</h6>
                                 </div>
                                 <input
