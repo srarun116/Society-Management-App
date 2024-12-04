@@ -29,6 +29,11 @@ import Rm from "./components/ResidentManagement/ResidentManagement";
 import ResidentForm from "./components/ResidentManagement/ResidentForm";
 import TenantForm from "./components/ResidentManagement/TenantForm";
 
+import SecurityLayout from "./Security/SecurityLayout/SecurityLayout";
+import SecurityMain from "./Security/SecurityMainContent/SecurityMain";
+import VisitorTracking from "./Security/SecurityMainContent/VisitorTracking";
+import EmergencyManagement from "./Security/SecurityMainContent/EmergencyManagement";
+
 
 
 
@@ -127,6 +132,26 @@ const App = () => {
 
       ],
 
+    },
+    {
+       path: "/Security",
+       element: <SecurityLayout/>,
+       children: [
+        {
+          path: "/Security",
+          element: <SecurityMain/>,
+          children: [
+            {
+              path: "VisitorTracking",
+              element: <VisitorTracking/>
+            },
+            {
+              path: "EmergencyManagement",
+              element: <EmergencyManagement/>
+            }
+          ]
+        }
+       ]
     },
     {
       path: "/",

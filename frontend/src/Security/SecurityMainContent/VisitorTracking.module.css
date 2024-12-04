@@ -1,0 +1,74 @@
+/* Modal backdrop styling */
+.modalBackdropShow {
+    background-color: rgba(0, 0, 0, 0.3) !important; /* Semi-transparent black */
+}
+
+/* Modal content styling */
+.modalContent {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+/* Body styling when modal is open */
+.modalOpen {
+    background-color: #f0f0f0; /* Light grey */
+    overflow: hidden; /* Prevent scrolling */
+}
+.timeBackground{
+    border: none;
+    border-radius: 15px;
+    max-width: 140px;
+    padding: 3px 10px;
+    background-color: #f6f8fb;
+
+}
+.rounded-table thead th:first-child {
+    border-top-left-radius: 12px;
+  }
+  
+  .rounded-table thead th:last-child {
+    border-top-right-radius: 12px;
+  }
+.wingBackground{
+    color: #5678e9;
+    border: none;
+    background-color: #5678e91a;
+    padding: 0px 0px 0px 4px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.selectWeek {
+    width: 100px;
+}
+
+.tableLightTh {
+    font-size: 14px;
+    text-align: center;
+}
+
+.tableHoverTd {
+    text-align: center;
+    font-size: 14px;
+}
+
+.dFlexImg {
+    object-fit: cover;
+}
+
+.scrollable {
+    max-height: 400px; /* Adjust based on desired height */
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.statusOpen {
+    background-color: #f0f4ff; /* Light blue background */
+    color: #6c83f7;
+}
+
+.statusTime {
+    background-color: #f0f4ff; /* Light blue background */
+    color: #000000;
+}

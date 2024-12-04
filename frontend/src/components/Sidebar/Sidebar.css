@@ -188,6 +188,14 @@
  color: #4F4F4F;
  border-radius: 2px;
 }
+.menu-item-security{
+  margin: 0;
+ padding: 5px 5px; /* Add vertical spacing between items */
+ font-size: 16px;
+ font-weight: 500; /* Slightly bold text for better readability */
+ color: #4F4F4F;
+ border-radius: 2px;
+}
 .menu-item:hover {
   background-color: rgba(128, 128, 128, 0.041);
 }
@@ -212,6 +220,7 @@
  height: 20px;
  transform: rotate(-0deg); /* Default (down) arrow rotation */
  transition: transform 0.2s ease-in-out; /* Smooth transition for rotation */
+ color: grey;
 }
 
 .arrow.up {

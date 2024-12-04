@@ -144,7 +144,7 @@
   
   .rounded-table th,
   .rounded-table td {
-    text-align: center; /* Center align text horizontally */
+   
     vertical-align: middle; /* Center align text vertically */
     /* Adjust padding for more spacing */
   }
