@@ -1,0 +1,41 @@
+
+
+  .btn-primary{
+    background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  }
+    .note-card {
+      border-radius: 10px;
+      overflow: hidden;
+      
+  }
+  
+  .note-card .card-body {
+      padding: 15px;
+      max-height: 320px;
+  }
+  
+  .note-card .badge {
+      font-weight: bold;
+  }
+  .badge1 {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center; /* Center text within badge */
+  }
+  
+  .open {
+    background-color: #f0f4ff; /* Light blue background */
+    color: #6c83f7;
+  }
+  
+  .pending {
+    background-color: #fff3cd; /* Light yellow background */
+    color: #ff9800;
+  }
+  
+  .solve {
+    background-color: #e8f5e9; /* Light green background */
+    color: #4caf50;
+  }

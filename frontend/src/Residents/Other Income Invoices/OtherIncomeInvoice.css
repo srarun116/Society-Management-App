@@ -1,0 +1,40 @@
+.Owner1{
+    background: #FFFFFF1A;
+    color: #ffffff;
+}
+.badge1 {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center; /* Center text within badge */
+  }
+  .btn-primary{
+    background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  }
+  .modal-header1 {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .modal-body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+  }
+  
+  .btn-warning {
+    background-color: #f97316;
+    border-color: #f97316;
+  } 
+  .text-success {
+    color: #28a745;
+  }
+  strong{
+    font-weight: normal;
+    color: #A7A7A7;
+  }

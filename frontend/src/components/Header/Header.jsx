@@ -149,11 +149,11 @@ const Header = ({ toggleSidebar }) => {
               {/* Notification Popup */}
               {showNotifications && (
                 <div
-                  className="notification-dropdown position-absolute bg-white border rounded shadow p-3"
+                  className="notification-dropdown position-absolute bg-white border rounded shadow p-3  "
                   style={{
                     right: "60px",
                     top: "60px",
-                    width: "400px",
+                    width: "00px",
                     zIndex: 1000,
                     maxHeight: "600px", // Set maximum height
                     overflowY: "auto",  // Enable vertical scrollbar

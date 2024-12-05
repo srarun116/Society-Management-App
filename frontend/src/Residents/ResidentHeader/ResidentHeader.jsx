@@ -1,3 +1,4 @@
+
 import React, { useState , useEffect} from 'react';
 import "../../components/Header/Header.css"
 import axios from 'axios';
@@ -6,67 +7,91 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 import { FiSearch } from "react-icons/fi";
 
-const SecurityHeader = ({ toggleSidebar }) => {
+const ResidentHeader = ({ toggleSidebar }) => {
 
-    const [profile, setProfile] = useState({
-        firstName: '',
-        lastName: '',
-        role: ''
-      });
-      
-    
-    
-     
-    
-      const [notifications, setNotifications] = useState([
-        {
-          title: "Maintenance (A-101)",
-          time: "Tuesday 11:41 AM",
-          message: "Evelyn Harper gave a Maintenance of 1000 rupees.",
-          type: "notification2",
-          actions: true,
-          timestamp: "2 days ago",
-        },
-        {
-          title: "Maintenance (A-101)",
-          time: "Tuesday 11:41 AM",
-          message: "Evelyn Harper gave a Maintenance of 1000 rupees.",
-          type: "notification3",
-          actions: true,
-          timestamp: "2 days ago",
-        },
-        {
-          title: "Ganesh Chaturthi (A-101)",
-          time: "Saturday 11:41 AM",
-          message: "Per Person Amount: ₹ 1,500",
-          p: "The celebration of Ganesh Chaturthi involves the installation of clay idols of Lord Ganesha in Our Resident.",
-          type: "notification4",
-          actions: true,
-          timestamp: "2 days ago",
-        },
-        {
-          title: "Update Maintenance",
-          time: "32 Minutes ago",
-          message: "Maintenance Amount: ₹ 1,500\nMaintenance Penalty: ₹ 350",
-          type: "notification3",
-          actions: false,
-          timestamp: "32 Minutes ago",
-        },
-      ]);
-      const [showNotifications, setShowNotifications] = useState(false);
-    
-      const toggleNotifications = () => {
-        setShowNotifications(!showNotifications);
-      };
-    
-      const clearNotifications = () => {
-        setNotifications([]);
-        setShowNotifications(false);
-      };
+  const [profile, setProfile] = useState({
+    firstName: '',
+    lastName: '',
+    role: ''
+  });
+  
+  const API_URL = 'http://localhost:4000/api/userProfile';
+
+  // Fetch user profile on component mount
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const token = localStorage.getItem('accessToken');
+        console.log(token)
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const { data } = await axios.get(API_URL, config);
+        setProfile({
+          firstName: data.firstName || '',
+          lastName: data.lastName || '',
+          role: data.role || ''
+         
+        });
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    };
+    fetchProfile();
+  }, []);
+
+  const [notifications, setNotifications] = useState([
+    {
+      title: "Maintenance (A-101)",
+      time: "Tuesday 11:41 AM",
+      message: "Evelyn Harper gave a Maintenance of 1000 rupees.",
+      type: "notification2",
+      actions: true,
+      timestamp: "2 days ago",
+    },
+    {
+      title: "Maintenance (A-101)",
+      time: "Tuesday 11:41 AM",
+      message: "Evelyn Harper gave a Maintenance of 1000 rupees.",
+      type: "notification3",
+      actions: true,
+      timestamp: "2 days ago",
+    },
+    {
+      title: "Ganesh Chaturthi (A-101)",
+      time: "Saturday 11:41 AM",
+      message: "Per Person Amount: ₹ 1,500",
+      p: "The celebration of Ganesh Chaturthi involves the installation of clay idols of Lord Ganesha in Our Resident.",
+      type: "notification4",
+      actions: true,
+      timestamp: "2 days ago",
+    },
+    {
+      title: "Update Maintenance",
+      time: "32 Minutes ago",
+      message: "Maintenance Amount: ₹ 1,500\nMaintenance Penalty: ₹ 350",
+      type: "notification3",
+      actions: false,
+      timestamp: "32 Minutes ago",
+    },
+  ]);
+  const [showNotifications, setShowNotifications] = useState(false);
+
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
+
+  const clearNotifications = () => {
+    setNotifications([]);
+    setShowNotifications(false);
+  };
+
   return (
     <>
-     <div className="header-main ">
-        <nav className="navbar navbar-expand-lg bg-white navbar_main">
+      <div className="header-main ">
+        <nav style={{height: "78px"}} className="navbar navbar-expand-lg bg-white navbar_main">
           <div className="container-fluid d-flex align-items-center justify-content-between mt-1">
             {/* Hamburger Icon (Mobile Only) */}
             <div className="d-lg-none">
@@ -76,7 +101,7 @@ const SecurityHeader = ({ toggleSidebar }) => {
             </div>
 
             {/* Search Section */}
-            <div className="d-flex align-items-center flex-grow-1 ">
+            <div className="d-flex align-items-center flex-grow-1">
               {/* Search Bar for Large Screens */}
               <div className="d-none d-md-block ">
                 <div className="input-group">
@@ -184,7 +209,7 @@ const SecurityHeader = ({ toggleSidebar }) => {
          </div>
               {/* User Profile */}
               <div className="dropdown d-flex align-items-center">
-                <Link to="/Security/EditProfile">
+                <Link to="/resident/EditProfile">
                   <button
                     className="btn btn-light dropdown-toggle d-flex align-items-center"
                     type="button"
@@ -194,15 +219,15 @@ const SecurityHeader = ({ toggleSidebar }) => {
                     <img
                       src="/Images/Profileimg.png"
                       alt="User"
-                      className="rounded-circle me-2 img-fluid"
+                      className=" me-2 img-fluid"
                       width="40"
                       height="40"
                     />
                     {/* Profile Name and Role (Large Screen Only) */}
                     <div className="d-none d-md-block">
-                      <span> Arun Chauhan </span>
+                      <span>{profile.firstName} {profile.lastName} </span>
                       <br />
-                      <small className="text-muted">Security</small>
+                      <small className="text-muted">{profile.role}</small>
                     </div>
                   </button>
                 </Link>
@@ -218,7 +243,8 @@ const SecurityHeader = ({ toggleSidebar }) => {
     
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SecurityHeader
+export default ResidentHeader;
+

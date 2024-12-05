@@ -29,13 +29,27 @@ import Rm from "./components/ResidentManagement/ResidentManagement";
 import ResidentForm from "./components/ResidentManagement/ResidentForm";
 import TenantForm from "./components/ResidentManagement/TenantForm";
 
+// Security
 import SecurityLayout from "./Security/SecurityLayout/SecurityLayout";
 import SecurityMain from "./Security/SecurityMainContent/SecurityMain";
 import VisitorTracking from "./Security/SecurityMainContent/VisitorTracking";
 import EmergencyManagement from "./Security/SecurityMainContent/EmergencyManagement";
 
 
-
+// Residents
+import ResidentLayout from "./Residents/ResidentLayout/ResidentLayout";
+import ResidentDashBoard from "./Residents/ResidentDashboard/ResidentDashBoard";
+import PersonalDetail from "./Residents/Personal Details/PersonalDetail";
+import PersonalDetailTenant from "./Residents/Personal Details/PersonalDetailTenant";
+import ServiceAndComplaint from "./Residents/Service And Complaint/ServiceAndComplaint";
+import EventParticipation from "./Residents/Event Participation/EventParticipation";
+import ActivityParticipaes from "./Residents/Activity Participate/ActivityParticipate";
+import AccessForums from "./Residents/Access Forums/AccessForums";
+import PollApp from "./Residents/Polls/PollApp";
+import Community from "./Residents/c d/cd";
+import CommunityQuestion from "./Residents/c d/CommunityQuestion";
+import MaintenanceInvoices from "./Residents/Maintanance Invoice/MaintananceInvoice";
+import OtherIncomeInvoice from "./Residents/Other Income Invoices/OtherIncomeInvoice";
 
 
 
@@ -150,8 +164,76 @@ const App = () => {
               element: <EmergencyManagement/>
             }
           ]
+        },
+        {
+          path: "EditProfile",
+          element: <EditProfile/>,
         }
        ]
+    },
+    {
+      path: "/resident",
+      element: <ResidentLayout />,
+      children: [
+        {
+          path: "/resident",
+          element: <ResidentDashBoard />,
+        },
+        {
+          path: "personaldetails",
+          element: <PersonalDetail />,
+        },
+        {
+          path: "personaldetailtenant",
+          element: <PersonalDetailTenant />,
+        },
+        {
+          path: "serviceandcomplaint",
+          element: <ServiceAndComplaint />,
+        },
+        {
+          path: "eventparticipation",
+          element: <EventParticipation />,
+        },
+        {
+          path: "activityparticipate",
+          element: <ActivityParticipaes />,
+        },
+        {
+          path: "AccessForums",
+          element:<AccessForums />,
+        },
+        {
+          path:"Polls",
+          element:<PollApp/>
+        },
+        {
+          path:"cd",
+          element:<Community/>
+        },
+        {
+          path:"Community-Question",
+          element:<CommunityQuestion/>
+        },
+        {
+          path:"maintananceinvoice",
+          element:<MaintenanceInvoices/>
+        },
+        {
+          path:"OtherIncomeInvoice",
+          element:<OtherIncomeInvoice/>
+          
+        }
+        ,
+        {
+          path: "securityprotocols",
+          element: <SecurityProtocols />,
+        },
+        {
+          path: "EditProfile",
+          element: <EditProfile/>,
+        }
+      ],
     },
     {
       path: "/",

@@ -1,5 +1,3 @@
-
-
  a , .dropdown_title{
   text-decoration: none;
   color: #4F4F4F;
@@ -63,7 +61,6 @@
 
 .font_color1:hover {
  color: rgb(0, 0, 0) !important;
- background-color: rgba(128, 128, 128, 0.068);
 }
 
 /* Active styles */
@@ -88,7 +85,7 @@
 .default-link {
  color: dimgray;
  border-left: 3px solid lightgray; /* Light gray border for inactive state */
- padding-left: 15px; /* Align text with the border */
+ /* Align text with the border */
  transition: all 0.3s ease; /* Smooth transition for hover and active states */
 }
 
@@ -98,7 +95,7 @@
 .active-link {
  color: black !important; /* Set text color to black */
  border-left: 3px solid black; /* Add black border */
- padding-left: 15px; /* Ensure text is aligned with border */
+ /* Ensure text is aligned with border */
 }
 
 /* Menu Item Styling */
@@ -109,28 +106,6 @@
  font-weight: 500; /* Slightly bold text for better readability */
  color: #4F4F4F;
  border-radius: 2px;
-}
-.menu-item-resident{
-  margin: 0;
- padding: 5px 5px; /* Add vertical spacing between items */
- font-size: 17px;
- font-weight: 500; /* Slightly bold text for better readability */
- color: #4F4F4F;
- border-radius: 2px;
-}
-.menu-item-security{
-  margin: 0;
- padding: 5px 5px; /* Add vertical spacing between items */
- font-size: 17px;
- font-weight: 500; /* Slightly bold text for better readability */
- color: #4F4F4F;
- border-radius: 2px;
-}
-.menu-item-security:hover {
-  background-color: rgba(128, 128, 128, 0.041);
-}
-.menu-item-resident:hover {
-  background-color: rgba(128, 128, 128, 0.041);
 }
 .menu-item:hover {
   background-color: rgba(128, 128, 128, 0.041);
@@ -144,6 +119,7 @@
 .dropdown-main {
   margin-left: 15px;
   z-index: 999999999;
+
  
 }
 /* Paragraph styling */
@@ -156,7 +132,6 @@
  height: 20px;
  transform: rotate(-0deg); /* Default (down) arrow rotation */
  transition: transform 0.2s ease-in-out; /* Smooth transition for rotation */
- color: grey;
 }
 
 .arrow.up {

@@ -1,0 +1,27 @@
+.chart-header {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .chartjs-render-monitor {
+    max-height: 300px;
+  }
+  .dropdown-menu label:hover {
+    color: #000;
+    cursor: pointer;
+    border-radius: 4px; /* Optional: to round the edges slightly */
+  }
+  /* Custom style for checked radio buttons */
+  input[type="radio"]:checked {
+    accent-color: #fd6208; /* Applies orange color when checked */
+  }
+  .dropdown-menu{
+    margin-top: 5px;
+    margin-left: -61px !important;
+    padding: 5px;
+  }
+  
+  
+  
+  
+  

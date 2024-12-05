@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import BalanceChart from '../BalanceChart/BalanceChart';
+
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { FaAngleDown, FaStarOfLife } from "react-icons/fa";
-import "./Dashboard.css"
+import "./ResidentDashBoard.css"
 import axios from 'axios';
 import moment from 'moment';
+import ResidentBalanceChart from '../ResidentBalanceChart/ResidentBalanceChart';
 
-const Dashboard = () => {
+const ResidentDashBoard = () => {
 
   // Complaint Start
 
@@ -352,7 +353,7 @@ const Dashboard = () => {
       <div className="row mb-2">
         <div className="col-lg-6 ">
           <div className="card balance-chart" style={{ maxHeight: "430px" }}>
-            <BalanceChart />
+            <ResidentBalanceChart />
           </div>
         </div>
 
@@ -557,6 +558,15 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -935,4 +945,4 @@ const Dashboard = () => {
   );
 }
 
-export default Dashboard
+export default ResidentDashBoard;

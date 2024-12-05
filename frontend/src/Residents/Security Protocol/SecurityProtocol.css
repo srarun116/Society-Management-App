@@ -1,0 +1,13 @@
+.head{
+    display: flex;
+    flex: row;
+    background-color:#eef1fd;
+  padding: 8px;
+  
+    border-radius: 10px 10px; 
+  min-width: 900px;
+ 
+}
+.data{
+    min-width: 900px;
+}

@@ -1,0 +1,258 @@
+.resident-management {
+    padding: 15px 10px;
+  }
+  
+  .balance-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    
+    position: relative;
+    height: 75px;
+  }
+  
+  .balance-card::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    height: 40px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  
+
+  
+  /* Distinct colors for each card type */
+  .balance-card-orange::before {
+    background-color: #FFA64D; /* Orange for Total Balance */
+  }
+  
+  .balance-card-green::before {
+    background-color: #4CAF50; /* Green for Total Income */
+  }
+  
+  .balance-card-blue::before {
+    background-color: #42A5F5; /* Blue for Total Expense */
+  }
+  
+  .balance-card-pink::before {
+    background-color: #EC407A; /* Pink for Total Unit */
+  }
+  
+  .balance-info {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+  
+  .balance-amount {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .balance-amount-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .icon-container img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .balance-chart {
+    border-radius: 10px;
+    background: #fff;
+    padding: 5px;
+  }
+  
+  .card-header {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+  }
+  
+  
+  .btn-primary{
+    background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+    border: 1px solid rgb(255, 255, 255);
+  }
+  
+  .important-numbers, .scrollable-card {
+    max-height: 250px; /* Set a maximum height for the scrollable sections */
+    overflow-y: auto; /* Enables vertical scrolling */
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .complaint-list {
+    height: 290px; /* Set a fixed height */
+    overflow-y: auto; /* Enables vertical scrolling */
+  }
+  
+  .upcoming-activity {
+    height: 290px; /* Set a fixed height */
+    overflow-y: auto; /* Enables vertical scrolling */
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .btn-action {
+    margin-right: 5px;
+  }
+  
+  .btn-action.edit {
+    background-color: #007bff; /* Blue */
+    color: white;
+  }
+  
+  .btn-action.delete {
+    background-color: #dc3545; /* Red */
+    color: white;
+  }
+  
+  .badge-medium {
+    background-color: #ffc107; /* Yellow */
+  }
+  .scrollable-card {
+    max-height: 400px; /* Set a maximum height for the scrollable sections */
+    overflow-y: auto; /* Enables vertical scrolling */
+  }
+  .rounded-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%; /* Full width table */
+    overflow: hidden;
+  }
+  
+  .rounded-table thead {
+    background-color: #5678e91b;
+  }
+  
+  .rounded-table th,
+  .rounded-table td {
+    text-align: center; /* Center align text horizontally */
+    vertical-align: middle; /* Center align text vertically */
+    /* Adjust padding for more spacing */
+  }
+  
+  .rounded-table thead th:first-child {
+    border-top-left-radius: 12px;
+  }
+  
+  .rounded-table thead th:last-child {
+    border-top-right-radius: 12px;
+  }
+  
+  .btn-action {
+    margin: 0 4px; /* Slight spacing between buttons */
+  }
+  
+  /* Styling for the row */
+  .complainer {
+    display: flex;
+    align-items: center;
+   /* Space between image and text */
+  }
+  
+  .complainer-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center; /* Center text within badge */
+  }
+  
+  /* Priority Colors */
+  .badge-medium {
+    background-color: #6c83f7; /* Medium - Blue */
+  }
+  
+  .badge-low {
+    background-color: #4caf50; /* Low - Green */
+  }
+  
+  .badge-high {
+    background-color: #f44336; /* High - Red */
+  }
+  
+  /* Status Colors */
+  .status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center; /* Center text within status */
+  }
+  
+  .status.open {
+    background-color: #f0f4ff; /* Light blue background */
+    color: #6c83f7;
+  }
+  
+  .status.pending {
+    background-color: #fff3cd; /* Light yellow background */
+    color: #ff9800;
+  }
+  
+  .status.solve {
+    background-color: #e8f5e9; /* Light green background */
+    color: #4caf50;
+  }
+  
+  /* Action Button Styles */
+  .actions {
+    display: flex;
+    /* Space between action buttons */
+  }
+  
+  .btn-action {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-action:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+  }
+  
+  .btn-action img {
+    width: 30px;
+    height: 30px;
+  }
+  #Red {
+    accent-color: #fd6208 ;
+  }
+
+
+
+
+
+

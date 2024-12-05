@@ -8,7 +8,6 @@ import { FaStarOfLife } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 
 
-
 const Announcement = () => {
 
   const [boxes, setBoxes] = useState([]);
