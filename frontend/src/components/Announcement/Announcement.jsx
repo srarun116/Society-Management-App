@@ -24,7 +24,6 @@ const Announcement = () => {
 
   const API_URL = 'http://localhost:4000/api/announcements';
 
-  
 
   const fetchAnnouncements = async () => {
     try {
@@ -98,8 +97,7 @@ const Announcement = () => {
     }
   };
 
-
-
+  
 
   // Open create announcement modal
   const handleCreateBox = () => {

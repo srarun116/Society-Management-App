@@ -40,10 +40,7 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .row > div {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
+   
   
     img.rounded-circle {
       width: 100px !important;
@@ -58,7 +55,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    max-width: 350px;
+    width: 100%;
     position: relative;
     height: 90px;
   }
@@ -74,7 +71,22 @@
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
   }
-  
+  .balance-card-dangere::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60%;
+    width: 30%;
+    background: linear-gradient(to bottom, red 1px, transparent 3px) no-repeat,
+        linear-gradient(to left, red 1px, transparent 3px) no-repeat;
+    background-position: top right, right top;
+    border-top-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;  /* Ensures no conflict */
+    clip-path: polygon(
+        17% border
+    ),
+  }
   /* Distinct colors for each card type */
   .balance-card-dangere::before {
     background: #E74C3C;

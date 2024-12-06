@@ -53,6 +53,7 @@ import OtherIncomeInvoice from "./Residents/Other Income Invoices/OtherIncomeInv
 
 
 
+
 const App = () => {
 
   const router = createBrowserRouter([
@@ -232,7 +233,8 @@ const App = () => {
         {
           path: "EditProfile",
           element: <EditProfile/>,
-        }
+        },
+        
       ],
     },
     {
@@ -255,7 +257,6 @@ const App = () => {
       path: "/resetPassword",
       element: <ResetPassword />,
     }
-
 
   ]
   , {

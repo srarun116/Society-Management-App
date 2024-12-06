@@ -27,12 +27,12 @@
     white-space: nowrap; /* Prevents content from wrapping */
   }
   
-  .eventtable .row {
+  .eventtable {
     min-width: 1000px; /* Ensures the entire row doesn't shrink */
   }
   
-  .eventtable .col-2,
-  .eventtable .col-3 {
+  .eventtable ,
+  .eventtable  {
     flex: 2 2 auto; /* Prevents shrinking of individual columns */
   }
   

@@ -34,10 +34,7 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .row > div {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
+   
   
     img.rounded-circle {
       width: 100px !important;

@@ -226,6 +226,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
                 </p>
               </NavLink>
             </div>
+            
           </div>
 
           <div className="row ">

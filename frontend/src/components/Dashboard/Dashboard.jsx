@@ -300,7 +300,7 @@ const Dashboard = () => {
     <div className="container-fluid resident-management ">
       {/* Top Balance Cards */}
       <div className="row ">
-        <div className="col-lg-3 mb-3 ">
+        <div className="col-6 col-sm-6   col-lg-3 mb-3  px-3 ">
           <div className="balance-card balance-card-orange">
             <div className="balance-info">
               <p className="mb-0 text-muted mt-3">Total Balance</p>
@@ -312,7 +312,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3 ">
+        <div className="  col-6 col-sm-6   col-lg-3 mb-3  p-0 ">
           <div className="balance-card balance-card-green">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Income</p>
@@ -324,7 +324,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3 ">
+        <div className=" col-6 col-sm-6   col-lg-3 mb-3  p-0 ">
           <div className="balance-card balance-card-blue">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Expense</p>
@@ -336,7 +336,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3">
+        <div className=" col-6 col-sm-6   col-lg-3 mb-3  p-0">
           <div className="balance-card balance-card-pink">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Unit</p>
@@ -360,7 +360,7 @@ const Dashboard = () => {
           <div className="row">
             {/* Important Numbers */}
             <div className="col-lg-6">
-              <div className="card border rounded" style={{ maxHeight: "430px" }}>
+              <div className="card border rounded" style={{ maxHeight: "430px" , minHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center p-2">
                   <h5 style={{ fontSize: "20px" , fontWeight: "bold" }}>Important Numbers</h5>
                   <button
@@ -421,7 +421,8 @@ const Dashboard = () => {
               </div>
 
               {/* Updated Add Create Number Modal */}
-              <div className="modal  fade" id="addCreateNumberModal" tabIndex="-1" aria-labelledby="addCreateNumberModalLabel" aria-hidden="true">
+             
+              <div className="modal  fade" id="addCreateNumberModal" tabIndex="-1" aria-labelledby="addCreateNumberModalLabel" aria-hidden="true"  >
                 <div className="modal-dialog modal-dialog-centered">
                   <div className="modal-content custom-modal" style={{backgroundColor: "white" , color: "black" , maxWidth: "400px" }}>
                     <div className="modal-header">

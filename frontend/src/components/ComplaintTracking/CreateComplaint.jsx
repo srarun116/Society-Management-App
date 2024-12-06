@@ -374,9 +374,6 @@ const CreateComplaint = () => {
                   </div>
                 </div>
 
-
-
-
                 {/* Modal Footer */}
 
                 <div className="row mt-4 px-0 ">
@@ -499,9 +496,6 @@ const CreateComplaint = () => {
                   Delete
                 </button>
               </div>
-
-
-
             </div>
           </div>
         </div>

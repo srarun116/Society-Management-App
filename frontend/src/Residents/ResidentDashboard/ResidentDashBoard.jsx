@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import "bootstrap/dist/css/bootstrap.min.css"
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { FaAngleDown, FaStarOfLife } from "react-icons/fa";
 import "./ResidentDashBoard.css"
@@ -301,8 +301,8 @@ const ResidentDashBoard = () => {
     <div className="container-fluid resident-management ">
       {/* Top Balance Cards */}
       <div className="row ">
-        <div className="col-lg-3 mb-3 ">
-          <div className="balance-card balance-card-orange">
+        <div className="col-6 col-sm-6  col-lg-6 col-xl-3  mb-3  px-3">
+          <div className="balance-card-main balance-card-orange">
             <div className="balance-info">
               <p className="mb-0 text-muted mt-3">Total Balance</p>
               <p className="balance-amount-price">₹ 2,22,520</p>
@@ -313,8 +313,8 @@ const ResidentDashBoard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3 ">
-          <div className="balance-card balance-card-green">
+        <div className="col-6 col-sm-6  col-lg-6 col-xl-3 mb-3  px-3 ">
+          <div className="balance-card-main balance-card-green">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Income</p>
               <p className="balance-amount-price">₹ 55,000</p>
@@ -325,8 +325,8 @@ const ResidentDashBoard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3 ">
-          <div className="balance-card balance-card-blue">
+        <div className="col-6 col-sm-6  col-lg-6 col-xl-3 mb-3  px-3">
+          <div className="balance-card-main balance-card-blue">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Expense</p>
               <p className="balance-amount-price">₹ 20,550</p>
@@ -337,8 +337,8 @@ const ResidentDashBoard = () => {
           </div>
         </div>
 
-        <div className="col-lg-3">
-          <div className="balance-card balance-card-pink">
+        <div className="col-6 col-sm-6   col-lg-6 col-xl-3 mb-3  px-3">
+          <div className="balance-card-main balance-card-pink">
             <div className="balance-info">
               <p className="mb-0 text-muted  mt-3">Total Unit</p>
               <p className="balance-amount-price">₹ 20,550</p>
@@ -349,10 +349,12 @@ const ResidentDashBoard = () => {
           </div>
         </div>
       </div>
+
+
       {/* Balance Chart and Sidebar Panels */}
       <div className="row mb-2">
         <div className="col-lg-6 ">
-          <div className="card balance-chart" style={{ maxHeight: "430px" }}>
+          <div className="card balance-chart" style={{ maxHeight: "430px" , minHeight: "430px" }}>
             <ResidentBalanceChart />
           </div>
         </div>
@@ -920,7 +922,7 @@ const ResidentDashBoard = () => {
               <button className='btn border' style={{ maxWidth: "90px", fontSize: "14px" }}>Month <FaAngleDown /></button>
             </div>
             <div className="card-body scrollable-card">
-              {/* Sample Upcoming Activity Item */}
+              
               {activity.map((activity, index) => (
                 <div className="maintenance-item d-flex bd-highlight align-items-center border-bottom" key={index} >
                   <div className=" bd-highlight rounded">

@@ -9,8 +9,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    
+    padding: 0px;
+    width:100%;
     position: relative;
     height: 75px;
   }
@@ -27,24 +27,87 @@
     border-bottom-right-radius: 12px;
   }
 
-  
+  .balance-card-orange::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60%;
+    width: 30%;
+    background: linear-gradient(to bottom, #FFA64D 1px, transparent 3px) no-repeat,
+        linear-gradient(to left, #FFA64D 1px, transparent 3px) no-repeat;
+    background-position: top right, right top;
+    border-top-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;  /* Ensures no conflict */
+    clip-path: polygon(
+        17% border
+    ),
+}
+.balance-card-green::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60%;
+  width: 30%;
+  background: linear-gradient(to bottom, #4CAF50 1px, transparent 3px) no-repeat,
+      linear-gradient(to left, #4CAF50 1px, transparent 3px) no-repeat;
+  background-position: top right, right top;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;  /* Ensures no conflict */
+  clip-path: polygon(
+      17% border
+  ),
+}
+.balance-card-blue::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60%;
+  width: 30%;
+  background: linear-gradient(to bottom, #42A5F5 1px, transparent 3px) no-repeat,
+      linear-gradient(to left, #42A5F5 1px, transparent 3px) no-repeat;
+  background-position: top right, right top;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;  /* Ensures no conflict */
+  clip-path: polygon(
+      17% border
+  ),
+}
+.balance-card-pink::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60%;
+  width: 30%;
+  background: linear-gradient(to bottom, #EC407A 1px, transparent 3px) no-repeat,
+      linear-gradient(to left, #EC407A 1px, transparent 3px) no-repeat;
+  background-position: top right, right top;
+  border-top-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;  /* Ensures no conflict */
+  clip-path: polygon(
+      17% border
+  ),
+}
 
   
-  /* Distinct colors for each card type */
+
   .balance-card-orange::before {
-    background-color: #FFA64D; /* Orange for Total Balance */
+    background-color: #FFA64D;
   }
   
   .balance-card-green::before {
-    background-color: #4CAF50; /* Green for Total Income */
+    background-color: #4CAF50; 
   }
   
   .balance-card-blue::before {
-    background-color: #42A5F5; /* Blue for Total Expense */
+    background-color: #42A5F5; 
   }
   
   .balance-card-pink::before {
-    background-color: #EC407A; /* Pink for Total Unit */
+    background-color: #EC407A;
   }
   
   .balance-info {
@@ -88,8 +151,8 @@
   }
   
   .important-numbers, .scrollable-card {
-    max-height: 250px; /* Set a maximum height for the scrollable sections */
-    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 250px; 
+    overflow-y: auto; 
   }
   
   .card-body {
@@ -97,13 +160,13 @@
   }
   
   .complaint-list {
-    height: 290px; /* Set a fixed height */
-    overflow-y: auto; /* Enables vertical scrolling */
+    height: 290px; 
+    overflow-y: auto; 
   }
   
   .upcoming-activity {
-    height: 290px; /* Set a fixed height */
-    overflow-y: auto; /* Enables vertical scrolling */
+    height: 290px;
+    overflow-y: auto; 
   }
   
   .table th, .table td {
@@ -115,26 +178,26 @@
   }
   
   .btn-action.edit {
-    background-color: #007bff; /* Blue */
+    background-color: #007bff; 
     color: white;
   }
   
   .btn-action.delete {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545; 
     color: white;
   }
   
   .badge-medium {
-    background-color: #ffc107; /* Yellow */
+    background-color: #ffc107; 
   }
   .scrollable-card {
-    max-height: 400px; /* Set a maximum height for the scrollable sections */
-    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 400px; 
+    overflow-y: auto; 
   }
   .rounded-table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 100%; /* Full width table */
+    width: 100%; 
     overflow: hidden;
   }
   
@@ -145,8 +208,8 @@
   .rounded-table th,
   .rounded-table td {
    
-    vertical-align: middle; /* Center align text vertically */
-    /* Adjust padding for more spacing */
+    vertical-align: middle; 
+
   }
   
   .rounded-table thead th:first-child {
@@ -158,14 +221,14 @@
   }
   
   .btn-action {
-    margin: 0 4px; /* Slight spacing between buttons */
+    margin: 0 4px; 
   }
   
-  /* Styling for the row */
+
   .complainer {
     display: flex;
     align-items: center;
-   /* Space between image and text */
+   
   }
   
   .complainer-image {
@@ -174,56 +237,56 @@
     border-radius: 50%;
   }
   
-  /* Badge Styles */
+  
   .badge {
     display: inline-block;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 14px;
-    text-align: center; /* Center text within badge */
+    text-align: center;
   }
   
-  /* Priority Colors */
+
   .badge-medium {
-    background-color: #6c83f7; /* Medium - Blue */
+    background-color: #6c83f7;
   }
   
   .badge-low {
-    background-color: #4caf50; /* Low - Green */
+    background-color: #4caf50; 
   }
   
   .badge-high {
-    background-color: #f44336; /* High - Red */
+    background-color: #f44336; 
   }
   
-  /* Status Colors */
+ 
   .status {
     display: inline-block;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 14px;
-    text-align: center; /* Center text within status */
+    text-align: center; 
   }
   
   .status.open {
-    background-color: #f0f4ff; /* Light blue background */
+    background-color: #f0f4ff; 
     color: #6c83f7;
   }
   
   .status.pending {
-    background-color: #fff3cd; /* Light yellow background */
+    background-color: #fff3cd; 
     color: #ff9800;
   }
   
   .status.solve {
-    background-color: #e8f5e9; /* Light green background */
+    background-color: #e8f5e9; 
     color: #4caf50;
   }
   
-  /* Action Button Styles */
+ 
   .actions {
     display: flex;
-    /* Space between action buttons */
+   
   }
   
   .btn-action {
@@ -240,7 +303,7 @@
   }
   
   .btn-action:hover {
-    background-color: #e0e0e0; /* Slightly darker on hover */
+    background-color: #e0e0e0;
   }
   
   .btn-action img {

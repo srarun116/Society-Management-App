@@ -325,17 +325,17 @@ function MaintenanceDetails({ data }) { // Accept data as prop
                     >
                         <table className="table align-middle text-center">
                             <thead>
-                                <tr style={{ backgroundColor: "#F3F4F6" }}>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Name</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Unit Number</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Date</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Status</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Phone Number</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Amount</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Penalty</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Status</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Payment</th>
-                                    <th style={{ backgroundColor: "#a3b4ec", }}>Action</th>
+                                <tr >
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Name</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Unit Number</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Date</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Status</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Phone Number</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Amount</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Penalty</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Status</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Payment</th>
+                                    <th style={{ backgroundColor: "#5678e91b", }}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

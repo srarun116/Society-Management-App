@@ -2,20 +2,20 @@
     padding: 15px 10px;
   }
   
-  .balance-card {
+  .balance-card-main {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    
+    padding: 1rem;  
     position: relative;
     height: 75px;
   }
   
-  .balance-card::before {
+  
+  .balance-card-main::before {
     content: '';
     position: absolute;
     top: 16px;
@@ -47,10 +47,7 @@
     background-color: #EC407A; /* Pink for Total Unit */
   }
   
-  .balance-info {
-    flex-grow: 1;
-    margin-left: 1rem;
-  }
+ 
   
   .balance-amount {
     font-size: 1.8rem;
