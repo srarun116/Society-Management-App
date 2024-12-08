@@ -255,7 +255,7 @@ const TenantForm = () => {
                                 <div className=" border border-2 rounded mx-auto d-flex flex-wrap align-items-center p-2">
                                     <img src="src\Images\image2.png" style={{width:"30px"}} alt="" className=" me-2 mt-3" />
                                     <h6 className='img-font'>Syncfusion Essential Adharcard JPG</h6><RiDeleteBin5Fill className='mb-2 ms-3 ' />
-                                    <span className='ms-5 text-secondary mb-3' style={{marginTop:"-20px", fontSize:"12px"}}>3.5 MB</span>
+                                    <span className='ms-4 text-secondary mb-3' style={{marginTop:"1px", fontSize:"12px"}}>3.5 MB</span>
                                   
                                 </div>
                                
@@ -268,7 +268,7 @@ const TenantForm = () => {
                                     <h6 className='img-font mt-1'>Syncfusion Essential Adharcard JPG</h6>
                                     <span role='button'><RiDeleteBin5Fill className='mb-2 ms-3 '/></span>
 
-                                    <span className='ms-5  text-secondary mb-3' style={{marginTop:"-20px", fontSize:"12px"}}>3.5 MB</span>
+                                    <span className='ms-2  text-secondary mb-3' style={{marginTop:"1px", fontSize:"12px"}}>3.5 MB</span>
                                 </div>
                                 <div>
                                 </div>
@@ -279,7 +279,7 @@ const TenantForm = () => {
                                     <img src="src\Images\image2.png" alt="" style={{width:"30px"}} className=" me-2 mt-3" />
                                     <h6 className='img-font'>Syncfusion Essential Adharcard JPG</h6><RiDeleteBin5Fill className='mb-2 ms-3'/>
 
-                                    <span className='ms-5 text-secondary mb-3' style={{marginTop:"-20px", fontSize:"12px"}}>3.5 MB</span>
+                                    <span className='ms-5 text-secondary mb-3' style={{marginTop:"1px", fontSize:"12px"}}>3.5 MB</span>
                                 </div>
                                 <div>
                                 </div>
@@ -289,7 +289,7 @@ const TenantForm = () => {
                                 <div className=" border border-2 rounded mx-auto d-flex flex-wrap align-items-center p-2">
                                     <img src="src\Images\image2.png" alt="" style={{width:"30px"}} className=" me-2 mt-3" />
                                     <h6 className='img-font'>Syncfusion Essential Adharcard JPG</h6><RiDeleteBin5Fill className='mb-2 ms-3' />
-                                    <span className='ms-5 text-secondary mb-3' style={{marginTop:"-20px", fontSize:"12px"}}>3.5 MB</span>
+                                    <span className='ms-5 text-secondary mb-3' style={{marginTop:"1px", fontSize:"12px"}}>3.5 MB</span>
                                    
                                 </div>
                                 <div>
@@ -306,7 +306,7 @@ const TenantForm = () => {
               <div className="d-flex justify-content-between">
                 <div className="d-flex ">
                   <h4>Member Counting:</h4>{" "}
-                  <h6 className="text-muted mt-4">(Other Members)</h6>
+                  <h6 className="text-muted mt-4 ms-2">(Other Members)</h6>
                 </div>
                 <button
                   type="button"

@@ -166,10 +166,10 @@ const Announcement = () => {
             {/* Header start */}
             <div className="row  d-flex justify-content-between align-items-cente">
               <div className="col-lg-2 pt-3 pb-3">
-                <h4 className='fw-bold'>Announcement</h4>
+                <h4 className='fw-bold admin-pages-styling'>Announcement</h4>
               </div>
               <div className="col-lg-2 d-flex justify-content-end align-items-center">
-                <button className="pt-2 pb-2 px-3 create_announcement_btn" onClick={handleCreateBox} >Create Announcement</button>
+                <button className="pt-2 pb-2 px-3 create_announcement_btn admin-pages-styling" onClick={handleCreateBox} >Create Announcement</button>
               </div>
             </div>
 
@@ -181,7 +181,7 @@ const Announcement = () => {
                 <div className="col-3 mt-3" key={index}>
                   <div className="px-2 entire_box_data">
                     <div className="row d-flex align-items-center pt-2 pb-1 box-heading">
-                      <p>
+                      <p className='admin-pages-styling'>
                         {box.title}
                         <BsThreeDotsVertical
                           className="edit_icon_data"

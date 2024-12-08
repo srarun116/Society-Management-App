@@ -45,18 +45,18 @@ const EventParticipation = () => {
         <div>
           <div className="d-flex justify-content-start mt-3">
             <Link
-              className="border-bottom border-2 border-danger"
+              
               to={"/resident/eventparticipation"}
             >
-              <button className="participatebtn text-white hovermaincolor mainColor2 rounded-top bg-white text-dark btn border-bottom">
+              <button className="participatebtn text-white hovermaincolor mainColor2 rounded-top bg-white text-dark btn ">
                 <span className="participatebtnspan">Events Participate</span>
               </button>
             </Link>
             <Link
-              className="border-bottom border-2 border-danger"
+              
               to="/resident/activityparticipate"
             >
-              <button className="participatebtn hovermaincolor border-bottom text-dark bg-white rounded-top btn">
+              <button className="participatebtn hovermaincolor  text-dark bg-white rounded-top btn">
                 <span className="participatebtnspan">Activity Participate</span>
               </button>
             </Link>

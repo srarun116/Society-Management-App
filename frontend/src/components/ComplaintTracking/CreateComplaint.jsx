@@ -23,20 +23,20 @@ const CreateComplaint = () => {
   const [deleteIndex, setDeleteIndex] = useState(null);
 
 
-    // Function to fetch complaints
-    const fetchComplaints = async () => {
-      try {
-          const response = await axios.get(API_URL);
-          setCreateComplaint(response.data);
-      } catch (error) {
-          console.error("Error fetching Create Complaints:", error);
-      }
-     };
+  // Function to fetch complaints
+  const fetchComplaints = async () => {
+    try {
+      const response = await axios.get(API_URL);
+      setCreateComplaint(response.data);
+    } catch (error) {
+      console.error("Error fetching Create Complaints:", error);
+    }
+  };
 
 
-    useEffect(() => {
-      fetchComplaints(); // Fetch data on component mount
-    }, []);
+  useEffect(() => {
+    fetchComplaints(); // Fetch data on component mount
+  }, []);
 
   const getPriorityClass = (priority) => {
     switch (priority) {
@@ -54,11 +54,11 @@ const CreateComplaint = () => {
   const getStatusClass = (status) => {
     switch (status) {
       case "Pending":
-        return "bg-warning text-white rounded-pill py-1 "; // Bootstrap class for warning
+        return "status-pending-item py-1";; 
       case "Open":
-        return "bg-primary text-white rounded-pill py-1"; // Bootstrap class for blue
+        return  "status-open-item py-1";
       case "Solve":
-        return "bg-success text-white rounded-pill py-1"; // Bootstrap class for green
+        return "status-solve-item py-1"; 
       default:
         return ""; // No background
     }
@@ -72,39 +72,39 @@ const CreateComplaint = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSave = async(e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
 
     try {
       if (isEditing) {
-         // Editing a Create Complaints
-         const response = await axios.put(`${API_URL}/update/${createComplaint[currentCreateComplaintIndex]._id}`, form);
+        // Editing a Create Complaints
+        const response = await axios.put(`${API_URL}/update/${createComplaint[currentCreateComplaintIndex]._id}`, form);
         const updatedCreateComplaint = [...createComplaint];
         updatedCreateComplaint[currentCreateComplaintIndex] = response.data;
         setCreateComplaint(updatedCreateComplaint);
       } else {
-          // Creating a new Create Complaints
-          const response = await axios.post('http://localhost:4000/api/complaints/create', form);
-       
-          setCreateComplaint(prevComplaints => [...prevComplaints, response.data]);
-       
+        // Creating a new Create Complaints
+        const response = await axios.post('http://localhost:4000/api/complaints/create', form);
+
+        setCreateComplaint(prevComplaints => [...prevComplaints, response.data]);
+
       }
 
-       // Re-fetch data to ensure state sync
-       await fetchComplaints();
+      // Re-fetch data to ensure state sync
+      await fetchComplaints();
 
-       // Reset the form and close modal
-          setForm({ complainerName: '', complaintName: '', description: '', wing: '', unit: '', priority: '', status: '' });
-          setIsEditing(false);
-          setCurrentCreateComplaintIndex(null);
+      // Reset the form and close modal
+      setForm({ complainerName: '', complaintName: '', description: '', wing: '', unit: '', priority: '', status: '' });
+      setIsEditing(false);
+      setCurrentCreateComplaintIndex(null);
 
     } catch (error) {
       console.error("Error saving Create Complaints:", error);
     }
 
-   
 
-   
+
+
   };
 
   const handleCancel = () => {
@@ -128,33 +128,33 @@ const CreateComplaint = () => {
     setShowDeleteModal(true);
   };
 
-  const handleDeleteConfirm = async() => {
+  const handleDeleteConfirm = async () => {
     try {
       const deleteId = createComplaint[deleteIndex]._id; // Get the correct ID from the selected security protocol
       const response = await axios.delete(`${API_URL}/delete/${deleteId}`);
 
-       // Log success
-       console.log("Created Complaints deleted successfully:", response.data);
+      // Log success
+      console.log("Created Complaints deleted successfully:", response.data);
 
-       // Update the UI by removing the deleted complain from the list
-       setCreateComplaint(createComplaint.filter((_, index) => index !== deleteIndex));
+      // Update the UI by removing the deleted complain from the list
+      setCreateComplaint(createComplaint.filter((_, index) => index !== deleteIndex));
 
-       // Re-fetch data to ensure state sync
-       await fetchComplaints();
+      // Re-fetch data to ensure state sync
+      await fetchComplaints();
 
-       // Close the modal and reset delete index
-       setShowDeleteModal(false);
-       setDeleteIndex(null);
+      // Close the modal and reset delete index
+      setShowDeleteModal(false);
+      setDeleteIndex(null);
     } catch (error) {
-       // Log the error details
-       console.error("Error deleting Creating Complaint:", error.response ? error.response.data : error.message);
-        
-       // Optionally, show a message to the user if deletion fails
-       alert("Failed to delete Create Complaint. Please check the console for details.");
+      // Log the error details
+      console.error("Error deleting Creating Complaint:", error.response ? error.response.data : error.message);
+
+      // Optionally, show a message to the user if deletion fails
+      alert("Failed to delete Create Complaint. Please check the console for details.");
     }
   };
 
-  
+
   return (
     <>
       <div className="container-fluid border main-content-wrapper ">
@@ -163,12 +163,12 @@ const CreateComplaint = () => {
 
             <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
               <div className="col-lg-2 pt-3 pb-3">
-                <h4 className='fw-bold'>Create Complaint</h4>
+                <h4 className='fw-bold admin-pages-styling'>Create Complaint</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3 ">
                 <button
-                  className="pt-2 pb-2 px-3 add_protocol_btn"
+                  className="pt-2 pb-2 px-3 add_protocol_btn admin-pages-styling"
                   data-bs-toggle="modal"
                   data-bs-target="#addCreateComplaintModal"
                   onClick={() => {
@@ -183,13 +183,13 @@ const CreateComplaint = () => {
 
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Complainer Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Complaint Name</h6></div>
-              <div className="col-3 py-2"><h6 className="text-start fw-bold">Discription</h6></div>
-              <div className="col-1 py-2"><h6 className="text-start fw-bold">Unit Number</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">Priority</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">statue</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Complainer Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Complaint Name</h6></div>
+              <div className="col-3 py-2"><h6 className="text-start admin-pages-styling">Discription</h6></div>
+              <div className="col-1 py-2"><h6 className="text-start admin-pages-styling">Unit Number</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">Priority</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">statue</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Action</h6></div>
             </div>
 
             {createComplaint.map((complaint, index) => (
@@ -201,34 +201,13 @@ const CreateComplaint = () => {
                 <div className="col-1 py-2"><p className={`text-center ${getPriorityClass(complaint.priority)}`}>{complaint.priority}</p></div>
                 <div className="col-1 py-2"><p className={`text-center ${getStatusClass(complaint.status)}`}>{complaint.status}</p></div>
 
-                <div className="col-2 py-2 d-flex gap-3 justify-content-center action_btn_main">
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleEdit(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#addCreateComplaintModal"
-                  >
-                    <RiEditBoxFill className="action_icon edit_icon_size" />
-                  </button>
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleView(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewCreateComplaintModal"
-                  >
-                    <GrView className="action_icon view_icon" />
-                  </button>
+                <div className="col-2 py-2 d-flex gap-3 justify-content-center action_btn_main">                                 
 
-                  {/* delete */}
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleDeleteClick(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#deleteCreateComplaintModal"  // Add this line
-                  >
-                    <RiDeleteBin2Fill className="action_icon delete_icon" />
-                  </button>
+                  <img src="/Images/Edit_btn.png" onClick={() => handleEdit(index)} data-bs-toggle="modal" data-bs-target="#addCreateComplaintModal" height={40} />
 
+                  <img src="/Images/View_btn.png" onClick={() => handleView(index)} data-bs-toggle="modal" data-bs-target="#viewCreateComplaintModal" height={40} />
+
+                  <img src="/Images/Delete_btn.png" onClick={() => handleDeleteClick(index)} data-bs-toggle="modal" data-bs-target="#deleteCreateComplaintModal" height={40} />
 
                 </div>
               </div>
@@ -245,45 +224,45 @@ const CreateComplaint = () => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal">
             <div className="modal-header">
-              <h4 className="modal-title" id="addCreateComplaintModalLabel">
+              <h4 className="modal-title admin-pages-styling" id="addCreateComplaintModalLabel">
                 {isEditing ? 'Edit Complaint' : 'Create Complaint'}
               </h4>
             </div>
             <div className="modal-body">
               <form onSubmit={handleSave}> {/* Add onSubmit here */}
                 <div className="mb-3">
-                  <label htmlFor="complainerName" className="form-label">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="complainerName" className="form-label admin-pages-styling">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="complainerName" autoComplete='off' placeholder="Enter Name" value={form.complainerName} onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="complaintName" className="form-label">ComplaintName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="complaintName" className="form-label admin-pages-styling">ComplaintName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="complaintName" autoComplete='off' placeholder="Enter Name" value={form.complaintName} onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="description" className="form-label">Discription <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="description" className="form-label admin-pages-styling">Discription <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="description" autoComplete='off' placeholder="Enter Discription" value={form.description} onChange={handleInputChange} required />
                 </div>
                 <div className="row">
                   <div className="col-6 mb-3">
-                    <label htmlFor="wing" className="form-label">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="wing" className="form-label admin-pages-styling">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <div className="input-group">
                       <input type="text" className="form-control" placeholder='Enter Wing' name="wing" autoComplete='off' value={form.wing} onChange={handleInputChange} required />
                     </div>
                   </div>
                   <div className="col-6 mb-3">
-                    <label htmlFor="Unit" className="form-label">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
+                    <label htmlFor="Unit" className="form-label admin-pages-styling">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
                     <input type="text" className="form-control " name="unit" autoComplete='off' placeholder='Enter Unit' value={form.unit} onChange={handleInputChange} required />
                   </div>
                 </div>
 
                 {/* Priority Section */}
                 <div className="mb-3">
-                  <label htmlFor="priority" className="form-label">
+                  <label htmlFor="priority" className="form-label admin-pages-styling">
                     Priority <FaStarOfLife className="star_icon_modal mb-2" />
                   </label>
                   <div className="d-flex row ">
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="priority"
@@ -297,7 +276,7 @@ const CreateComplaint = () => {
                     </div>
 
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="priority"
@@ -310,7 +289,7 @@ const CreateComplaint = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="priority"
@@ -328,12 +307,12 @@ const CreateComplaint = () => {
 
                 {/* Status Section */}
                 <div className="mb-3">
-                  <label htmlFor="status" className="form-label">
+                  <label htmlFor="status" className="form-label admin-pages-styling">
                     Status <FaStarOfLife className="star_icon_modal mb-2" />
                   </label>
                   <div className="d-flex row ">
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="status"
@@ -346,7 +325,7 @@ const CreateComplaint = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="status"
@@ -359,7 +338,7 @@ const CreateComplaint = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="status"
@@ -385,14 +364,14 @@ const CreateComplaint = () => {
                       onClick={handleCancel}
 
                     >
-                      Cancel
+                      <h6 className='admin-pages-styling mb-0 py-1'>Cancel</h6>
                     </button>
                   </div>
                   <div className="col-6   ">
 
                     <button
                       type="submit" // Change button type to submit
-                      className="btn  save_btn "
+                      className="btn  save_btn admin-pages-styling"
                       data-bs-dismiss="modal"
                     >
                       {isEditing ? 'Update' : 'Save'}

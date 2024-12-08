@@ -1,13 +1,24 @@
 .head{
-    display: flex;
-    flex: row;
-    background-color:#eef1fd;
-  padding: 8px;
-  
-    border-radius: 10px 10px; 
-  min-width: 900px;
- 
+  display: flex;
+  flex: row;
+  background-color:#eef1fd;
+padding: 8px;
+
+  border-radius: 10px 10px; 
+min-width: 900px;
+
 }
 .data{
-    min-width: 900px;
+  min-width: 900px;
+}
+.Online1{
+  background: #5678E91A;
+  color: #000000;
+}  
+.badge1 {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-align: center; /* Center text within badge */
 }

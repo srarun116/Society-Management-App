@@ -41,7 +41,9 @@
 
 .sidebar_link:hover .font_color {
   color: white;
+  
 }
+
 
 /* Default styles */
 .font_color {
@@ -72,6 +74,10 @@
  border-left: 3px solid black; /* Border appears when active */
  padding-left: 8px; /* Spacing for border alignment */
 
+}
+.sidebar_link:hover .sidebar_img{
+  color: white;
+  
 }
 /* Default styles for inactive links */
 /* Common NavLink Styles */
@@ -143,8 +149,8 @@
  color: #fff;
 }
 
-@media only screen and (min-width:768px) and (max-width:1050px) {
+/* @media only screen and (min-width:768px) and (max-width:1050px) {
   a p {
     font-size: 14px;
   }
-}
+} */

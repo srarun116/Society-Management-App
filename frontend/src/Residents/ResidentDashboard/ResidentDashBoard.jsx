@@ -283,7 +283,18 @@ const ResidentDashBoard = () => {
     }
   };
 
-
+  const getPriorityClass = (priority) => {
+    switch (priority) {
+      case "High":
+        return "bg-danger text-white rounded-pill py-1"; // Bootstrap class for red
+      case "Medium":
+        return "bg-primary text-white rounded-pill py-1"; // Bootstrap class for blue
+      case "Low":
+        return "bg-success text-white rounded-pill py-1"; // Bootstrap class for green
+      default:
+        return ""; // No background
+    }
+  };
 
   // Import number end 
 
@@ -304,7 +315,7 @@ const ResidentDashBoard = () => {
         <div className="col-6 col-sm-6  col-lg-6 col-xl-3  mb-3  px-3">
           <div className="balance-card-main balance-card-orange">
             <div className="balance-info">
-              <p className="mb-0 text-muted mt-3">Total Balance</p>
+              <p className="mb-0 text-muted mt-3 dashboard-styling">Total Balance</p>
               <p className="balance-amount-price">₹ 2,22,520</p>
             </div>
             <div className="icon-container">
@@ -316,7 +327,7 @@ const ResidentDashBoard = () => {
         <div className="col-6 col-sm-6  col-lg-6 col-xl-3 mb-3  px-3 ">
           <div className="balance-card-main balance-card-green">
             <div className="balance-info">
-              <p className="mb-0 text-muted  mt-3">Total Income</p>
+              <p className="mb-0 text-muted  mt-3 dashboard-styling">Total Income</p>
               <p className="balance-amount-price">₹ 55,000</p>
             </div>
             <div className="icon-container ">
@@ -328,7 +339,7 @@ const ResidentDashBoard = () => {
         <div className="col-6 col-sm-6  col-lg-6 col-xl-3 mb-3  px-3">
           <div className="balance-card-main balance-card-blue">
             <div className="balance-info">
-              <p className="mb-0 text-muted  mt-3">Total Expense</p>
+              <p className="mb-0 text-muted  mt-3 dashboard-styling">Total Expense</p>
               <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
@@ -340,7 +351,7 @@ const ResidentDashBoard = () => {
         <div className="col-6 col-sm-6   col-lg-6 col-xl-3 mb-3  px-3">
           <div className="balance-card-main balance-card-pink">
             <div className="balance-info">
-              <p className="mb-0 text-muted  mt-3">Total Unit</p>
+              <p className="mb-0 text-muted  mt-3 dashboard-styling">Total Unit</p>
               <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
@@ -353,19 +364,19 @@ const ResidentDashBoard = () => {
 
       {/* Balance Chart and Sidebar Panels */}
       <div className="row mb-2">
-        <div className="col-lg-6 ">
-          <div className="card balance-chart" style={{ maxHeight: "430px" , minHeight: "430px" }}>
+        <div className="col-lg-12 col-xl-6" >
+          <div className="card balance-chart" style={{ maxHeight: "430px"  }}>
             <ResidentBalanceChart />
           </div>
         </div>
 
-        <div className="col-lg-6">
+        <div className="  col-lg-12 col-xl-6 mt-3 mt-sm-3 mt-md-3 mt-lg-2 mt-xl-0">
           <div className="row">
             {/* Important Numbers */}
-            <div className="col-lg-6">
-              <div className="card border rounded" style={{ maxHeight: "430px" }}>
+            <div className=" col-sm-6 col-md-6  col-lg-6">
+              <div className="card border rounded" style={{ maxHeight: "430px", minHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center p-2">
-                  <h5 style={{ fontSize: "20px" , fontWeight: "bold" }}>Important Numbers</h5>
+                  <h5 style={{ fontSize: "20px" , fontWeight: "bold" }} className='dashboard-styling' >Important Numbers</h5>
                   <button
                     className="btn btn-primary"
                     data-bs-toggle="modal"
@@ -375,7 +386,7 @@ const ResidentDashBoard = () => {
                       setNumberForm({ fullName: '', phoneNumber: '', work: '' });
                     }}
                   >
-                    Add
+                   <h6 className='dashboard-styling mb-1 me-1'> Add </h6> 
                   </button>
                 </div>
                 <div className="important-numbers scrollable-card">
@@ -386,7 +397,7 @@ const ResidentDashBoard = () => {
                         key={index}
                       >
                         <div className="col-lg-8 p-2">
-                          <h5 style={{ fontSize: "13px" }}>
+                          <h5 style={{ fontSize: "13px" }} >
                             Name: <span className="text-secondary fw-normal">{number.fullName}</span>
                           </h5>
                           <h5 style={{ fontSize: "12px" }}>
@@ -396,7 +407,7 @@ const ResidentDashBoard = () => {
                             Work: <span className="text-secondary fw-normal "> {number.work} </span>
                           </h5>
                         </div>
-                        <div className="col-lg-4">
+                        <div className="col-lg-4 text-end">
                           <img
                             className="delete-number me-2"
                             role="button"
@@ -422,29 +433,30 @@ const ResidentDashBoard = () => {
                   </div>
                 </div>
               </div>
+              </div>
 
               {/* Updated Add Create Number Modal */}
               <div className="modal  fade" id="addCreateNumberModal" tabIndex="-1" aria-labelledby="addCreateNumberModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                   <div className="modal-content custom-modal" style={{backgroundColor: "white" , color: "black" , maxWidth: "400px" }}>
                     <div className="modal-header">
-                      <h4 className="modal-title m-0" id="addCreateNumberModalLabel">
+                      <h5 className="modal-title m-0 dashboard-styling" id="addCreateNumberModalLabel">
                         {isNumberEditing ? 'Edit Number' : 'Create Number'}
-                      </h4>
+                      </h5>
                     </div>
 
                     <div className="modal-body">
                       <form onSubmit={handleNumberSave}> {/* Add onSubmit here */}
                         <div className="mb-3">
-                          <label htmlFor="fullName" className="form-label">Full Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                          <label htmlFor="fullName" className="form-label dashboard-styling">Full Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                           <input type="text" className="form-control" name="fullName" autoComplete='off' placeholder="Enter Name" value={numberForm.fullName} onChange={handleInputNumberChange} required />
                         </div>
                         <div className="mb-3">
-                          <label htmlFor="phoneNumber" className="form-label"> Phone Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                          <label htmlFor="phoneNumber" className="form-label dashboard-styling"> Phone Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                           <input type="text" className="form-control" name="phoneNumber" autoComplete='off' placeholder="Enter Phone Number" value={numberForm.phoneNumber} onChange={handleInputNumberChange} required />
                         </div>
                         <div className="mb-3">
-                          <label htmlFor="work" className="form-label"> Work <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                          <label htmlFor="work" className="form-label dashboard-styling"> Work <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                           <input type="text" className="form-control" name="work" autoComplete='off' placeholder="Enter Work" value={numberForm.work} onChange={handleInputNumberChange} required />
                         </div>
 
@@ -529,14 +541,14 @@ const ResidentDashBoard = () => {
               </div>
 
 
-            </div>
+            
 
             {/* Pending Maintenances */}
-            <div className="col-lg-6">
-              <div className="card pending-maintenance" style={{ maxHeight: "430px" }}>
+            <div className=" col-sm-6 col-md-6 col-lg-6 mt-3 mt-sm-0 mt-md-0">
+              <div className="card pending-maintenance" style={{ maxHeight: "430px" , minHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center">
-                  <h5 style={{ fontSize: "17px" , fontWeight: "bold" }}>Pending Maintenances</h5>
-                  <span className='text-primary'>View all</span>
+                  <h5 style={{ fontSize: "17px" , fontWeight: "bold" }} className='dashboard-styling' >Pending Maintenances</h5>
+                  <span className='text-primary dashboard-styling'>View all</span>
                 </div>
                 <div className="card-body scrollable-card">
                   {/* Sample Pending Maintenance Item */}
@@ -561,37 +573,24 @@ const ResidentDashBoard = () => {
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* Complaint List */}
       <div className="row">
-        <div className="col-9 ">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-9 ">
           <div className="border rounded complaint-list p-3 bg-white">
             <div className="d-flex justify-content-between align-items-center ">
-              <h5 className='fw-bold'>Complaint List</h5>
+              <h5 className='fw-bold dashboard-styling'>Complaint List</h5>
               <button className="btn border">Month <i className="fas fa-angle-down"></i></button>
             </div>
             <div className="table-responsive mt-2">
               <table className="table rounded-table">
                 <thead>
                   <tr>
-                    <th className=' text-start' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complainer Name</th>
-                    <th className=' text-center' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complaint Name</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Date</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Priority</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complain Status</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Action</th>
+                    <th className=' text-start dashboard-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complainer Name</th>
+                    <th className=' text-center dashboard-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complaint Name</th>
+                    <th className='dashboard-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Date</th>
+                    <th className='dashboard-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Priority</th>
+                    <th className='dashboard-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complain Status</th>
+                    <th className='dashboard-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -602,7 +601,7 @@ const ResidentDashBoard = () => {
                       </td>
                       <td>{complaint.complaintName}</td>
                       <td>{moment(complaint.createdAt).format('DD-MM-YYYY')}</td>
-                      <td><span className="badge badge-medium">{complaint.priority}</span></td>
+                      <td><span className={`text-center priotty-data-styling ${getPriorityClass(complaint.priority)}`}>{complaint.priority}</span></td>
                       <td><span className="status open">{complaint.status}</span></td>
                       <td className="actions d-flex justify-content-center">
                         <button className="btn-action mb-2">
@@ -649,7 +648,7 @@ const ResidentDashBoard = () => {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content custom-modal">
               <div className="modal-header  mb-0">
-                <h5 className="modal-title" id="viewCreateComplaintModalLabel "> View Complaint</h5>
+                <h5 className="modal-title dashboard-styling" id="viewCreateComplaintModalLabel "> View Complaint</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <hr className="no-margin-hr" />
@@ -659,27 +658,27 @@ const ResidentDashBoard = () => {
                 {viewCreateComplaint && (
                   <div>
                     <div className="col-12">
-                      <p className='fw-bold complainerNameViewModal'> {viewCreateComplaint.complainerName} <br /><span className='viewModalComplaintPara viewPageLabelData'> {moment(viewCreateComplaint.createdAt).format('DD MMMM, YYYY')} </span> </p>
+                      <p className='fw-bold complainerNameViewModal dashboard-styling'> {viewCreateComplaint.complainerName} <br /><span className='viewModalComplaintPara viewPageLabelData'> {moment(viewCreateComplaint.createdAt).format('DD MMMM, YYYY')} </span> </p>
                     </div>
                     <div className="col-12">
-                      <p><strong className='viewPageLabelData'>Request Name</strong> <br />{viewCreateComplaint.complaintName}</p>
+                      <p className='dashboard-styling'><strong className='viewPageLabelData dashboard-styling'>Request Name</strong> <br />{viewCreateComplaint.complaintName}</p>
                     </div>
                     <div className="col-12">
-                      <p><strong className='viewPageLabelData'>Discription</strong> <br />{viewCreateComplaint.description}</p>
+                      <p className='dashboard-styling'><strong className='viewPageLabelData dashboard-styling'>Discription</strong> <br />{viewCreateComplaint.description}</p>
                     </div>
 
                     <div className='d-flex '>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData '>Wing</strong><br /> <span className='wingDataStyle'> {viewCreateComplaint.wing} </span></p>
+                        <p><strong className='viewPageLabelData dashboard-styling'>Wing</strong><br /> <span className='wingDataStyle dashboard-styling'> {viewCreateComplaint.wing} </span></p>
                       </div>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData '>Unit</strong> <br />  {viewCreateComplaint.unit} </p>
+                        <p className='dashboard-styling'><strong className='viewPageLabelData dashboard-styling'>Unit</strong> <br />  {viewCreateComplaint.unit} </p>
                       </div>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData'>Priority</strong><br /> <span className="">  {viewCreateComplaint.priority}</span></p>
+                        <p className='dashboard-styling'><strong className='viewPageLabelData dashboard-styling'>Priority</strong><br /> <span className="">  {viewCreateComplaint.priority}</span></p>
                       </div>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData '>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateComplaint.status} </span> </p>
+                        <p className='dashboard-styling'><strong className='viewPageLabelData dashboard-styling'>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateComplaint.status} </span> </p>
                       </div>
 
                     </div>
@@ -700,40 +699,40 @@ const ResidentDashBoard = () => {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content custom-modal">
               <div className="modal-header">
-                <h4 className="modal-title" id="addCreateComplaintModalLabel">
+                <h5 className="modal-title dashboard-styling" id="addCreateComplaintModalLabel">
                   {isEditing ? 'Edit Complaint' : 'Create Complaint'}
-                </h4>
+                </h5>
               </div>
               <div className="modal-body">
                 <form onSubmit={handleSave}> {/* Add onSubmit here */}
                   <div className="mb-3">
-                    <label htmlFor="complainerName" className="form-label ">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="complainerName" className="form-label dashboard-styling">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="complainerName" autoComplete='off' placeholder="Enter Name" value={form.complainerName} onChange={handleInputChange} required />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="complaintName" className="form-label">ComplaintName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="complaintName" className="form-label dashboard-styling">ComplaintName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="complaintName" autoComplete='off' placeholder="Enter Name" value={form.complaintName} onChange={handleInputChange} required />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="description" className="form-label">Discription <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="description" className="form-label dashboard-styling">Discription <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="description" autoComplete='off' placeholder="Enter Discription" value={form.description} onChange={handleInputChange} required />
                   </div>
                   <div className="row">
                     <div className="col-6 mb-3">
-                      <label htmlFor="wing" className="form-label">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                      <label htmlFor="wing" className="form-label dashboard-styling">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                       <div className="input-group">
                         <input type="text" className="form-control" placeholder='Enter Wing' name="wing" autoComplete='off' value={form.wing} onChange={handleInputChange} required />
                       </div>
                     </div>
                     <div className="col-6 mb-3">
-                      <label htmlFor="Unit" className="form-label">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
+                      <label htmlFor="Unit" className="form-label dashboard-styling">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
                       <input type="text" className="form-control " name="unit" autoComplete='off' placeholder='Enter Unit' value={form.unit} onChange={handleInputChange} required />
                     </div>
                   </div>
 
                   {/* Priority Section */}
                   <div className="mb-3">
-                    <label htmlFor="priority" className="form-label">
+                    <label htmlFor="priority" className="form-label dashboard-styling">
                       Priority <FaStarOfLife className="star_icon_modal mb-2" />
                     </label>
                     <div className="d-flex row ">
@@ -783,7 +782,7 @@ const ResidentDashBoard = () => {
 
                   {/* Status Section */}
                   <div className="mb-3">
-                    <label htmlFor="status" className="form-label">
+                    <label htmlFor="status" className="form-label dashboard-styling">
                       Status <FaStarOfLife className="star_icon_modal mb-2" />
                     </label>
                     <div className="d-flex row ">
@@ -843,7 +842,7 @@ const ResidentDashBoard = () => {
                         onClick={handleCancel}
 
                       >
-                        Cancel
+                       <h6 className='dashboard-styling mb-1'>  Cancel </h6> 
                       </button>
                     </div>
                     <div className="col-6   ">
@@ -853,7 +852,7 @@ const ResidentDashBoard = () => {
                         className="btn  save_btn "
                         data-bs-dismiss="modal"
                       >
-                        {isEditing ? 'Update' : 'Save'}
+                       <h6 className='dashboard-styling mb-0'> {isEditing ? 'Update' : 'Save'} </h6> 
                       </button>
                     </div>
                   </div>
@@ -915,10 +914,10 @@ const ResidentDashBoard = () => {
 
 
         {/* Upcoming Activity */}
-        <div className="col-lg-3">
+        <div className="col-md-6 col-lg-6 col-xl-3 mt-3 mt-md-0">
           <div className="card upcoming-activity">
             <div className="card-header d-flex justify-content-between align-items-center">
-              <h5 style={{ fontSize: "18px" , fontWeight: "bold" }}>Upcoming Activity</h5>
+              <h5 style={{ fontSize: "18px" , fontWeight: "bold" }} className='dashboard-styling' >Upcoming Activity</h5>
               <button className='btn border' style={{ maxWidth: "90px", fontSize: "14px" }}>Month <FaAngleDown /></button>
             </div>
             <div className="card-body scrollable-card">
@@ -937,8 +936,6 @@ const ResidentDashBoard = () => {
                   </div>
                 </div>
               ))}
-
-
             </div>
           </div>
         </div>

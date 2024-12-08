@@ -30,7 +30,7 @@ function ServiceAndComplaint() {
                                
                             }}
                         >
-                            Complaint Submission
+                          <h6 > Complaint Submission </h6>  
                         </button>
                     </li>
                     <li className="nav-item">
@@ -48,7 +48,8 @@ function ServiceAndComplaint() {
                                 fontWeight: '500',
                               
                             }}
-                        >  Request Submission
+                        >  
+                        <h6 >  Request Submission </h6>
                         </button>
                     </li>
                 </ul>
@@ -128,8 +129,8 @@ const ComplaintSubmission = () => {
     return (
         <div className="container-fluid pt-3 mt-3">
             <div className="d-flex justify-content-between align-items-center mb-3">
-                <h4 style={{ fontSize: "14px" }}>Complaint</h4>
-                <button className="btn btn-primary  " style={{ fontSize: "14px" }} onClick={() => setShowModal(true)}>
+                <h5 className='complaint-header'>Complaint</h5>
+                <button className="btn btn-primary  " style={{ fontSize: "16px" }} onClick={() => setShowModal(true)}>
                     Create Complaint
                 </button>
             </div>
@@ -137,7 +138,7 @@ const ComplaintSubmission = () => {
             {/* Complaint Cards */}
             <div className="row">
                 {complaints.map((complaint) => (
-                    <div  className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4 mb-3" key={complaint.id}>
+                    <div  className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4 mb-3" key={complaint.id}>
                         <div style={{minHeight:"220px"}} className="card shadow-sm  note-card bg-white">
                             <div
                                 className="d-flex justify-content-between align-items-center p-2 rounded-top"
@@ -168,18 +169,19 @@ const ComplaintSubmission = () => {
                             <div className="card-body" >
                                 {/* Request Date */}
                                 <div className="d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" }}>
+                                    <span className="text-muted complaint-header" style={{ fontSize: "14px" }}>
                                         Request Date
                                     </span>
                                     <span
-                                        style={{ fontSize: "12px", fontWeight: "bold", }} >
+                                    className='complaint-header complaint-header'
+                                        style={{ fontSize: "13px", fontWeight: "bold", }} >
                                             {complaint.requestDate}
                                     </span>
                                 </div>
 
                                 {/* Status */}
-                                <div className="d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" }}>
+                                <div className="d-flex justify-content-between align-items-center mb-2">
+                                    <span className="text-muted complaint-header" style={{ fontSize: "14px" }}>
                                         Status
                                     </span>{" "}
                                     <span
@@ -196,10 +198,10 @@ const ComplaintSubmission = () => {
 
                                 {/* Description */}
                                 <div>
-                                    <h5 className="text-muted mb-1" style={{ fontSize: "14px" }}  >
+                                    <h5 className="text-muted mb-1 complaint-header" style={{ fontSize: "14px" }}  >
                                         Description
                                     </h5>
-                                    <p className="text-normal mb-0" style={{ fontSize: "12px" }}>{complaint.description} </p>
+                                    <p className="text-normal mb-0 complaint-header complaint-header" style={{ fontSize: "14px" }}>{complaint.description} </p>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +222,7 @@ const ComplaintSubmission = () => {
                         <div className="modal-dialog modal-dialog-centered">
                             <div className="modal-content" style={{ maxWidth: "400px" }}>
                                 <div className="modal-header">
-                                    <h5 className="modal-title d-n">Create Complaint</h5>
+                                    <h5 className="modal-title d-n complaint-header">Create Complaint</h5>
                                     <button
                                         type="button"
                                         className="btn-close"
@@ -231,7 +233,7 @@ const ComplaintSubmission = () => {
                                     <form onSubmit={handleSubmit}>
                                         {/* Title */}
                                         <div className="mb-3">
-                                            <label htmlFor="title" className="form-label">
+                                            <label htmlFor="title" className="form-label complaint-header">
                                                 Title<span className="text-danger">*</span>
                                             </label>
                                             <input type="text" className="form-control" id="title" name="title" value={formData.title}
@@ -240,7 +242,7 @@ const ComplaintSubmission = () => {
 
                                         {/* Request Date */}
                                         <div className="mb-3">
-                                            <label htmlFor="requestDate" className="form-label">
+                                            <label htmlFor="requestDate" className="form-label complaint-header">
                                                 Request Date<span className="text-danger">*</span>
                                             </label>
                                             <input type="date" className="form-control" id="requestDate" name="requestDate"
@@ -249,7 +251,7 @@ const ComplaintSubmission = () => {
 
                                         {/* Description */}
                                         <div className="mb-3">
-                                            <label htmlFor="description" className="form-label">
+                                            <label htmlFor="description" className="form-label complaint-header">
                                                 Description<span className="text-danger">*</span>
                                             </label>
                                             <textarea className="form-control"
@@ -263,7 +265,7 @@ const ComplaintSubmission = () => {
                                         </div>
                                         {/* Status */}
                                         <div className="mb-3">
-                                            <label className="form-label">Status</label>
+                                            <label className="form-label complaint-header">Status</label>
                                             <div className="d-flex gap-2d-flex justify-content-evenly">
                                                 <div className="col-4 form-check border p-2 me-1 rounded text-center">
                                                     <input
@@ -274,7 +276,7 @@ const ComplaintSubmission = () => {
                                                         checked={formData.status === "Open"}
                                                         onChange={handleChange}
                                                     />
-                                                    <label htmlFor="statusOpen">Open</label>
+                                                    <label htmlFor="statusOpen" className='complaint-header ms-1'>Open</label>
                                                 </div>
                                                 <div className="col-4 form-check border p-2 me-1 rounded text-center">
                                                     <input
@@ -285,7 +287,7 @@ const ComplaintSubmission = () => {
                                                         checked={formData.status === "Pending"}
                                                         onChange={handleChange}
                                                     />
-                                                    <label htmlFor="statusPending">Pending</label>
+                                                    <label htmlFor="statusPending" className='complaint-header ms-1'>Pending</label>
                                                 </div>
                                                 <div className="col-4 form-check border p-2 me-1 rounded text-center">
                                                     <input
@@ -293,10 +295,11 @@ const ComplaintSubmission = () => {
                                                         id="statusSolved"
                                                         name="status"
                                                         value="Solved"
+                                                        
                                                         checked={formData.status === "Solved"}
                                                         onChange={handleChange}
                                                     />
-                                                    <label htmlFor="statusSolved">Solved</label>
+                                                    <label htmlFor="statusSolved" className='complaint-header ms-1'>Solved</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -308,10 +311,10 @@ const ComplaintSubmission = () => {
                                                 onClick={() => setShowModal(false)}
                                                 style={{ width: "49%" }}
                                             >
-                                                Cancel
+                                               <h6 className='complaint-header pt-1'> cancel </h6>
                                             </button>
                                             <button type="submit" className="btn  btn-primary" style={{ width: "49%" }}>
-                                            Create
+                                              <h6 className='complaint-header pt-1'> Create </h6>
                                             </button>
                                         </div>
                                     </form>
@@ -464,7 +467,7 @@ const RequestSubmission = () => {
     return (
         <div className="container-fluid pt-3 mt-3">
             <div className="d-flex justify-content-between align-items-center mb-3">
-                <h2 style={{ fontSize: "20px" }}>Request</h2>
+                <h5 className='complaint-header'>Request</h5>
                 <button className="btn btn-primary" onClick={() => setShowModal(true)}>
                 Create Request
                 </button>
@@ -473,7 +476,7 @@ const RequestSubmission = () => {
             {/* Complaint Cards */}
             <div className="row">
                 {complaints.map((complaint) => (
-                    <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4 mb-3" key={complaint.id}>
+                    <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4 mb-3" key={complaint.id}>
                         <div style={{minHeight:"220px"}} className="card shadow-sm border-0 note-card bg-white">
                             <div
                                 className="d-flex justify-content-between align-items-center p-2 rounded-top"
@@ -504,18 +507,19 @@ const RequestSubmission = () => {
                             <div className="card-body">
                                 {/* Request Date */}
                                 <div className="d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" }}>
+                                    <span className="text-muted complaint-header" style={{ fontSize: "14px" }}>
                                         Request Date
                                     </span>
                                     <span
+                                    className='complaint-header'
                                         style={{ fontSize: "12px", fontWeight: "bold", }} >
                                             {complaint.requestDate}
                                     </span>
                                 </div>
 
                                 {/* Status */}
-                                <div className="d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" }}>
+                                <div className="d-flex justify-content-between ">
+                                    <span className="text-muted complaint-header" style={{ fontSize: "14px" }}>
                                         Status
                                     </span>{" "}
                                     <span
@@ -532,10 +536,10 @@ const RequestSubmission = () => {
 
                                 {/* Description */}
                                 <div>
-                                    <h5 className="text-muted mb-1" style={{ fontSize: "14px" }}  >
+                                    <h5 className="text-muted mb-1 complaint-header" style={{ fontSize: "14px" }}  >
                                         Description
                                     </h5>
-                                    <p className="text-normal mb-0" style={{ fontSize: "12px" }}>{complaint.description} </p>
+                                    <p className="text-normal mb-0 complaint-header" style={{ fontSize: "14px" }}>{complaint.description} </p>
                                 </div>
                             </div>
                         </div>
@@ -556,7 +560,7 @@ const RequestSubmission = () => {
                         <div className="modal-dialog modal-dialog-centered">
                             <div className="modal-content" style={{ maxWidth: "400px" }}>
                                 <div className="modal-header">
-                                    <h5 className="modal-title">Create  Request</h5>
+                                    <h5 className="modal-title complaint-header">Create  Request</h5>
                                     <button
                                         type="button"
                                         className="btn-close"
@@ -567,7 +571,7 @@ const RequestSubmission = () => {
                                     <form onSubmit={handleSubmit}>
                                         {/* Title */}
                                         <div className="mb-3">
-                                            <label htmlFor="title" className="form-label">
+                                            <label htmlFor="title" className="form-label complaint-header">
                                                 Title<span className="text-danger">*</span>
                                             </label>
                                             <input type="text" className="form-control" id="title" name="title" value={formData.title}
@@ -576,7 +580,7 @@ const RequestSubmission = () => {
 
                                         {/* Request Date */}
                                         <div className="mb-3">
-                                            <label htmlFor="requestDate" className="form-label">
+                                            <label htmlFor="requestDate" className="form-label complaint-header">
                                                 Request Date<span className="text-danger">*</span>
                                             </label>
                                             <input type="date" className="form-control" id="requestDate" name="requestDate"
@@ -585,7 +589,7 @@ const RequestSubmission = () => {
 
                                         {/* Description */}
                                         <div className="mb-3">
-                                            <label htmlFor="description" className="form-label">
+                                            <label htmlFor="description" className="form-label complaint-header">
                                                 Description<span className="text-danger">*</span>
                                             </label>
                                             <textarea className="form-control"
@@ -599,7 +603,7 @@ const RequestSubmission = () => {
                                         </div>
                                         {/* Status */}
                                         <div className="mb-3">
-                                            <label className="form-label">Status</label>
+                                            <label className="form-label complaint-header">Status</label>
                                             <div className="d-flex gap-2d-flex justify-content-evenly">
                                                 <div className="col-4 form-check border p-2 me-1 rounded text-center">
                                                     <input
@@ -610,7 +614,7 @@ const RequestSubmission = () => {
                                                         checked={formData.status === "Open"}
                                                         onChange={handleChange}
                                                     />
-                                                    <label htmlFor="statusOpen">Open</label>
+                                                    <label htmlFor="statusOpen " className='complaint-header ms-1'>Open</label>
                                                 </div>
                                                 <div className="col-4 form-check border p-2 me-1 rounded text-center">
                                                     <input
@@ -621,7 +625,7 @@ const RequestSubmission = () => {
                                                         checked={formData.status === "Pending"}
                                                         onChange={handleChange}
                                                     />
-                                                    <label htmlFor="statusPending">Pending</label>
+                                                    <label htmlFor="statusPending " className='complaint-header ms-1'>Pending</label>
                                                 </div>
                                                 <div className="col-4 form-check border p-2 me-1 rounded text-center">
                                                     <input
@@ -632,7 +636,7 @@ const RequestSubmission = () => {
                                                         checked={formData.status === "Solved"}
                                                         onChange={handleChange}
                                                     />
-                                                    <label htmlFor="statusSolved">Solved</label>
+                                                    <label htmlFor="statusSolved " className='complaint-header ms-1'>Solved</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -644,10 +648,11 @@ const RequestSubmission = () => {
                                                 onClick={() => setShowModal(false)}
                                                 style={{ width: "49%" }}
                                             >
-                                                Cancel
+                                              <h6 className='complaint-header pt-1'> Cancel </h6>  
+                                            
                                             </button>
                                             <button type="submit" className="btn  btn-primary" style={{ width: "49%" }}>
-                                            Create
+                                            <h6 className='complaint-header pt-1'> Create </h6>
                                             </button>
                                         </div>
                                     </form>

@@ -243,17 +243,17 @@ function PersonalDetail() {
           <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
             <div className="d-flex justify-content-between align-items-center ">
-                <h2 style={{ fontSize: "20px" }}>Member : (04)</h2>
+                <h2 style={{ fontSize: "20px" }} className="personal-details-styling">Member : (04)</h2>
             </div>
             <div className="row">
                 {notes.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div
                               className="d-flex justify-content-between align-items-center p-2 rounded-top"
                               style={{ backgroundColor: "#5678e9", color: "#fff" }} >
-                              <h5 className="card-title mb-0" style={{ fontSize: "14px"}} >
+                              <h5 className="card-title mb-0 personal-details-styling" style={{ fontSize: "14px"}} >
                                   {note.title}
                               </h5>
                           </div>
@@ -261,24 +261,24 @@ function PersonalDetail() {
                           <div className="card-body">
                               {/* Request Date */}
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Email</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Email} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Email</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Email} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Phone Number</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Phone} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Phone Number</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Phone} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Age</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Age} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Age</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Age} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Gender</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Gender} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Gender</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Gender} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Relation</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Relation} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Relation</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Relation} </span>
                               </div>
                           </div>
                       </div>
@@ -292,17 +292,17 @@ function PersonalDetail() {
           <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
             <div className="d-flex justify-content-between align-items-center ">
-                <h2 style={{ fontSize: "20px" }}>Vehicle : (04)</h2>
+                <h2 style={{ fontSize: "20px" }} className="personal-details-styling">Vehicle : (04)</h2>
             </div>
             <div className="row">
                 {Vehicle.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div
                               className="d-flex justify-content-between align-items-center p-2 rounded-top"
                               style={{ backgroundColor: "#5678e9", color: "#fff" }} >
-                              <h5 className="card-title mb-0" style={{ fontSize: "14px"}} >
+                              <h5 className="card-title mb-0 personal-details-styling" style={{ fontSize: "14px"}} >
                                   {note.Vehicletitle}
                               </h5>
                           </div>
@@ -310,12 +310,12 @@ function PersonalDetail() {
                           <div className="card-body">
                               {/* Request Date */}
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Vehicle Name</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.VehicleName} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Vehicle Name</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.VehicleName} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Vehicle Number</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.VehicleNumber} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Vehicle Number</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.VehicleNumber} </span>
                               </div>
                           </div>
                       </div>
@@ -326,25 +326,23 @@ function PersonalDetail() {
           </div>
  {/*Show Maintenance Details*/}
           <div className=" rounded shadow bg-white mt-3 p-4">
-            <div className="row  d-flex align-items-center">
-               <div className="col-8 col-lg-6 col-sm-6 col-md-4 col-xl-8 text-start">
-                   <h4 className="">Show Maintenance Details</h4>
-                </div>
-
-                <div className="col-2  col-sm-3 col-xl-2  col-lg-3 col-md-4 mt-2">
-                    <div className="balance-card balance-card-green">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-4 col-sm-12 col-md-4 col-xl-6 text-start mb-3 mb-sm-2 mb-md-0">
+                   <h4 style={{fontSize:"20px"}} className="personal-details-styling">Show Maintenance Details</h4>
+            </div>
+                <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4">
+                    <div className="balance-card balance-card-green mb-3 mb-sm-0">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Maintenance Amount</p>
-                            <p className="balance-amount text-success ">₹ 1,500</p>
+                            <p className="mb-0 text-muted mt-3 maintenance_text personal-details-styling">Maintenance Amount</p>
+                            <p className="balance-amount text-success personal-details-styling">₹ 1,500</p>
                         </div>
                     </div>
                 </div>
-
-                <div className="col-2  col-sm-3 col-xl-2 col-lg-3  col-md-4 mt-2">
-                    <div className="balance-card balance-card-dangere">
+                <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4  ">
+                    <div className="balance-card balance-card-danger">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Penalty Amount</p>
-                            <p className="balance-amount text-danger">₹ 500</p>
+                            <p className="mb-0 text-muted mt-3 penalty_text personal-details-styling">Penalty Amount</p>
+                            <p className="balance-amount text-danger personal-details-styling">₹ 500</p>
                         </div>
                     </div>
                 </div>
@@ -355,15 +353,15 @@ function PersonalDetail() {
             <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
             <div className="d-flex justify-content-between align-items-center ">
-                <h2 style={{ fontSize: "20px" }}>Pending Maintanance</h2>
+                <h2 style={{ fontSize: "20px" }} className="personal-details-styling mb-2">Pending Maintanance</h2>
             </div>
             <div className="row">
                 {Maintenance.map((note , index) => (
-                      <div className="col-md-4 col-lg-3 col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-3 col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{backgroundColor:"#5678e9"}}>
-                  <h5 className="mb-0" style={{ fontSize: "14px"}}>
+                  <h5 className="mb-0 personal-details-styling" style={{ fontSize: "14px"}} >
                     {note.title}
                   </h5>
                   <span className="badge1 Owner1">Pending</span>
@@ -373,26 +371,26 @@ function PersonalDetail() {
                           <div className="card-body">
                               {/* Request Date */}
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Bill Date</span>
-                                  <span className="text-secondary" style={{ fontSize: "12px"}} > {note.BDate} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }} >Bill Date</span>
+                                  <span className="text-secondary personal-details-styling" style={{ fontSize: "12px"}} > {note.BDate} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2 ">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Pending Date</span>
-                                  <span className="text-secondary " style={{ fontSize: "12px"}} > {note.PDate} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Pending Date</span>
+                                  <span className="text-secondary personal-details-styling" style={{ fontSize: "12px"}} > {note.PDate} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2 border-top">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Maintanance Amount</span>
-                                  <span className="text-danger" style={{ fontSize: "12px"}} > {note.Amount} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Maintanance Amount</span>
+                                  <span className="text-danger personal-details-styling" style={{ fontSize: "12px"}} > {note.Amount} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Maintenance Penalty Amount</span>
-                                  <span className="text-danger" style={{ fontSize: "12px"}} > {note.PAmount} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Maintenance Penalty Amount</span>
+                                  <span className="text-danger personal-details-styling" style={{ fontSize: "12px"}} > {note.PAmount} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2 border-top">
-                                  <span className="text-muted fw-bold" style={{ fontSize: "12px"}}>Grand Total</span>
-                                  <span className="text-success" style={{ fontSize: "12px"}} > {note.Total} </span>
+                                  <span className="text-muted fw-bold personal-details-styling" style={{ fontSize: "12px"}}>Grand Total</span>
+                                  <span className="text-success personal-details-styling" style={{ fontSize: "12px"}} > {note.Total} </span>
                               </div>
-                              <button className="btn-primary btn col-12" >Pay Now</button>
+                              <button className="btn-primary btn col-12 personal-details-styling" >Pay Now</button>
                           </div>
                       </div>
                   </div>
@@ -404,37 +402,37 @@ function PersonalDetail() {
            <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
             <div className="d-flex justify-content-between align-items-center ">
-                <h2 style={{ fontSize: "20px" }}>Due Maintanance</h2>
+                <h2 style={{ fontSize: "20px" }} className="personal-details-styling" >Due Maintanance</h2>
             </div>
             <div className="row">
                 {DMaintenance.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{backgroundColor:"#5678e9"}}>
-                  <h5 className="mb-0" style={{ fontSize: "14px"}}>
+                  <h5 className="mb-0 personal-details-styling" style={{ fontSize: "14px"}}>
                     {note.title}
                   </h5>
-                  <span className="badge1 Owner">Pending</span>
+                  <span className="badge1 Owner personal-details-styling">Pending</span>
                 </div>
                           {/* Card Body */}
                         
                           <div className="card-body">
                               {/* Request Date */}
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Date</span>
-                                  <span className="text-secondary" style={{ fontSize: "12px"}} > {note.Date} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Date</span>
+                                  <span className="text-secondary personal-details-styling" style={{ fontSize: "12px"}} > {note.Date} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2 border-top">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}> Amount</span>
-                                  <span className="text-danger" style={{ fontSize: "12px"}} > {note.Amount} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}> Amount</span>
+                                  <span className="text-danger personal-details-styling" style={{ fontSize: "12px"}} > {note.Amount} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Due Maintenance Amount</span>
-                                  <span className="text-danger" style={{ fontSize: "12px"}} > {note.PAmount} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Due Maintenance Amount</span>
+                                  <span className="text-danger personal-details-styling" style={{ fontSize: "12px"}} > {note.PAmount} </span>
                               </div>
                             <div className=" border-top pt-2">
-                                     <button className="btn-primary btn col-12 " >Pay Now</button>
+                                     <button className="btn-primary btn col-12 personal-details-styling" >Pay Now</button>
                             </div>
                               
                           </div>
@@ -448,17 +446,17 @@ function PersonalDetail() {
           <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
             <div className="d-flex justify-content-between align-items-center ">
-                <h2 style={{ fontSize: "20px" }}>Announcement Details</h2>
+                <h2 style={{ fontSize: "20px" }} className="personal-details-styling" >Announcement Details</h2>
             </div>
             <div className="row">
                 {Community.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div
                               className="d-flex justify-content-between align-items-center p-2 rounded-top"
                               style={{ backgroundColor: "#5678e9", color: "#fff" }} >
-                              <h5 className="card-title mb-0" style={{ fontSize: "14px"}} >
+                              <h5 className="card-title mb-0 personal-details-styling" style={{ fontSize: "14px"}} >
                                   {note.title}
                               </h5>
                           </div>
@@ -466,16 +464,16 @@ function PersonalDetail() {
                           <div className="card-body">
                               {/* Request Date */}
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Announcement Date</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Date} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Announcement Date</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Date} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Announcement Time</span>
-                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Time} </span>
+                                  <span className="text-muted personal-details-styling" style={{ fontSize: "12px" }}>Announcement Time</span>
+                                  <span style={{ fontSize: "12px", fontWeight: "bold"}} className="personal-details-styling"> {note.Time} </span>
                               </div>
                               <div className="mb-2">
-                                    <h6 className="mb-1 " style={{ fontSize: "12px" }}>Description</h6>
-                                     <p className="card-text" style={{ fontSize: "11px" }}>{note.description}</p>
+                                    <h6 className="mb-1 text-start text-muted personal-details-styling" style={{ fontSize: "12px" }}>Description</h6>
+                                     <p className="card-text personal-details-styling" style={{ fontSize: "11px" }} >{note.description}</p>
                                 </div>
                           </div>
                       </div>

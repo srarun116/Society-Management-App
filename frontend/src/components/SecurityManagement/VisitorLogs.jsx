@@ -64,15 +64,15 @@ const VisitorLogs = () => {
 
             <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
               <div className="col-lg-2 pt-3 pb-3">
-                <h4 className='fw-bold'>Visitor Logs</h4>
+                <h4 className='fw-bold admin-pages-styling'>Visitor Logs</h4>
               </div>
             </div>
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-3 py-2"><h6 className="text-start fw-bold">Visitor Name</h6></div>
-              <div className="col-3 py-2"><h6 className='fw-bold'>Phone Number</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Date</h6></div>
-              <div className="col-2 py-2"><h6 className='fw-bold'>Unit Number</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold"> Time</h6></div>
+              <div className="col-3 py-2"><h6 className="text-start admin-pages-styling">Visitor Name</h6></div>
+              <div className="col-3 py-2"><h6 className='admin-pages-styling'>Phone Number</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Date</h6></div>
+              <div className="col-2 py-2"><h6 className='admin-pages-styling'>Unit Number</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling"> Time</h6></div>
             </div>
 
             {visitor.map((visitor, index) => {

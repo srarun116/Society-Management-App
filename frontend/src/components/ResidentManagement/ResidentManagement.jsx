@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {  Modal, Form } from "react-bootstrap";
+import { Modal, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./ResidentManagement.css";  
+import "./ResidentManagement.css";
 import {
   FaUser,
   FaHome,
@@ -50,11 +50,11 @@ export default function Rm() {
   const handleOpenDeleteModal = () => setShowDeleteModal(true);
   const handleCloseDeleteModal = () => setShowDeleteModal(false);
 
-  
+
   const [showVacateModal, setShowVacateModal] = useState(false);
   const handleCloseVacateModal = () => setShowVacateModal(false);
 
-  
+
   const [showCreateModal, setShowCreateModal] = useState(false); // New modal state for create modal
   const handleCloseCreateModal = () => setShowCreateModal(false);
   const [selectedStatus, setSelectedStatus] = useState("");
@@ -66,7 +66,7 @@ export default function Rm() {
   const [showViewModal, setViewShowModal] = useState(false);
   const handleOpenViewModal = () => setViewShowModal(true);
   const handleCloseViewModal = () => setViewShowModal(false);
- // Close create modal
+  // Close create modal
 
   const handleSave = () => {
     if (selectedStatus === "Occupied" && agreeChecked) {
@@ -146,10 +146,10 @@ export default function Rm() {
         <div className="container-fluid">
           <div className="bg-white residentmng">
             <div className="d-flex justify-content-between align-items-center">
-              <h4>Resident Tenant and Owner Details</h4>
+              <h4 className="admin-pages-styling">Resident Tenant and Owner Details</h4>
 
               <button
-                className="mainColor2 addresidentbtn text-white ms-3 flex-end d-flex align-items-center p-2 border-0"
+                className="mainColor2 admin-pages-styling addresidentbtn text-white ms-3 flex-end d-flex align-items-center p-2 border-0"
                 onClick={handleOpenModal}
               >
                 <FaPlusSquare className="me-2" />
@@ -247,23 +247,13 @@ export default function Rm() {
 
                   {/* Action */}
                   <div className="col-1 text-center">
-                    <div className="d-flex align-items-center justify-content-evenly">
-                      <FaEdit
-                        className="text-success me-2"
-                        style={{ cursor: "pointer", fontSize: "20px" }}
-                      />
-                    <button onClick={handleOpenViewModal} className="border-0 bg-transparent">
-                        <FaEye
-                        
-                        className="text-primary me-2"
-                        style={{ cursor: "pointer", fontSize: "20px" }}
-                        />
-
-                        </button>
-                        <button onClick={handleOpenDeleteModal} className="border-0 bg-transparent">
-                          
-                        <FaTrash className="text-danger" style={{ cursor: "pointer", fontSize: "20px" }} />
-                        </button>
+                    <div className="d-flex align-items-center justify-content-between">
+                     
+                       <img src="/Images/Edit_btn.png"  height={30}/>
+                      
+                       <img src="/Images/View_btn.png"  onClick={handleOpenViewModal}  height={30}/>
+                     
+                      <img src="/Images/Delete_btn.png"  onClick={handleOpenDeleteModal}  height={30} />
                     </div>
                   </div>
                 </div>
@@ -280,43 +270,43 @@ export default function Rm() {
                 <Modal.Title>Residence Status</Modal.Title>
               </Modal.Header>
               <Modal.Body className="">
-               
-                  <Form>
-                    <div
-                      className="radio-group d-flex justify-content-between"
-                      style={{ gap: "12px" }}
-                    >
-                      <Form.Check
-                        className="formcheck border "
-                        type="radio"
-                        label="Occupied"
-                        name="residenceStatus"
-                        value="Occupied"
-                        checked={selectedStatus === "Occupied"}
-                        onChange={(e) => setSelectedStatus(e.target.value)}
-                      />
-                      <Form.Check
-                        className="formcheck border"
-                        type="radio"
-                        label="Vacate"
-                        name="residenceStatus"
-                        value="Vacate"
-                        checked={selectedStatus === "Vacate"}
-                        onChange={(e) => setSelectedStatus(e.target.value)}
-                      />
-                    </div>
-                    <Form.Group className="agreement-checkbox">
-                      <Form.Check
-                        type="checkbox"
-                        label={`By submitting, you agree to select ${selectedStatus}.`}
-                        checked={agreeChecked}
-                        onChange={(e) => setAgreeChecked(e.target.checked)}
-                        className=" mt-2"
-                        id="custom-checkbox"
-                      />
-                    </Form.Group>
-                  </Form>
-              
+
+                <Form>
+                  <div
+                    className="radio-group d-flex justify-content-between"
+                    style={{ gap: "12px" }}
+                  >
+                    <Form.Check
+                      className="formcheck border "
+                      type="radio"
+                      label="Occupied"
+                      name="residenceStatus"
+                      value="Occupied"
+                      checked={selectedStatus === "Occupied"}
+                      onChange={(e) => setSelectedStatus(e.target.value)}
+                    />
+                    <Form.Check
+                      className="formcheck border"
+                      type="radio"
+                      label="Vacate"
+                      name="residenceStatus"
+                      value="Vacate"
+                      checked={selectedStatus === "Vacate"}
+                      onChange={(e) => setSelectedStatus(e.target.value)}
+                    />
+                  </div>
+                  <Form.Group className="agreement-checkbox">
+                    <Form.Check
+                      type="checkbox"
+                      label={`By submitting, you agree to select ${selectedStatus}.`}
+                      checked={agreeChecked}
+                      onChange={(e) => setAgreeChecked(e.target.checked)}
+                      className=" mt-2"
+                      id="custom-checkbox"
+                    />
+                  </Form.Group>
+                </Form>
+
               </Modal.Body>
               <Modal.Footer className="d-flex justify-content-between ">
                 <button
@@ -438,122 +428,122 @@ export default function Rm() {
             {/* view Modal */}
 
             <Modal className="viewowner" show={showViewModal} onHide={handleCloseViewModal} centered>
-      <Modal.Header className="col-12 d-flex justify-content-between">
-        <h5 className=" mb-0"> <FiArrowLeft onClick={handleCloseViewModal} /> View Owner Details</h5>
-    
-      </Modal.Header>
-      <Modal.Body className="">
-        {/* Profile Section */}
-        <div className="row text-center mb-2">
-          <div className="col-12">
-            <img
-              src="src/Images/ProfileiMG.png" // Replace with the image URL
-              alt="Profile"
-              className="rounded-circle img-thumbnail"
-              style={{ width: '100px', height: '100px' }}
-            />
-            <h6 className="mt-2 mb-0">Roger Lubin</h6>
-            <p className="text-muted">RogerLubin@gmail.com</p>
-            
-          </div>
-        </div>
+              <Modal.Header className="col-12 d-flex justify-content-between">
+                <h5 className=" mb-0"> <FiArrowLeft onClick={handleCloseViewModal} /> View Owner Details</h5>
 
-        {/* Basic Details Section */}
-        <div className="container-fluid bg-light row mb-4 ms-1 ">
-          <div className="col-12 d-flex justify-content-between border-bottom">
-            <p className="fw-bold mb-0">Wing</p>
-            <p className="text-muted">A</p>
-          </div>
-        
-          <div className="col-12 d-flex justify-content-between  border-bottom">
-            <p className="fw-bold mb-0">Unit</p>
-            <p className="text-muted">101</p>
-          </div>
-          <div className="col-12 d-flex justify-content-between  border-bottom">
-            <p className="fw-bold mb-0">Age</p>
-            <p className="text-muted">20</p>
-          </div>
-          <div className="col-12 d-flex justify-content-between  border-bottom">
-            <p className="fw-bold mb-0">Gender</p>
-            <p className="text-muted">Male</p>
-          </div>
-        </div>
+              </Modal.Header>
+              <Modal.Body className="">
+                {/* Profile Section */}
+                <div className="row text-center mb-2">
+                  <div className="col-12">
+                    <img
+                      src="src/Images/ProfileiMG.png" // Replace with the image URL
+                      alt="Profile"
+                      className="rounded-circle img-thumbnail"
+                      style={{ width: '100px', height: '100px' }}
+                    />
+                    <h6 className="mt-2 mb-0">Roger Lubin</h6>
+                    <p className="text-muted">RogerLubin@gmail.com</p>
 
-        {/* Documents Section */}
-        <div className="container-fluid bg-light mb-4">
-          <p className="fw-bold">Document</p>
-          <div className="d-flex justify-content-between align-items-center border p-2 rounded mb-2">
-            <div className="d-flex">
-              <div>
+                  </div>
+                </div>
 
-              <img src="src/Images/Image2.png" alt="" />
-              </div>
-             <div>
-               <p className="mb-0">Aadharcard Front Side.JPG</p>
-              <p className="text-muted mb-0">3.5 MB</p>
-               </div>
-            </div>
-           <FaEye style={{fontSize:"20px"}} className="text-muted "/>{/* Use Bootstrap Icons */}
-          </div>
-          <div className="d-flex justify-content-between align-items-center border p-2 rounded mb-2">
-            <div className="d-flex">
-              <div>
+                {/* Basic Details Section */}
+                <div className="container-fluid bg-light row mb-4 ms-1 ">
+                  <div className="col-12 d-flex justify-content-between border-bottom">
+                    <p className="fw-bold mb-0">Wing</p>
+                    <p className="text-muted">A</p>
+                  </div>
 
-              <img src="src/Images/Group1.png" alt="" />
-              </div>
-             <div>
-               <p className="mb-0">Aadharcard Front Side.JPG</p>
-              <p className="text-muted mb-0">3.5 MB</p>
-               </div>
-            </div>
-           <FaEye style={{fontSize:"20px"}} className="text-muted "/>{/* Use Bootstrap Icons */}
-          </div>
-        </div>
+                  <div className="col-12 d-flex justify-content-between  border-bottom">
+                    <p className="fw-bold mb-0">Unit</p>
+                    <p className="text-muted">101</p>
+                  </div>
+                  <div className="col-12 d-flex justify-content-between  border-bottom">
+                    <p className="fw-bold mb-0">Age</p>
+                    <p className="text-muted">20</p>
+                  </div>
+                  <div className="col-12 d-flex justify-content-between  border-bottom">
+                    <p className="fw-bold mb-0">Gender</p>
+                    <p className="text-muted">Male</p>
+                  </div>
+                </div>
 
-        {/* Member Counting Section */}
-        <div className="mb-4">
-          <div className="d-flex justify-content-between align-items-center bg-primary text-white px-3 py-2 rounded">
-            <p className="mb-0">Member Counting</p>
-            <p className="mb-0">02</p>
-          </div>
-          <div className="border rounded p-3 ">
-            <div className="row mb-2 p-3">
-              <div className="col-12 d-flex justify-content-between border-bottom p-2">
-                <p className="fw-bold mb-0">First Name</p>
-                <p className="text-muted mb-0">Roger Lubin</p>
-              </div>
-              <div className="col-12 d-flex justify-content-between border-bottom p-2">
-                <p className="fw-bold mb-0">Phone No</p>
-                <p className="text-muted mb-0">9123455555</p>
-              </div>
-         
-              <div className="col-12 d-flex justify-content-between border-bottom p-2">
-                <p className="fw-bold mb-0">Age</p>
-                <p className="text-muted mb-0">20</p>
-              </div>
-              <div className="col-12 d-flex justify-content-between border-bottom   p-2">
-                <p className="fw-bold mb-0">Relation</p>
-                <p className="text-muted mb-0">Brother</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Modal.Body>
-    </Modal>
+                {/* Documents Section */}
+                <div className="container-fluid bg-light mb-4">
+                  <p className="fw-bold">Document</p>
+                  <div className="d-flex justify-content-between align-items-center border p-2 rounded mb-2">
+                    <div className="d-flex">
+                      <div>
 
-          {/* Delete Modal */}
-          <Modal
+                        <img src="src/Images/Image2.png" alt="" />
+                      </div>
+                      <div>
+                        <p className="mb-0">Aadharcard Front Side.JPG</p>
+                        <p className="text-muted mb-0">3.5 MB</p>
+                      </div>
+                    </div>
+                    <FaEye style={{ fontSize: "20px" }} className="text-muted " />{/* Use Bootstrap Icons */}
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border p-2 rounded mb-2">
+                    <div className="d-flex">
+                      <div>
+
+                        <img src="src/Images/Group1.png" alt="" />
+                      </div>
+                      <div>
+                        <p className="mb-0">Aadharcard Front Side.JPG</p>
+                        <p className="text-muted mb-0">3.5 MB</p>
+                      </div>
+                    </div>
+                    <FaEye style={{ fontSize: "20px" }} className="text-muted " />{/* Use Bootstrap Icons */}
+                  </div>
+                </div>
+
+                {/* Member Counting Section */}
+                <div className="mb-4">
+                  <div className="d-flex justify-content-between align-items-center bg-primary text-white px-3 py-2 rounded">
+                    <p className="mb-0">Member Counting</p>
+                    <p className="mb-0">02</p>
+                  </div>
+                  <div className="border rounded p-3 ">
+                    <div className="row mb-2 p-3">
+                      <div className="col-12 d-flex justify-content-between border-bottom p-2">
+                        <p className="fw-bold mb-0">First Name</p>
+                        <p className="text-muted mb-0">Roger Lubin</p>
+                      </div>
+                      <div className="col-12 d-flex justify-content-between border-bottom p-2">
+                        <p className="fw-bold mb-0">Phone No</p>
+                        <p className="text-muted mb-0">9123455555</p>
+                      </div>
+
+                      <div className="col-12 d-flex justify-content-between border-bottom p-2">
+                        <p className="fw-bold mb-0">Age</p>
+                        <p className="text-muted mb-0">20</p>
+                      </div>
+                      <div className="col-12 d-flex justify-content-between border-bottom   p-2">
+                        <p className="fw-bold mb-0">Relation</p>
+                        <p className="text-muted mb-0">Brother</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Modal.Body>
+            </Modal>
+
+            {/* Delete Modal */}
+            <Modal
               className="Round-modal"
               show={showDeleteModal}
               onHide={handleCloseDeleteModal}
               centered
             >
-              <Modal.Header> 
+              <Modal.Header>
                 <Modal.Title>
-                  <p>Do you want to delate?</p>  
+                  <p>Do you want to delate?</p>
                 </Modal.Title>
-                <FaX onClick={handleCloseDeleteModal} style={{fontSize:"20px"}} className="text-muted "/>{/* Use Bootstrap Icons */}
-               
+                <FaX onClick={handleCloseDeleteModal} style={{ fontSize: "20px" }} className="text-muted " />{/* Use Bootstrap Icons */}
+
               </Modal.Header>
               <Modal.Body>
                 <p>Are you sure you want to delate  details?</p>
@@ -576,11 +566,11 @@ export default function Rm() {
               </Modal.Footer>
             </Modal>
 
-          
+
           </div>
         </div>
       </div>
-         
+
     </div>
   );
 }

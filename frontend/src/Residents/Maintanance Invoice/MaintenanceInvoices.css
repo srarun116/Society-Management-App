@@ -28,11 +28,7 @@
     object-fit: cover;
   }
   
-  /* p,
-  h6 {
-    margin: 0;
-    font-size: 14px;
-  } */
+  
   
   .bi {
     margin-right: 8px;
@@ -40,7 +36,7 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
-   
+    
   
     img.rounded-circle {
       width: 100px !important;
@@ -55,23 +51,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    width: 100%;
+ 
     position: relative;
     height: 90px;
   }
   
-  .balance-card::before {
-    content: '';
-    position: absolute;
-    top:25%;
-    left: 0;
-    bottom: 0;
-    width: 8px;
-    height: 40px;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-  .balance-card-dangere::after {
+  .balance-card-danger::after {
     content: '';
     position: absolute;
     top: 0;
@@ -86,7 +71,20 @@
     clip-path: polygon(
         17% border
     ),
+}
+  
+  .balance-card::before {
+    content: '';
+    position: absolute;
+    top:25%;
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    height: 40px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
   }
+  
   /* Distinct colors for each card type */
   .balance-card-dangere::before {
     background: #E74C3C;
@@ -97,7 +95,7 @@
   } 
  
   .balance-amount {
-    font-size: 1.8rem;
+    font-size: 25px;
     font-weight: bold;
   }
   .Owner1{
@@ -112,3 +110,15 @@
     text-align: center; /* Center text within badge */
   }
   
+
+  @media only screen and (min-width: 768px ) and (max-width: 1300px){
+    .maintenance_text{
+      font-size: 14px;
+    }
+    .penalty_text{
+      font-size: 14px;
+    }
+    .balance-amount{
+      font-size: 25px;
+    }
+  }

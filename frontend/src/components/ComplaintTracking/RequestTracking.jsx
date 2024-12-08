@@ -20,19 +20,19 @@ const RequestTracking = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteIndex, setDeleteIndex] = useState(null);
 
-     // Function to fetch complaints
-     const fetchRequestComplaints = async () => {
-      try {
-          const response = await axios.get(API_URL);
-          setCreateRequest(response.data);
-      } catch (error) {
-          console.error("Error fetching Request Complaints:", error);
-      }
-     };
+  // Function to fetch complaints
+  const fetchRequestComplaints = async () => {
+    try {
+      const response = await axios.get(API_URL);
+      setCreateRequest(response.data);
+    } catch (error) {
+      console.error("Error fetching Request Complaints:", error);
+    }
+  };
 
-    useEffect(() => {
-      fetchRequestComplaints(); // Fetch data on component mount
-    }, []);
+  useEffect(() => {
+    fetchRequestComplaints(); // Fetch data on component mount
+  }, []);
 
   const getPriorityClass = (priority) => {
     switch (priority) {
@@ -50,11 +50,11 @@ const RequestTracking = () => {
   const getStatusClass = (status) => {
     switch (status) {
       case "Pending":
-        return "bg-warning text-white rounded-pill py-1"; // Bootstrap class for warning
+        return "status-pending-item py-1";; 
       case "Open":
-        return "bg-primary text-white rounded-pill py-1"; // Bootstrap class for blue
+        return  "status-open-item py-1";
       case "Solve":
-        return "bg-success text-white rounded-pill py-1"; // Bootstrap class for green
+        return "status-solve-item py-1"; 
       default:
         return ""; // No background
     }
@@ -68,30 +68,30 @@ const RequestTracking = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSave = async(e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
 
     try {
       if (isEditing) {
-         // Editing a Create Complaints
-         const response = await axios.put(`${API_URL}/${createRequest[currentCreateRequestIndex]._id}`, form);
+        // Editing a Create Complaints
+        const response = await axios.put(`${API_URL}/${createRequest[currentCreateRequestIndex]._id}`, form);
         const updatedCreateRequest = [...createRequest];
         updatedCreateRequest[currentCreateRequestIndex] = response.data;
         setCreateRequest(updatedCreateRequest);
       } else {
-          // Creating a new Create Complaints
-          const response = await axios.post('http://localhost:4000/api/requests/create', form);
-       
-          setCreateRequest(prevRequest => [...prevRequest, response.data]);   
+        // Creating a new Create Complaints
+        const response = await axios.post('http://localhost:4000/api/requests/create', form);
+
+        setCreateRequest(prevRequest => [...prevRequest, response.data]);
       }
 
-       // Re-fetch data to ensure state sync
-       await fetchRequestComplaints();
+      // Re-fetch data to ensure state sync
+      await fetchRequestComplaints();
 
-          // Reset the form and close modal
-    setForm({ requesterName: '', requestName: '', description: '', date: '', wing: '', unit: '', priority: '', status: '' });
-    setIsEditing(false);
-    setCurrentCreateRequestIndex(null);
+      // Reset the form and close modal
+      setForm({ requesterName: '', requestName: '', description: '', date: '', wing: '', unit: '', priority: '', status: '' });
+      setIsEditing(false);
+      setCurrentCreateRequestIndex(null);
 
     } catch (error) {
       console.error("Error saving Request Complaints:", error);
@@ -107,28 +107,28 @@ const RequestTracking = () => {
 
   const handleEdit = (index) => {
     const selectedRequest = createRequest[index];
-  
+
     // Format the date to 'YYYY-MM-DD' for the date input
     const formattedDate = moment(selectedRequest.date).format('YYYY-MM-DD');
-  
+
     setForm({
       ...selectedRequest,
       date: formattedDate, // Set the formatted date
     });
-  
+
     setIsEditing(true);
     setCurrentCreateRequestIndex(index);
   };
 
-      // Function to format date in MM/DD/YY format
-      const formattedDate = (dateString) => {
-        const date = new Date(dateString); // Parse the database date
-        return date.toLocaleDateString('en-US', {
-            month: '2-digit',
-            day: '2-digit',
-            year: '2-digit',
-        });
-      };
+  // Function to format date in MM/DD/YY format
+  const formattedDate = (dateString) => {
+    const date = new Date(dateString); // Parse the database date
+    return date.toLocaleDateString('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+      year: '2-digit',
+    });
+  };
 
   const handleView = (index) => {
     setViewCreateRequest(createRequest[index]); // Set the selected request to view
@@ -139,32 +139,32 @@ const RequestTracking = () => {
     setShowDeleteModal(true);
   };
 
-  const handleDeleteConfirm = async() => {
+  const handleDeleteConfirm = async () => {
 
     try {
       const deleteId = createRequest[deleteIndex]._id; // Get the correct ID from the selected security protocol
       const response = await axios.delete(`${API_URL}/${deleteId}`);
 
-        // Log success
-        console.log("Created Complaints deleted successfully:", response.data);
+      // Log success
+      console.log("Created Complaints deleted successfully:", response.data);
 
-        // Update the UI by removing the deleted request from the list
-        setCreateRequest(createRequest.filter((_, index) => index !== deleteIndex));
- 
-        // Re-fetch data to ensure state sync
-        await fetchRequestComplaints();
- 
-        // Close the modal and reset delete index
-        setShowDeleteModal(false);
-        setDeleteIndex(null);
+      // Update the UI by removing the deleted request from the list
+      setCreateRequest(createRequest.filter((_, index) => index !== deleteIndex));
+
+      // Re-fetch data to ensure state sync
+      await fetchRequestComplaints();
+
+      // Close the modal and reset delete index
+      setShowDeleteModal(false);
+      setDeleteIndex(null);
     } catch (error) {
-       // Log the error details
-       console.error("Error deleting request Complaint:", error.response ? error.response.data : error.message);
-        
-       // Optionally, show a message to the user if deletion fails
-       alert("Failed to delete request Complaint. Please check the console for details.");
+      // Log the error details
+      console.error("Error deleting request Complaint:", error.response ? error.response.data : error.message);
+
+      // Optionally, show a message to the user if deletion fails
+      alert("Failed to delete request Complaint. Please check the console for details.");
     }
-  
+
   };
   return (
     <>
@@ -174,12 +174,12 @@ const RequestTracking = () => {
 
             <div className="row mx-2 d-flex justify-content-between align-items-center mb-1">
               <div className="col-lg-2 pt-2 pb-3">
-                <h4  fw-bold>Create Request</h4>
+                <h4 className='admin-pages-styling'>Create Request</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3 ">
                 <button
-                  className="pt-2 pb-2 px-3 add_protocol_btn"
+                  className="pt-2 pb-2 px-3 add_protocol_btn admin-pages-styling"
                   data-bs-toggle="modal"
                   data-bs-target="#addCreateRequestModal"
                   onClick={() => {
@@ -194,14 +194,14 @@ const RequestTracking = () => {
 
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Requester Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Request Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Description</h6></div>
-              <div className="col-1 py-2"><h6 className="text-start fw-bold"> Request Date</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">Unit Number</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">Priority</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">statue</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Requester Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Request Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Description</h6></div>
+              <div className="col-1 py-2"><h6 className="text-start admin-pages-styling">  Date</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">Unit Number</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">Priority</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">statue</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Action</h6></div>
             </div>
 
             {createRequest.map((complaint, index) => (
@@ -215,33 +215,12 @@ const RequestTracking = () => {
                 <div className="col-1 py-2"><p className={`text-center ${getStatusClass(complaint.status)}`}>{complaint.status}</p></div>
 
                 <div className="col-2 py-2 d-flex gap-3 justify-content-center action_btn_main">
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleEdit(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#addCreateRequestModal"
-                  >
-                    <RiEditBoxFill className="action_icon edit_icon_size" />
-                  </button>
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleView(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewCreateRequestModal"
-                  >
-                    <GrView className="action_icon view_icon" />
-                  </button>
 
-                  {/* delete */}
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleDeleteClick(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#deleteCreateRequestModal"  // Add this line
-                  >
-                    <RiDeleteBin2Fill className="action_icon delete_icon" />
-                  </button>
+                  <img src="/Images/Edit_btn.png" onClick={() => handleEdit(index)} data-bs-toggle="modal" data-bs-target="#addCreateRequestModal" height={40} />
 
+                  <img src="/Images/View_btn.png" onClick={() => handleView(index)} data-bs-toggle="modal" data-bs-target="#viewCreateRequestModal" height={40} />
+
+                  <img src="/Images/Delete_btn.png" onClick={() => handleDeleteClick(index)} data-bs-toggle="modal" data-bs-target="#deleteCreateRequestModal" height={40} />
 
                 </div>
               </div>
@@ -258,49 +237,49 @@ const RequestTracking = () => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal">
             <div className="modal-header">
-              <h4 className="modal-title" id="addCreateRequestModalLabel">
+              <h4 className="modal-title admin-pages-styling" id="addCreateRequestModalLabel">
                 {isEditing ? 'Edit Request' : 'Create Request'}
               </h4>
             </div>
             <div className="modal-body">
               <form onSubmit={handleSave}> {/* Add onSubmit here */}
                 <div className="mb-3">
-                  <label htmlFor="requesterName" className="form-label">Requester Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="requesterName" className="form-label admin-pages-styling">Requester Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="requesterName" placeholder="Enter Name" value={form.requesterName} autoComplete='off' onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="requestName" className="form-label">RequestName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="requestName" className="form-label admin-pages-styling">RequestName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="requestName" placeholder="Enter Name" value={form.requestName} autoComplete='off' onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="description" className="form-label">Description <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="description" className="form-label admin-pages-styling">Description <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="description" placeholder="Enter Discription" value={form.description} autoComplete='off' onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="date" className="form-label">Request Date <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="date" className="form-label admin-pages-styling">Request Date <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="date" className="form-control" name="date" placeholder="Enter Date" value={form.date} autoComplete='off' onChange={handleInputChange} required />
                 </div>
                 <div className="row">
                   <div className="col-6 mb-3">
-                    <label htmlFor="wing" className="form-label">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="wing" className="form-label admin-pages-styling">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <div className="input-group">
                       <input type="text" className="form-control" placeholder='Enter Wing' name="wing" value={form.wing} autoComplete='off' onChange={handleInputChange} required />
                     </div>
                   </div>
                   <div className="col-6 mb-3">
-                    <label htmlFor="Unit" className="form-label">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
+                    <label htmlFor="Unit" className="form-label admin-pages-styling">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
                     <input type="text" className="form-control " name="unit" placeholder='Enter Unit' value={form.unit} autoComplete='off' onChange={handleInputChange} required />
                   </div>
                 </div>
 
                 {/* Priority Section */}
                 <div className="mb-3">
-                  <label htmlFor="priority" className="form-label">
+                  <label htmlFor="priority" className="form-label admin-pages-styling">
                     Priority <FaStarOfLife className="star_icon_modal mb-2" />
                   </label>
                   <div className="d-flex row ">
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="priority"
@@ -314,7 +293,7 @@ const RequestTracking = () => {
                     </div>
 
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="priority"
@@ -327,7 +306,7 @@ const RequestTracking = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="priority"
@@ -345,12 +324,12 @@ const RequestTracking = () => {
 
                 {/* Status Section */}
                 <div className="mb-3">
-                  <label htmlFor="status" className="form-label">
+                  <label htmlFor="status" className="form-label admin-pages-styling">
                     Status <FaStarOfLife className="star_icon_modal mb-2" />
                   </label>
                   <div className="d-flex row ">
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="status"
@@ -363,7 +342,7 @@ const RequestTracking = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="status"
@@ -376,7 +355,7 @@ const RequestTracking = () => {
                       </div>
                     </div>
                     <div className="col-4">
-                      <div className='complaintPriorityBox'>
+                      <div className='complaintPriorityBox admin-pages-styling'>
                         <input
                           type="radio"
                           name="status"
@@ -400,7 +379,7 @@ const RequestTracking = () => {
                   <div className="col-6 ">
                     <button
                       type="button"
-                      className="btn btn-outline-secondary expense_cancel_btn_modal py-2  me-2"
+                      className="btn btn-outline-secondary expense_cancel_btn_modal py-2 fw-bold me-2"
                       data-bs-dismiss="modal"
                       onClick={handleCancel}
 
@@ -432,7 +411,7 @@ const RequestTracking = () => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal">
             <div className="modal-header  mb-0">
-              <h5 className="modal-title" id="viewCreateRequestModalLabel "> View Request</h5>
+              <h5 className="modal-title admin-pages-styling" id="viewCreateRequestModalLabel "> View Request</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <hr className="no-margin-hr" />
@@ -442,27 +421,27 @@ const RequestTracking = () => {
               {viewCreateRequest && (
                 <div>
                   <div className="col-12">
-                    <p className='fw-bold complainerNameViewModal'> {viewCreateRequest.requesterName} <br /><span className='viewModalComplaintPara viewPageLabelData'> {formattedDate(viewCreateRequest.date)} </span> </p>
+                    <p className='fw-bold complainerNameViewModal admin-pages-styling'> {viewCreateRequest.requesterName} <br /><span className='viewModalComplaintPara admin-pages-styling viewPageLabelData'> {formattedDate(viewCreateRequest.date)} </span> </p>
                   </div>
                   <div className="col-12">
-                    <p><strong className='viewPageLabelData'>Request Name</strong> <br />{viewCreateRequest.requestName}</p>
+                    <p className='admin-pages-styling' ><strong className='viewPageLabelData admin-pages-styling'>Request Name</strong> <br />{viewCreateRequest.requestName}</p>
                   </div>
                   <div className="col-12">
-                    <p><strong className='viewPageLabelData'>Description</strong> <br />{viewCreateRequest.description}</p>
+                    <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Description</strong> <br />{viewCreateRequest.description}</p>
                   </div>
 
                   <div className='d-flex '>
                     <div className="col-3">
-                      <p><strong className='viewPageLabelData '>Wing</strong><br /> <span className='wingDataStyle'> {viewCreateRequest.wing} </span></p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Wing</strong><br /> <span className='wingDataStyle'> {viewCreateRequest.wing} </span></p>
                     </div>
                     <div className="col-3">
-                      <p><strong className='viewPageLabelData '>Unit</strong> <br />  {viewCreateRequest.unit} </p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Unit</strong> <br />  {viewCreateRequest.unit} </p>
                     </div>
                     <div className="col-3">
-                      <p><strong className='viewPageLabelData'>Priority</strong><br /> <span className='PriorityDataStyle '>  {viewCreateRequest.priority}</span></p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Priority</strong><br /> <span className='PriorityDataStyle '>  {viewCreateRequest.priority}</span></p>
                     </div>
                     <div className="col-3">
-                      <p><strong className='viewPageLabelData '>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateRequest.status} </span> </p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateRequest.status} </span> </p>
                     </div>
 
                   </div>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import BalanceChart from '../BalanceChart/BalanceChart';
 import { MdOutlineCurrencyRupee } from "react-icons/md";
-import { FaAngleDown, FaStarOfLife } from "react-icons/fa";
+import { FaAngleDown,  FaStarOfLife } from "react-icons/fa";
 import "./Dashboard.css"
 import axios from 'axios';
 import moment from 'moment';
+import { GoPlus } from "react-icons/go";
+
 
 const Dashboard = () => {
 
@@ -282,7 +284,18 @@ const Dashboard = () => {
     }
   };
 
-
+  const getPriorityClass = (priority) => {
+    switch (priority) {
+      case "High":
+        return "bg-danger text-white rounded-pill py-1"; // Bootstrap class for red
+      case "Medium":
+        return "bg-primary text-white rounded-pill py-1"; // Bootstrap class for blue
+      case "Low":
+        return "bg-success text-white rounded-pill py-1"; // Bootstrap class for green
+      default:
+        return ""; // No background
+    }
+  };
 
   // Import number end 
 
@@ -303,8 +316,8 @@ const Dashboard = () => {
         <div className="col-6 col-sm-6   col-lg-3 mb-3  px-3 ">
           <div className="balance-card balance-card-orange">
             <div className="balance-info">
-              <p className="mb-0 text-muted mt-3">Total Balance</p>
-              <p className="balance-amount-price">₹ 2,22,520</p>
+              <p className="mb-0 text-muted mt-3 admin-pages-styling">Total Balance</p>
+              <p className="balance-amount-price ">₹ 2,22,520</p>
             </div>
             <div className="icon-container">
               <img src="/src/Images/Group1.png" alt="Balance icon" />
@@ -312,10 +325,10 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="  col-6 col-sm-6   col-lg-3 mb-3  p-0 ">
+        <div className="  col-6 col-sm-6   col-lg-3 mb-3  px-3 ">
           <div className="balance-card balance-card-green">
             <div className="balance-info">
-              <p className="mb-0 text-muted  mt-3">Total Income</p>
+              <p className="mb-0 text-muted  mt-3 admin-pages-styling">Total Income</p>
               <p className="balance-amount-price">₹ 55,000</p>
             </div>
             <div className="icon-container ">
@@ -324,10 +337,10 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className=" col-6 col-sm-6   col-lg-3 mb-3  p-0 ">
+        <div className=" col-6 col-sm-6   col-lg-3 mb-3 px-3 ">
           <div className="balance-card balance-card-blue">
             <div className="balance-info">
-              <p className="mb-0 text-muted  mt-3">Total Expense</p>
+              <p className="mb-0 text-muted  mt-3 admin-pages-styling">Total Expense</p>
               <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
@@ -336,10 +349,10 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className=" col-6 col-sm-6   col-lg-3 mb-3  p-0">
+        <div className=" col-6 col-sm-6   col-lg-3 mb-3  px-3">
           <div className="balance-card balance-card-pink">
             <div className="balance-info">
-              <p className="mb-0 text-muted  mt-3">Total Unit</p>
+              <p className="mb-0 text-muted  mt-3 admin-pages-styling">Total Unit</p>
               <p className="balance-amount-price">₹ 20,550</p>
             </div>
             <div className="icon-container">
@@ -362,9 +375,9 @@ const Dashboard = () => {
             <div className="col-lg-6">
               <div className="card border rounded" style={{ maxHeight: "430px" , minHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center p-2">
-                  <h5 style={{ fontSize: "20px" , fontWeight: "bold" }}>Important Numbers</h5>
+                  <h5 style={{ fontSize: "20px" , fontWeight: "bold" }} className='admin-pages-styling'>Important Numbers</h5>
                   <button
-                    className="btn btn-primary"
+                    className="btn btn-primary me-2"
                     data-bs-toggle="modal"
                     data-bs-target="#addCreateNumberModal"
                     onClick={() => {
@@ -372,7 +385,7 @@ const Dashboard = () => {
                       setNumberForm({ fullName: '', phoneNumber: '', work: '' });
                     }}
                   >
-                    Add
+                   <GoPlus className='add-btn-icon'/> Add
                   </button>
                 </div>
                 <div className="important-numbers scrollable-card">
@@ -393,7 +406,7 @@ const Dashboard = () => {
                             Work: <span className="text-secondary fw-normal "> {number.work} </span>
                           </h5>
                         </div>
-                        <div className="col-lg-4">
+                        <div className="col-lg-4 d-flex justify-content-end ">
                           <img
                             className="delete-number me-2"
                             role="button"
@@ -426,7 +439,7 @@ const Dashboard = () => {
                 <div className="modal-dialog modal-dialog-centered">
                   <div className="modal-content custom-modal" style={{backgroundColor: "white" , color: "black" , maxWidth: "400px" }}>
                     <div className="modal-header">
-                      <h4 className="modal-title m-0" id="addCreateNumberModalLabel">
+                      <h4 className="modal-title m-0 admin-pages-styling" id="addCreateNumberModalLabel">
                         {isNumberEditing ? 'Edit Number' : 'Create Number'}
                       </h4>
                     </div>
@@ -434,15 +447,15 @@ const Dashboard = () => {
                     <div className="modal-body">
                       <form onSubmit={handleNumberSave}> {/* Add onSubmit here */}
                         <div className="mb-3">
-                          <label htmlFor="fullName" className="form-label">Full Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                          <label htmlFor="fullName" className="form-label admin-pages-styling">Full Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                           <input type="text" className="form-control" name="fullName" autoComplete='off' placeholder="Enter Name" value={numberForm.fullName} onChange={handleInputNumberChange} required />
                         </div>
                         <div className="mb-3">
-                          <label htmlFor="phoneNumber" className="form-label"> Phone Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                          <label htmlFor="phoneNumber" className="form-label admin-pages-styling"> Phone Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                           <input type="text" className="form-control" name="phoneNumber" autoComplete='off' placeholder="Enter Phone Number" value={numberForm.phoneNumber} onChange={handleInputNumberChange} required />
                         </div>
                         <div className="mb-3">
-                          <label htmlFor="work" className="form-label"> Work <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                          <label htmlFor="work" className="form-label admin-pages-styling"> Work <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                           <input type="text" className="form-control" name="work" autoComplete='off' placeholder="Enter Work" value={numberForm.work} onChange={handleInputNumberChange} required />
                         </div>
 
@@ -533,8 +546,8 @@ const Dashboard = () => {
             <div className="col-lg-6">
               <div className="card pending-maintenance" style={{ maxHeight: "430px" }}>
                 <div className="card-header d-flex justify-content-between align-items-center">
-                  <h5 style={{ fontSize: "17px" , fontWeight: "bold" }}>Pending Maintenances</h5>
-                  <span className='text-primary'>View all</span>
+                  <h5 style={{ fontSize: "17px" , fontWeight: "bold" }} className='admin-pages-styling'>Pending Maintenances</h5>
+                  <span className='text-primary admin-pages-styling'>View all</span>
                 </div>
                 <div className="card-body scrollable-card">
                   {/* Sample Pending Maintenance Item */}
@@ -568,19 +581,19 @@ const Dashboard = () => {
         <div className="col-9 ">
           <div className="border rounded complaint-list p-3 bg-white">
             <div className="d-flex justify-content-between align-items-center ">
-              <h5 className='fw-bold'>Complaint List</h5>
+              <h5 className='fw-bold admin-pages-styling'>Complaint List</h5>
               <button className="btn border">Month <i className="fas fa-angle-down"></i></button>
             </div>
             <div className="table-responsive mt-2">
               <table className="table rounded-table">
                 <thead>
                   <tr>
-                    <th className=' text-start' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complainer Name</th>
-                    <th className=' text-center' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complaint Name</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Date</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Priority</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complain Status</th>
-                    <th style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Action</th>
+                    <th className=' text-start admin-pages-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complainer Name</th>
+                    <th className=' text-center admin-pages-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complaint Name</th>
+                    <th className='admin-pages-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Date</th>
+                    <th className='admin-pages-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Priority</th>
+                    <th className='admin-pages-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Complain Status</th>
+                    <th className='admin-pages-styling' style={{ backgroundColor: "#5678e91b" , color: "black" , fontWeight: "bold"}}>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -591,7 +604,7 @@ const Dashboard = () => {
                       </td>
                       <td>{complaint.complaintName}</td>
                       <td>{moment(complaint.createdAt).format('DD-MM-YYYY')}</td>
-                      <td><span className="badge badge-medium">{complaint.priority}</span></td>
+                      <td><span className={`text-center priotty-data-styling ${getPriorityClass(complaint.priority)}`}>{complaint.priority}</span></td>
                       <td><span className="status open">{complaint.status}</span></td>
                       <td className="actions d-flex justify-content-center">
                         <button className="btn-action mb-2">
@@ -638,7 +651,7 @@ const Dashboard = () => {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content custom-modal">
               <div className="modal-header  mb-0">
-                <h5 className="modal-title" id="viewCreateComplaintModalLabel "> View Complaint</h5>
+                <h5 className="modal-title admin-pages-styling" id="viewCreateComplaintModalLabel "> View Complaint</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <hr className="no-margin-hr" />
@@ -648,27 +661,27 @@ const Dashboard = () => {
                 {viewCreateComplaint && (
                   <div>
                     <div className="col-12">
-                      <p className='fw-bold complainerNameViewModal'> {viewCreateComplaint.complainerName} <br /><span className='viewModalComplaintPara viewPageLabelData'> {moment(viewCreateComplaint.createdAt).format('DD MMMM, YYYY')} </span> </p>
+                      <p className='fw-bold complainerNameViewModal admin-pages-styling'> {viewCreateComplaint.complainerName} <br /><span className='viewModalComplaintPara admin-pages-styling viewPageLabelData'> {moment(viewCreateComplaint.createdAt).format('DD MMMM, YYYY')} </span> </p>
                     </div>
                     <div className="col-12">
-                      <p><strong className='viewPageLabelData'>Request Name</strong> <br />{viewCreateComplaint.complaintName}</p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Request Name</strong> <br />{viewCreateComplaint.complaintName}</p>
                     </div>
                     <div className="col-12">
-                      <p><strong className='viewPageLabelData'>Discription</strong> <br />{viewCreateComplaint.description}</p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Discription</strong> <br />{viewCreateComplaint.description}</p>
                     </div>
 
                     <div className='d-flex '>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData '>Wing</strong><br /> <span className='wingDataStyle'> {viewCreateComplaint.wing} </span></p>
+                        <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling '>Wing</strong><br /> <span className='wingDataStyle'> {viewCreateComplaint.wing} </span></p>
                       </div>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData '>Unit</strong> <br />  {viewCreateComplaint.unit} </p>
+                        <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Unit</strong> <br />  {viewCreateComplaint.unit} </p>
                       </div>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData'>Priority</strong><br /> <span className="">  {viewCreateComplaint.priority}</span></p>
+                        <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Priority</strong><br /> <span className="">  {viewCreateComplaint.priority}</span></p>
                       </div>
                       <div className="col-3">
-                        <p><strong className='viewPageLabelData '>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateComplaint.status} </span> </p>
+                        <p className='admin-pages-styling'><strong className='viewPageLabelData admin-pages-styling'>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateComplaint.status} </span> </p>
                       </div>
 
                     </div>
@@ -689,40 +702,40 @@ const Dashboard = () => {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content custom-modal">
               <div className="modal-header">
-                <h4 className="modal-title" id="addCreateComplaintModalLabel">
+                <h4 className="modal-title admin-pages-styling" id="addCreateComplaintModalLabel">
                   {isEditing ? 'Edit Complaint' : 'Create Complaint'}
                 </h4>
               </div>
               <div className="modal-body">
                 <form onSubmit={handleSave}> {/* Add onSubmit here */}
                   <div className="mb-3">
-                    <label htmlFor="complainerName" className="form-label ">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="complainerName" className="form-label admin-pages-styling">Complainer Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="complainerName" autoComplete='off' placeholder="Enter Name" value={form.complainerName} onChange={handleInputChange} required />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="complaintName" className="form-label">ComplaintName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="complaintName" className="form-label admin-pages-styling">ComplaintName <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="complaintName" autoComplete='off' placeholder="Enter Name" value={form.complaintName} onChange={handleInputChange} required />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="description" className="form-label">Discription <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="description" className="form-label admin-pages-styling">Discription <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="text" className="form-control" name="description" autoComplete='off' placeholder="Enter Discription" value={form.description} onChange={handleInputChange} required />
                   </div>
                   <div className="row">
                     <div className="col-6 mb-3">
-                      <label htmlFor="wing" className="form-label">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                      <label htmlFor="wing" className="form-label admin-pages-styling">Wing <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                       <div className="input-group">
                         <input type="text" className="form-control" placeholder='Enter Wing' name="wing" autoComplete='off' value={form.wing} onChange={handleInputChange} required />
                       </div>
                     </div>
                     <div className="col-6 mb-3">
-                      <label htmlFor="Unit" className="form-label">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
+                      <label htmlFor="Unit" className="form-label admin-pages-styling">Unit <FaStarOfLife className='star_icon_modal mb-2' /></label>
                       <input type="text" className="form-control " name="unit" autoComplete='off' placeholder='Enter Unit' value={form.unit} onChange={handleInputChange} required />
                     </div>
                   </div>
 
                   {/* Priority Section */}
                   <div className="mb-3">
-                    <label htmlFor="priority" className="form-label">
+                    <label htmlFor="priority" className="form-label admin-pages-styling">
                       Priority <FaStarOfLife className="star_icon_modal mb-2" />
                     </label>
                     <div className="d-flex row ">
@@ -772,7 +785,7 @@ const Dashboard = () => {
 
                   {/* Status Section */}
                   <div className="mb-3">
-                    <label htmlFor="status" className="form-label">
+                    <label htmlFor="status" className="form-label admin-pages-styling">
                       Status <FaStarOfLife className="star_icon_modal mb-2" />
                     </label>
                     <div className="d-flex row ">
@@ -832,7 +845,7 @@ const Dashboard = () => {
                         onClick={handleCancel}
 
                       >
-                        Cancel
+                       <h6 className='admin-pages-styling mb-0 py-1'> Cancel </h6> 
                       </button>
                     </div>
                     <div className="col-6   ">
@@ -907,7 +920,7 @@ const Dashboard = () => {
         <div className="col-lg-3">
           <div className="card upcoming-activity">
             <div className="card-header d-flex justify-content-between align-items-center">
-              <h5 style={{ fontSize: "18px" , fontWeight: "bold" }}>Upcoming Activity</h5>
+              <h5 style={{ fontSize: "18px" , fontWeight: "bold" }} className='admin-pages-styling'>Upcoming Activity</h5>
               <button className='btn border' style={{ maxWidth: "90px", fontSize: "14px" }}>Month <FaAngleDown /></button>
             </div>
             <div className="card-body scrollable-card">

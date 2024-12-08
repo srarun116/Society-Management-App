@@ -46,7 +46,7 @@ const BalanceChart = () => {
         beginAtZero: true,
       },
     },
-  
+
   };
 
   return (
@@ -64,20 +64,20 @@ const BalanceChart = () => {
             Month <FaAngleDown />
             {/* Display "Month" instead of the selected option */}
           </button>
-          <ul className="dropdown-menu text-secondary"  aria-labelledby="timeframeDropdown">
-  <div className="">
-    <input type="radio" id="last-week" name="colors" value="Last-week" style={{Color:'fd6208'}}/>
-    <label className="ms-1" htmlFor="last-week">Last week</label>
-  </div>
-  <div className="">
-    <input type="radio" id="last-month" name="colors" value="Last-month" />
-    <label className="ms-1" htmlFor="last-month">Last month</label>
-  </div>
-  <div className="">
-    <input type="radio" id="last-year" name="colors" value="Last-year" />
-    <label className="ms-1" htmlFor="last-year">Last Year</label>
-  </div>
-</ul>
+          <ul className="dropdown-menu text-secondary" aria-labelledby="timeframeDropdown">
+            <div className="">
+              <input type="radio" id="last-week" name="colors" value="Last-week" style={{ Color: 'fd6208' }} />
+              <label className="ms-1" htmlFor="last-week">Last week</label>
+            </div>
+            <div className="">
+              <input type="radio" id="last-month" name="colors" value="Last-month" />
+              <label className="ms-1" htmlFor="last-month">Last month</label>
+            </div>
+            <div className="">
+              <input type="radio" id="last-year" name="colors" value="Last-year" />
+              <label className="ms-1" htmlFor="last-year">Last Year</label>
+            </div>
+          </ul>
 
         </div>
       </div>

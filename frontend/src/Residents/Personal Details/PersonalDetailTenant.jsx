@@ -239,7 +239,7 @@ function PersonalDetailTenant() {
             </div>
             <div className="row">
                 {notes.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div
@@ -288,7 +288,7 @@ function PersonalDetailTenant() {
             </div>
             <div className="row">
                 {Vehicle.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" onKeyDown={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" onKeyDown={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div
@@ -318,22 +318,22 @@ function PersonalDetailTenant() {
           </div>
  {/*Show Maintenance Details*/}
           <div className="border rounded shadow bg-white mt-3 p-4">
-            <div className="row align-items-center">
-            <div className="col-8 col-lg-6 col-sm-6 col-md-4 col-xl-8 text-start">
-                   <h4>Show Maintenance Details</h4>
-                </div>
-                <div className="col-2  col-sm-3 col-xl-2  col-lg-3 col-md-4 mt-2">
-                    <div className="balance-card balance-card-green">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-4 col-sm-12 col-md-4 col-xl-6 text-start mb-3 mb-sm-2 mb-md-0">
+                   <h4 style={{fontSize:"20px"}}>Show Maintenance Details</h4>
+            </div>
+                <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4">
+                    <div className="balance-card balance-card-green mb-3 mb-sm-0">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Maintenance Amount</p>
+                            <p className="mb-0 text-muted mt-3 maintenance_text">Maintenance Amount</p>
                             <p className="balance-amount text-success">₹ 1,500</p>
                         </div>
                     </div>
                 </div>
-                <div className="col-2  col-sm-3 col-xl-2  col-lg-3 col-md-4 mt-2 ">
-                    <div className="balance-card balance-card-dangere">
+                <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4  ">
+                    <div className="balance-card balance-card-danger">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Penalty Amount</p>
+                            <p className="mb-0 text-muted mt-3 penalty_text">Penalty Amount</p>
                             <p className="balance-amount text-danger">₹ 500</p>
                         </div>
                     </div>
@@ -349,7 +349,7 @@ function PersonalDetailTenant() {
             </div>
             <div className="row">
                 {Maintenance.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{backgroundColor:"#5678e9"}}>
@@ -375,7 +375,7 @@ function PersonalDetailTenant() {
                                   <span className="text-danger" style={{ fontSize: "12px"}} > {note.Amount} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2">
-                                  <span className="text-muted" style={{ fontSize: "12px" }}>Maintenance Penalty Amount</span>
+                                  <span className="text-muted text-start" style={{ fontSize: "12px" }}>Maintenance Penalty Amount</span>
                                   <span className="text-danger" style={{ fontSize: "12px"}} > {note.PAmount} </span>
                               </div>
                               <div className="d-flex justify-content-between mb-2 border-top">
@@ -398,7 +398,7 @@ function PersonalDetailTenant() {
             </div>
             <div className="row">
                 {DMaintenance.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{backgroundColor:"#5678e9"}}>
@@ -442,7 +442,7 @@ function PersonalDetailTenant() {
             </div>
             <div className="row">
                 {Community.map((note , index) => (
-                      <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                      <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                       <div className="card shadow-sm border-0 note-card bg-white">
                           {/* Card Header */}
                           <div
@@ -464,7 +464,7 @@ function PersonalDetailTenant() {
                                   <span style={{ fontSize: "12px", fontWeight: "bold"}} > {note.Time} </span>
                               </div>
                               <div className="mb-2">
-                                    <h6 className="mb-1 " style={{ fontSize: "12px" }}>Description</h6>
+                                    <h6 className="mb-1 text-start text-muted" style={{ fontSize: "12px" }}>Description</h6>
                                      <p className="card-text" style={{ fontSize: "11px" }}>{note.description}</p>
                                 </div>
                           </div>

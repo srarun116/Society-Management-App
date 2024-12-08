@@ -54,9 +54,9 @@ function OtherIncomeInvoice() {
                 <div className="row justify-content-center">
                     <div className="border rounded shadow bg-white mt-3 p-4">
                         <div className="row align-items-center">
-                            <div className="d-flex justify-content-between align-items-center mb-3">
-                                <h2 style={{ fontSize: "20px" }}>Due Event Payment</h2>
-                                <button className="btn btn-primary" onClick={() => handleShowModal(true)}>
+                            <div className="d-flex justify-content-between align-items-center mb-3 ">
+                                <h2 style={{ fontSize: "20px" }} >Due Event Payment</h2>
+                                <button className="btn btn-primary " onClick={() => handleShowModal(true)}>
                                     View Invoice
                                 </button>
                             </div>
@@ -164,7 +164,7 @@ function OtherIncomeInvoice() {
 
                             <div className="row">
                                 {DMaintenance.map((note) => (
-                                    <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4">
+                                    <div className="col-sm-6 col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4">
                                         <div className="card shadow-sm border-0 note-card bg-white">
                                             {/* Card Header */}
                                             <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{ backgroundColor: "#5678e9" }}>

@@ -139,10 +139,10 @@ const FinancialNote = () => {
           <div className="col-12">
             <div className="row d-flex justify-content-between align-items-center px-2">
               <div className="col-lg-2 pt-3 pb-3">
-                <h4 className="fw-bold">Note</h4>
+                <h4 className='admin-pages-styling'>Note</h4>
               </div>
               <div className="col-lg-2 d-flex justify-content-end align-items-center">
-                <button className="pt-2 pb-2 px-3 create_note_btn" onClick={handleCreateBox}>Create Note</button>
+                <button className="pt-2 pb-2 px-3 create_note_btn admin-pages-styling" onClick={handleCreateBox}>Create Note</button>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ const FinancialNote = () => {
                 <div className="col-3 mt-3" key={index}>
                   <div className="px-2 entire_box_data">
                     <div className="row d-flex align-items-center pt-2 pb-1 box-heading">
-                      <p>
+                      <p className='admin-pages-styling'>
                         {box.title}
                         <BsThreeDotsVertical
                           className="edit_icon_data"
@@ -180,13 +180,13 @@ const FinancialNote = () => {
       {/* Modal for adding or editing a note */}
       <Modal className='modal-container' show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header>
-          <Modal.Title className='add_note_heading'><h4 className='fw-bold'>  {editIndex !== null ? 'Edit Note' : 'Add Note'} </h4></Modal.Title>
+          <Modal.Title className='add_note_heading'><h4 className='admin-pages-styling'>  {editIndex !== null ? 'Edit Note' : 'Add Note'} </h4></Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSaveNote}>
           <Modal.Body>
 
             <Form.Group className="mb-3" controlId="noteTitle">
-              <Form.Label>Title <FaStarOfLife className='required_icon' /></Form.Label>
+              <Form.Label  className='admin-pages-styling'>Title <FaStarOfLife className='required_icon' /></Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Title"
@@ -197,7 +197,7 @@ const FinancialNote = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="noteDescription">
-              <Form.Label>Description <FaStarOfLife className='required_icon' /></Form.Label>
+              <Form.Label className='admin-pages-styling'>Description <FaStarOfLife className='required_icon' /></Form.Label>
               <Form.Control
                 as="textarea"
                 rows={2}
@@ -209,7 +209,7 @@ const FinancialNote = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="noteDate">
-              <Form.Label>Date <FaStarOfLife className='required_icon' /></Form.Label>
+              <Form.Label className='admin-pages-styling'>Date <FaStarOfLife className='required_icon' /></Form.Label>
               <Form.Control
                 type="date"
                 name="date"
@@ -237,9 +237,9 @@ const FinancialNote = () => {
       {/* Delete Modal */}
       <Modal className="custom-delete-modal" show={showDeleteModal} onHide={() => setShowDeleteModal(false)} centered>
         <Modal.Header>
-          <Modal.Title>Delete Note?</Modal.Title>
+          <Modal.Title className='admin-pages-styling'>Delete Note?</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="no-border delete-para">Are you sure you want to delete this note ?</Modal.Body>
+        <Modal.Body className="no-border delete-para fs-6">Are you sure you want to delete this note ?</Modal.Body>
         <Modal.Footer >
           <div className="d-flex w-100 justify-content-between">
             <Button className="btn btn-outline-secondary w-50 ms-2 cancel_announcement_btn" variant="secondary" onClick={() => setShowDeleteModal(false)}>Cancel</Button>

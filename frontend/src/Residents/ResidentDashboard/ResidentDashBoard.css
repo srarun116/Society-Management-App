@@ -13,7 +13,10 @@
     position: relative;
     height: 75px;
   }
-  
+  .dashboard-styling{
+    font-family: poppins;
+    font-weight: 600
+  }
   
   .balance-card-main::before {
     content: '';
@@ -27,7 +30,9 @@
     border-bottom-right-radius: 12px;
   }
 
-  
+  .priotty-data-styling{
+    padding: 3px 13px;
+  }
 
   
   /* Distinct colors for each card type */
@@ -247,9 +252,32 @@
   #Red {
     accent-color: #fd6208 ;
   }
+  @media (max-width: 1318px) {
+    .balance-card-main p{
+      font-size: 18px;
+    }
+  }
 
-
-
+  @media (max-width: 450px) {
+    .balance-card-main p{
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 430px) {
+    .balance-card-main p{
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 382px) {
+    .balance-card-main p{
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 382px) {
+    .balance-card-main p{
+      font-size: 12px;
+    }
+  }
 
 
 

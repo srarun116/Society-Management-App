@@ -668,7 +668,7 @@ const formatDateYear = (dateString) => {
 
             <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
               <div className="col-lg-3 pt-3 fw-bold pb-3">
-                <h4 className='fw-bold'>Security Guard Details</h4>
+                <h4 className='fw-bold admin-pages-styling'>Security Guard Details</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3">
@@ -691,13 +691,13 @@ const formatDateYear = (dateString) => {
             </div>
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Security Guard Name</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Phone Number</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Select Shift</h6></div>
-              <div className="col-2 py-2"><h6 className="text-start fw-bold">Shift Date</h6></div>
-              <div className="col-1 py-2"><h6 className="text-start fw-bold">Shift Time</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">Gender</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start  admin-pages-styling">Security Guard Name</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Phone Number</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Select Shift</h6></div>
+              <div className="col-2 py-2"><h6 className="text-start admin-pages-styling">Shift Date</h6></div>
+              <div className="col-1 py-2"><h6 className="text-start admin-pages-styling">Shift Time</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">Gender</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Action</h6></div>
             </div>
 
             {guard.map((guard, index) => (
@@ -713,37 +713,17 @@ const formatDateYear = (dateString) => {
                 <div className="col-1 py-2 my-2"><p> {guard.time ? formatTime(guard.time) : "No time available"}</p></div>
                 <div className="col-1 py-2 my-2">
                   <p className={`text-center  ${guard.gender === 'male' ? 'gender-male-color' : 'gender-female-color'}`}>
-                    {guard.gender === 'male' ? (<span> <IoPersonSharp /> Male  </span>) : (<span><MdPerson2 /> Female  </span>)}
+                    {guard.gender === 'male' ? (<span className='gender-item-size'> <IoPersonSharp /> Male  </span>) : (<span className='gender-item-size'><MdPerson2 /> Female  </span>)}
                   </p>
                 </div>
 
-                <div className="col-2 py-2 d-flex gap-3 justify-content-center action_btn_main">
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleEdit(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#addGuardModal"
-                  >
-                    <RiEditBoxFill className="action_icon edit_icon_size" />
-                  </button>
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleView(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewGuardModal"
-                  >
-                    <GrView className="action_icon view_icon" />
-                  </button>
+                <div className="col-2 py-1 d-flex gap-3 justify-content-center action_btn_main ">
+                 
+                  <img src="/Images/Edit_btn.png" onClick={() => handleEdit(index)}   data-bs-toggle="modal"  data-bs-target="#addGuardModal" height={40}/>
+                
+                  <img src="/Images/View_btn.png"  onClick={() => handleView(index)}   data-bs-toggle="modal"  data-bs-target="#viewGuardModal" height={40}/>
 
-                  {/* delete */}
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleDeleteClick(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#deleteGuardModal"  // Add this line
-                  >
-                    <RiDeleteBin2Fill className="action_icon delete_icon" />
-                  </button>
+                  <img src="/Images/Delete_btn.png"  onClick={() => handleDeleteClick(index)}  data-bs-toggle="modal" data-bs-target="#deleteGuardModal" height={40} />
 
 
                 </div>
@@ -762,7 +742,7 @@ const formatDateYear = (dateString) => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal">
             <div className="modal-header">
-              <h5 className="modal-title" id="addGuardModalLabel">
+              <h5 className="modal-title admin-pages-styling" id="addGuardModalLabel">
                 {isEditing ? 'Edit Security ' : 'Add Security '}
               </h5>
             </div>
@@ -791,16 +771,16 @@ const formatDateYear = (dateString) => {
                 </div>
 
                 <div className="mb-3">
-                  <label htmlFor="fullName" className="form-label">Full Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="fullName" className="form-label admin-pages-styling">Full Name <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="fullName" placeholder="Enter Name" value={form.fullName} onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="phoneNumber" className="form-label">Phone Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="phoneNumber" className="form-label admin-pages-styling">Phone Number <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="number" className="form-control" name="phoneNumber" placeholder="Enter Phone Number" value={form.phoneNumber} onChange={handleInputChange} required />
                 </div>
                 <div className="row">
                   <div className="col-6 mb-3">
-                    <label htmlFor="gender" className="form-label">
+                    <label htmlFor="gender" className="form-label admin-pages-styling">
                       Gender <FaStarOfLife className="star_icon_modal mb-2" />
                     </label>
                     <div className="input-group">
@@ -822,7 +802,7 @@ const formatDateYear = (dateString) => {
 
 
                   <div className="col-6 mb-3">
-                    <label htmlFor="selectShift" className="form-label"> Shift <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="selectShift" className="form-label admin-pages-styling"> Shift <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <div className="input-group">
                       {/* <input type="time" className="form-control" name="selectShift" value={form.selectShift} onChange={handleInputChange} required />
                        */}
@@ -846,17 +826,17 @@ const formatDateYear = (dateString) => {
 
                 <div className="row">
                   <div className="col-6 mb-3">
-                    <label htmlFor="date" className="form-label">Shift Date <FaStarOfLife className='star_icon_modal mb-2' /></label>
+                    <label htmlFor="date" className="form-label admin-pages-styling">Shift Date <FaStarOfLife className='star_icon_modal mb-2' /></label>
                     <input type="date" className="form-control " name="date" value={form.date} onChange={handleInputChange} required />
                   </div>
                   <div className="col-6 mb-3">
-                    <label htmlFor="time" className="form-label">Shift Time <FaStarOfLife className='star_icon_modal mb-2' /></label>
+                    <label htmlFor="time" className="form-label admin-pages-styling">Shift Time <FaStarOfLife className='star_icon_modal mb-2' /></label>
                     <input type="time" className="form-control " name="time" value={form.time} onChange={handleInputChange} required />
                   </div>
                 </div>
 
                 <div className="mb-0">
-                  <label htmlFor="billFormat" className="form-label">Upload Aadhar Card <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="billFormat" className="form-label admin-pages-styling">Upload Aadhar Card <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <div className="file-upload-box file-upload-box-border">
                     <input
                       type="file"
@@ -882,14 +862,14 @@ const formatDateYear = (dateString) => {
                       onClick={handleCancel}
 
                     >
-                      Cancel
+                     <h6 className='admin-pages-styling mb-0 py-1'> Cancel </h6> 
                     </button>
                   </div>
                   <div className="col-6   ">
 
                     <button
                       type="submit" // Change button type to submit
-                      className="btn  save_btn "
+                      className="btn  save_btn admin-pages-styling"
                       data-bs-dismiss="modal"
                     >
                       {isEditing ? 'Update' : 'Save'}
@@ -907,7 +887,7 @@ const formatDateYear = (dateString) => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal">
             <div className="modal-header  mb-0">
-              <h5 className="modal-title" id="viewGuardModalLabel "> View Security Guard Details</h5>
+              <h5 className="modal-title admin-pages-styling" id="viewGuardModalLabel "> View Security Guard Details</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <hr className="no-margin-hr" />
@@ -924,25 +904,25 @@ const formatDateYear = (dateString) => {
                       </div>
 
                       <div className="col-4 d-flex align-items-center ps-4">
-                        <p className='text-secondary'><strong className='text-dark fw-bold'>{viewGuard.fullName} </strong><br /> {formatDateYear(viewGuard.date)}</p>
+                        <p className='text-secondary admin-pages-styling'><strong className='text-dark fw-bold admin-pages-styling'>{viewGuard.fullName} </strong><br /> {formatDateYear(viewGuard.date)}</p>
                       </div>
                     </div>
 
                     <div className="row mt-3">
                       <div className="col-4 ">
-                        <p className='mb-1 text-secondary ps-2'>Select Shift</p>
-                        <p className={`ps-3  ${viewGuard.selectShift === 'day' ? 'day-shift-color' : 'night-shift-color'}`}>
+                        <p className='mb-1 text-secondary ps-2 admin-pages-styling'>Select Shift</p>
+                        <p className={`ps-3  admin-pages-styling ${viewGuard.selectShift === 'day' ? 'day-shift-color' : 'night-shift-color'}`}>
                           {viewGuard.selectShift === 'day' ? (<p> <IoIosSunny /> Day  </p>) : (<p><MdNightlight /> Night  </p>)}
                         </p>
                       </div>
                       <div className="col-4">
-                        <p className='mb-1 text-secondary ps-2'> Shift Time</p>
-                        <p className='viewPage_time ps-3'>{viewGuard.time}</p>
+                        <p className='mb-1 text-secondary ps-2 admin-pages-styling'> Shift Time</p>
+                        <p className='viewPage_time ps-3 admin-pages-styling'>{viewGuard.time}</p>
                       </div>
                       <div className="col-4">
-                        <p className='mb-1 text-secondary ps-2'>Gender</p>
-                        <p className={` ps-3 ${viewGuard.gender === 'male' ? 'gender-male-color' : 'gender-female-color'}`}>
-                          {viewGuard.gender === 'male' ? (<p> <IoPersonSharp /> Male  </p>) : (<p><MdPerson2 /> Female  </p>)}
+                        <p className='mb-1 text-secondary ps-2 admin-pages-styling'>Gender</p>
+                        <p className={` ps-3 admin-pages-styling ${viewGuard.gender === 'male' ? 'gender-male-color' : 'gender-female-color'}`}>
+                          {viewGuard.gender === 'male' ? (<p className='admin-pages-styling'> <IoPersonSharp /> Male  </p>) : (<p className='admin-pages-styling'><MdPerson2 /> Female  </p>)}
                         </p>
                       </div>
                     </div>

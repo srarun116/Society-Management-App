@@ -72,7 +72,7 @@ function FinancialIncome() {
                 <div className="col-lg-2 col-md-2 ">
                     <div className="balance-card balance-card-green">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Maintenance Amount</p>
+                            <p className="mb-0 text-muted mt-3 admin-pages-styling">Maintenance Amount</p>
                             <p className="balance-amount text-success">₹ 0</p>
                         </div>
                     </div>
@@ -80,14 +80,14 @@ function FinancialIncome() {
                 <div className="col-lg-2 col-md-2 ">
                     <div className="balance-card balance-card-danger">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Penalty Amount</p>
+                            <p className="mb-0 text-muted mt-3 admin-pages-styling">Penalty Amount</p>
                             <p className="balance-amount text-danger">₹ 0</p>
                         </div>
                     </div>
                 </div>
                 <div className="col text-end">
                     <button
-                        className="btn btn-primary mb-3"
+                        className="btn btn-primary mb-3 admin-pages-styling"
                         onClick={() => setShowMainModal(true)}
                     >
                         Set Maintenance
@@ -100,7 +100,7 @@ function FinancialIncome() {
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content" style={{ width: "430px" }}>
                             <div className="modal-header">
-                                <h5 className="modal-title">Set Maintenance</h5>
+                                <h5 className="modal-title admin-pages-styling">Set Maintenance</h5>
                                 <button
                                     type="button"
                                     className="btn-close"
@@ -109,7 +109,7 @@ function FinancialIncome() {
                             </div>
                             <div className="modal-body">
                                 <div className="mb-3">
-                                    <label className="form-label">
+                                    <label className="form-label admin-pages-styling">
                                         Password<span className="text-danger">*</span>
                                     </label>
                                     <div className="input-group">
@@ -132,7 +132,7 @@ function FinancialIncome() {
                               <button
                                     type="button"
                                     style={{width:"100%"}}
-                                    className="btn btn-outline-secondary text-dark"
+                                    className="btn btn-outline-secondary text-dark fw-bold"
                                     onClick={() => setShowMainModal(false)}
                                 >
                                     Cancel
@@ -141,7 +141,7 @@ function FinancialIncome() {
                               <div className="col-6">
                               <button
                                     type="button"
-                                    className="btn"
+                                    className="btn fw-bold"
                                     style={{
                                         background: "linear-gradient(90deg, #FF5722, #FF9800)",
                                         color: "white",
@@ -165,7 +165,7 @@ function FinancialIncome() {
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content" style={{ width: "430px" }}>
                             <div className="modal-header">
-                                <h5 className="modal-title">Add Maintenance Detail</h5>
+                                <h5 className="modal-title admin-pages-styling">Add Maintenance Detail</h5>
                                 <button
                                     type="button"
                                     className="btn-close"
@@ -175,7 +175,7 @@ function FinancialIncome() {
                             <div className="modal-body">
                                 <div className="row mb-3">
                                     <div className="col">
-                                        <label className="form-label">Maintenance Amount</label>
+                                        <label className="form-label admin-pages-styling">Maintenance Amount</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -185,7 +185,7 @@ function FinancialIncome() {
                                         />
                                     </div>
                                     <div className="col">
-                                        <label className="form-label">Penalty Amount</label>
+                                        <label className="form-label admin-pages-styling">Penalty Amount</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -196,7 +196,7 @@ function FinancialIncome() {
                                     </div>
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">Maintenance Due Date</label>
+                                    <label className="form-label admin-pages-styling">Maintenance Due Date</label>
                                     <div className="input-group">
                                         <input
                                             type="date"
@@ -207,11 +207,11 @@ function FinancialIncome() {
                                     </div>
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">
+                                    <label className="form-label admin-pages-styling">
                                         Penalty Applied After Day Selection
                                     </label>
                                     <select
-                                        className="form-select"
+                                        className="form-select admin-pages-styling"
                                         value={penaltyDays}
                                         onChange={(e) => setPenaltyDays(e.target.value)}
                                     >
@@ -232,14 +232,14 @@ function FinancialIncome() {
                               <button
                                     type="button" 
                                     style={{width:"100%"}}                                  
-                                    className="btn btn-outline-secondary"
+                                    className="btn btn-outline-secondary fw-bold"
                                     onClick={() => setShowAddMaintenanceModal(false)}
                                 >
                                     Cancel
                                 </button>
                               </div>
                               <div className="col-6 ">
-                              <button type="button" className="btn " 
+                              <button type="button" className="btn fw-bold" 
                                     style={{
                                         background: "linear-gradient(90deg, #FF5722, #FF9800)", color: "white", width:"100%"
                                     }}
@@ -261,7 +261,7 @@ function FinancialIncome() {
                 <ul className="nav nav-tabs border-0">
                     <li className="nav-item">
                         <button
-                            className={`nav-link ${activeTab === 'maintenance' ? 'active' : ''}`}
+                            className={`nav-link admin-pages-styling ${activeTab === 'maintenance' ? 'active' : ''}`}
                             onClick={() => handleTabClick('maintenance')}
                             style={{
                                 background: activeTab === 'maintenance' ? 'linear-gradient(90deg, #FF5722, #FF9800)' : 'white',
@@ -277,7 +277,7 @@ function FinancialIncome() {
                     </li>
                     <li className="nav-item">
                         <button
-                            className={`nav-link ${activeTab === 'otherIncome' ? 'active' : ''}`}
+                            className={`nav-link admin-pages-styling ${activeTab === 'otherIncome' ? 'active' : ''}`}
                             onClick={() => handleTabClick('otherIncome')}
                             style={{
                                 background: activeTab === 'otherIncome' ? 'linear-gradient(90deg, #FF5722, #FF9800)' : 'white',
@@ -326,16 +326,16 @@ function MaintenanceDetails({ data }) { // Accept data as prop
                         <table className="table align-middle text-center">
                             <thead>
                                 <tr >
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Name</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Unit Number</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Date</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Status</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Phone Number</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Amount</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Penalty</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Status</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Payment</th>
-                                    <th style={{ backgroundColor: "#5678e91b", }}>Action</th>
+                                    <th  className="admin-pages-styling"  style={{ backgroundColor: "#5678e91b", }}>Name</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Unit Number</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Date</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Status</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Phone Number</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Amount</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Penalty</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Status</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Payment</th>
+                                    <th  className="admin-pages-styling" style={{ backgroundColor: "#5678e91b", }}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -401,7 +401,7 @@ function MaintenanceDetails({ data }) { // Accept data as prop
                             <div className="modal-content" style={{ borderRadius: "10px" }}>
                                 {/* Modal Header */}
                                 <div className="modal-header">
-                                    <h5 className="modal-title" style={{ fontWeight: "bold" }}>
+                                    <h5 className="modal-title  admin-pages-styling" style={{ fontWeight: "bold" }}>
                                         View Maintenance Details
                                     </h5>
                                     <button type="button" className="btn-close" aria-label="Close" onClick={() => setShowModal(false)}><FiX size={24} /> </button>
@@ -409,7 +409,7 @@ function MaintenanceDetails({ data }) { // Accept data as prop
                                 {/* Modal Body */}
                                 <div className="modal-body">
                                     <div className="d-flex align-items-center mb-3">
-                                        <img src="src\Images\image.png" alt="User" className="rounded-circle me-3"
+                                        <img src="\Images\image.png" alt="User" className="rounded-circle me-3"
                                             style={{ width: "50px", height: "50px",objectFit: "cover",}}/>
                                         <div>
                                             <h6 style={{ fontWeight: "bold", margin: 0 }}>
@@ -680,8 +680,8 @@ const OtherIncome = () => {
     return (
         <div className="container-fluid pt-3 mt-3 financial-management">
             <div className="d-flex justify-content-between align-items-center mb-3 text-dark">
-                <h2 style={{ fontSize: "20px" }}>Other Income </h2>
-                <button className="btn btn-primary mb-3"  onClick={() => {
+                <h2 style={{ fontSize: "20px" }} className="admin-pages-styling">Other Income </h2>
+                <button className="btn btn-primary mb-3 admin-pages-styling"  onClick={() => {
                         setModalType("create");
                         setShowModal(true);
                     }}>
@@ -698,7 +698,7 @@ const OtherIncome = () => {
                                 className="d-flex justify-content-between align-items-center rounded-top p-2"
                                 style={{ backgroundColor: "#5678e9", color: "white" }}
                             >
-                                <h5 className="card-title mb-0" style={{ fontSize: "16px" }}>
+                                <h5 className="card-title mb-0 admin-pages-styling" style={{ fontSize: "16px" }}>
                                     {note.title}
                                 </h5>
                                 <img
@@ -728,8 +728,8 @@ const OtherIncome = () => {
                             </div>
                             <div className="card-body ">
                                 <div className="d-flex justify-content-between mb-1">
-                                    <span className="text-muted" style={{ fontSize: "12px" , fontFamily: "sans-serif" ,   }}> Amount Per Member: </span>
-                                    <span className='badge  text-primary' style={{
+                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" , fontFamily: "sans-serif" ,   }}> Amount Per Member: </span>
+                                    <span className='badge admin-pages-styling text-primary' style={{
                                         fontSize: "12px",
                                         padding: "5px 10px",
                                         borderRadius: "20px",
@@ -737,22 +737,22 @@ const OtherIncome = () => {
                                     }}>₹ {note.amount} </span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}> Total Menbers: </span>
-                                    <span style={{ fontSize: "12px", fontWeight: "bold", fontFamily: "sans-serif"  }}> {note.totalMembers} </span>
+                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}> Total Menbers: </span>
+                                    <span style={{ fontSize: "12px", fontWeight: "bold", fontFamily: "sans-serif"  }}  className="admin-pages-styling"> {note.totalMembers} </span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}> Date: </span>
-                                    <span style={{ fontSize: "12px", fontWeight: "bold", fontFamily: "sans-serif"  }}> {moment(note.date).format('DD/MM/YYYY')} </span>
+                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}> Date: </span>
+                                    <span style={{ fontSize: "12px", fontWeight: "bold", fontFamily: "sans-serif"  }} className="admin-pages-styling"> {moment(note.date).format('DD/MM/YYYY')} </span>
                                 </div>
                                 <div className=" d-flex justify-content-between mb-2">
-                                    <span className="text-muted" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}>Due Date: </span>
-                                    <span style={{ fontSize: "12px", fontWeight: "bold", fontFamily: "sans-serif" }}> {moment(note.dueDate).format('DD/MM/YYYY')} </span>
+                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}>Due Date: </span>
+                                    <span style={{ fontSize: "12px", fontWeight: "bold", fontFamily: "sans-serif" }} className="admin-pages-styling"> {moment(note.dueDate).format('DD/MM/YYYY')} </span>
                                 </div>
                                 <div>
-                                    <h6 className="text-start text-muted mb-1" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}  >
+                                    <h6 className="text-start text-muted  admin-pages-styling mb-1" style={{ fontSize: "12px" , fontFamily: "sans-serif" }}  >
                                         Description:
                                     </h6>
-                                    <p className="text-normal mb-0" style={{ fontSize: "12px" ,fontFamily: "sans-serif" }}>{note.description} </p>
+                                    <p className="text-normal mb-0 admin-pages-styling" style={{ fontSize: "12px" ,fontFamily: "sans-serif" }}>{note.description} </p>
                                 </div>
                             </div>
                         </div>
@@ -766,7 +766,7 @@ const OtherIncome = () => {
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">
+                                <h5 className="modal-title admin-pages-styling">
                                     {modalType === "create" ? "Create Other Income" : `Edit ${currentNote?.title}`}
                                 </h5>
                                 <button type="button" className="btn-close"  onClick={() => {
@@ -787,33 +787,33 @@ const OtherIncome = () => {
                                 <form onSubmit={handleSubmit}>
                                     {/* Form Fields */}
                                     <div className="form-group mb-2">
-                                        <label>Title<span className='text-danger'>*</span></label>
+                                        <label className="admin-pages-styling" >Title<span className='text-danger'>*</span></label>
                                         <input type="text" name="title" className="form-control" value={formValues.title} onChange={handleInputChange} />
                                     </div>
                                     <div className=" row form-row d-flex ">
                                         <div className="form-group col-6 mb-1 ">
-                                            <label>Date<span className='text-danger'>*</span></label>
+                                            <label className="admin-pages-styling" >Date<span className='text-danger'>*</span></label>
                                             <input type="date" className="form-control" name="date" value={formValues.date}
                                                 onChange={handleInputChange} />
                                         </div>
                                         <div className="form-group col-6 mb-1">
-                                            <label>Due Date<span className='text-danger'>*</span></label>
+                                            <label className="admin-pages-styling" >Due Date<span className='text-danger'>*</span></label>
                                             <input type="date" className="form-control" name="dueDate" value={formValues.dueDate}
                                                 onChange={handleInputChange} />
                                         </div>
                                     </div>
                                     <div className="form-group mb-2">
-                                        <label>Description<span className='text-danger'>*</span></label>
+                                        <label className="admin-pages-styling" >Description<span className='text-danger'>*</span></label>
                                         <textarea name="description" className="form-control" value={formValues.description}
                                             onChange={handleInputChange} ></textarea>
                                     </div>
                                     <div className="form-group mb-2">
-                                        <label>Total Members<span className='text-danger'>*</span></label>
+                                        <label className="admin-pages-styling" >Total Members<span className='text-danger'>*</span></label>
                                         <input type="number" name="totalMembers" className="form-control" value={formValues.totalMembers}
                                             onChange={handleInputChange} />
                                     </div>
                                     <div className="form-group mb-2">
-                                        <label>Amount<span className='text-danger'>*</span></label>
+                                        <label className="admin-pages-styling" >Amount<span className='text-danger'>*</span></label>
                                         <input type="text" name="amount" className="form-control" value={formValues.amount}
                                             onChange={handleInputChange}
                                         />

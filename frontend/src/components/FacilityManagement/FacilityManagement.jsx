@@ -116,11 +116,11 @@ const FacilityManagement = () => {
         <div className="row">
           <div className="col-12">
             <div className="row d-flex justify-content-between align-items-center">
-              <div className="col-lg-2 pt-3 pb-3">
-                <h4 className='fw-bold'>Facility Management</h4>
+              <div className="col-lg-3 pt-3 pb-3">
+                <h4 className='admin-pages-styling'>Facility Management</h4>
               </div>
               <div className="col-lg-2 d-flex justify-content-end align-items-center">
-                <button className="pt-2 pb-2 px-3 create_note_btn" onClick={handleCreateBox}>Create Facility</button>
+                <button className="pt-2 pb-2 px-3 create_facility_btn admin-pages-styling" onClick={handleCreateBox}>Create Facility</button>
               </div>
             </div>
 
@@ -129,7 +129,7 @@ const FacilityManagement = () => {
                 <div className="col-3 mt-3" key={index}>
                   <div className="px-2 entire_box_data">
                     <div className="row d-flex align-items-center pt-2 pb-1 box-heading">
-                      <p>
+                      <p className='admin-pages-styling'>
                         {box.title}
                         <BsThreeDotsVertical
                           className="edit_icon_data"
@@ -162,13 +162,13 @@ const FacilityManagement = () => {
       {/* Modal for adding or editing a note */}
       <Modal className='modal-container' show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header>
-          <Modal.Title className='add_note_heading'><h4 className='fw-bold'> {editIndex !== null ? 'Edit Facility' : 'Create Facility'}  </h4> </Modal.Title>
+          <Modal.Title className='add_note_heading'><h4 className='admin-pages-styling'> {editIndex !== null ? 'Edit Facility' : 'Create Facility'}  </h4> </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSaveNote}>
           <Modal.Body>
 
             <Form.Group className="mb-3" controlId="facilityTitle">
-              <Form.Label>Facility Name <FaStarOfLife className='required_icon' /></Form.Label>
+              <Form.Label className='admin-pages-styling'>Facility Name <FaStarOfLife className='required_icon' /></Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Title"
@@ -179,7 +179,7 @@ const FacilityManagement = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="facilityDescription">
-              <Form.Label>Description <FaStarOfLife className='required_icon' /></Form.Label>
+              <Form.Label className='admin-pages-styling'>Description <FaStarOfLife className='required_icon' /></Form.Label>
               <Form.Control
                 as="textarea"
                 rows={2}
@@ -191,7 +191,7 @@ const FacilityManagement = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="facilityDate">
-              <Form.Label>Schedule Service Date </Form.Label>
+              <Form.Label className='admin-pages-styling'>Schedule Service Date </Form.Label>
               <Form.Control
                 type="date"
                 name="date"
@@ -201,7 +201,7 @@ const FacilityManagement = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="facilityReminder">
-              <Form.Label>Remind Before</Form.Label>
+              <Form.Label className='admin-pages-styling'>Remind Before</Form.Label>
               <Form.Control
                 type='number'
                 name="remindBefore"
@@ -232,9 +232,9 @@ const FacilityManagement = () => {
   {/* Delete Modal */}
   <Modal className="custom-delete-modal" show={showDeleteModal} onHide={() => setShowDeleteModal(false)} centered>
         <Modal.Header>
-          <Modal.Title>Delete Facility?</Modal.Title>
+          <Modal.Title className='admin-pages-styling'>Delete Facility?</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="no-border delete-para">Are you sure you want to delete this Facility ?</Modal.Body>
+        <Modal.Body className="no-border delete-para ">Are you sure you want to delete this Facility ?</Modal.Body>
         <Modal.Footer >
           <div className="d-flex w-100 justify-content-between">
             <Button className="btn btn-outline-secondary w-50 ms-2 cancel_announcement_btn" variant="secondary" onClick={() => setShowDeleteModal(false)}>Cancel</Button>

@@ -1,10 +1,12 @@
-.create_note_btn {
+
+.create_facility_btn {
   background-image: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
 }
+
 
 .main-content-wrapper {
   border: 1px solid rgba(128, 128, 128, 0.314);

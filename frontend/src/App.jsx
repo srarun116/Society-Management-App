@@ -50,6 +50,7 @@ import Community from "./Residents/c d/cd";
 import CommunityQuestion from "./Residents/c d/CommunityQuestion";
 import MaintenanceInvoices from "./Residents/Maintanance Invoice/MaintananceInvoice";
 import OtherIncomeInvoice from "./Residents/Other Income Invoices/OtherIncomeInvoice";
+import ResidentSecurityProtocols from "./Residents/Security Protocol/SecurityProtocol";
 
 
 
@@ -62,7 +63,7 @@ const App = () => {
       element: <Layout />,
       children: [
         {
-          path: "/admin",
+          path: "/admin/dashboard",
           element: <Dashboard />,
         },
         {
@@ -177,7 +178,7 @@ const App = () => {
       element: <ResidentLayout />,
       children: [
         {
-          path: "/resident",
+          path: "dashboard",
           element: <ResidentDashBoard />,
         },
         {
@@ -227,8 +228,8 @@ const App = () => {
         }
         ,
         {
-          path: "securityprotocols",
-          element: <SecurityProtocols />,
+          path: "residentsecurityprotocols",
+          element: <ResidentSecurityProtocols />,
         },
         {
           path: "EditProfile",

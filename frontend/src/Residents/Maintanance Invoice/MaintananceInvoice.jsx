@@ -69,21 +69,21 @@ const MaintenanceInvoices = () => {
              {/*Show Maintenance Details*/}
           <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
-            <div className="col-8 col-lg-6 col-sm-6 col-md-4 col-xl-8 text-start">
+            <div className="col-12 col-lg-4 col-sm-12 col-md-4 col-xl-6 text-start mb-3 mb-sm-2 mb-md-0">
                    <h4 style={{fontSize:"20px"}}>Show Maintenance Details</h4>
-                </div>
-                <div className="col-2  col-sm-3 col-xl-2  col-lg-3 col-md-4 ">
-                    <div className="balance-card balance-card-green">
+            </div>
+                <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4">
+                    <div className="balance-card balance-card-green mb-3 mb-sm-0">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Maintenance Amount</p>
+                            <p className="mb-0 text-muted mt-3 maintenance_text">Maintenance Amount</p>
                             <p className="balance-amount text-success">₹ 1,500</p>
                         </div>
                     </div>
                 </div>
-                <div className="col-2  col-sm-3 col-xl-2  col-lg-3 col-md-4  ">
-                    <div className="balance-card balance-card-dangere">
+                <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4  ">
+                    <div className="balance-card balance-card-danger">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3">Penalty Amount</p>
+                            <p className="mb-0 text-muted mt-3 penalty_text">Penalty Amount</p>
                             <p className="balance-amount text-danger">₹ 500</p>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ const MaintenanceInvoices = () => {
               </div>
               <div className="row">
                 {maintenanceData.map((note, index) => (
-                  <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                  <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                     <div className="card shadow-sm border-0 note-card bg-white">
                       {/* Card Header */}
                       <div
@@ -331,7 +331,7 @@ const MaintenanceInvoices = () => {
                             </div>
                             <div className="row">
                                 {DMaintenance.map((note , index) => (
-                                    <div className="col-md-4 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                                    <div className="col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
                                         <div className="card shadow-sm border-0 note-card bg-white">
                                             {/* Card Header */}
                                             <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{ backgroundColor: "#5678e9" }}>

@@ -315,7 +315,7 @@ const ResidentForm = () => {
               <div className="d-flex justify-content-between">
                 <div className="d-flex ">
                   <h4>Member Counting:</h4>{" "}
-                  <h6 className="text-muted mt-4">(Other Members)</h6>
+                  <h6 className="text-muted mt-4 ms-2">(Other Members)</h6>
                 </div>
                 <button
                   type="button"

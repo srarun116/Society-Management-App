@@ -200,12 +200,12 @@ const FinancialExpense = () => {
 
             <div className="row mx-2 d-flex justify-content-between align-items-center mb-2">
               <div className="col-lg-3 pt-3 pb-3">
-                <h4 className='fw-bold'>Add Expenses Details</h4>
+                <h4 className='admin-pages-styling'>Add Expenses Details</h4>
               </div>
 
               <div className="col-lg-3 d-flex justify-content-end align-items-center pt-3">
                 <button
-                  className="pt-2 pb-2 px-3 add_expense_btn"
+                  className="pt-2 pb-2 px-3 add_expense_btn admin-pages-styling"
                   data-bs-toggle="modal"
                   data-bs-target="#addExpenseModal"
                   onClick={() => {
@@ -220,12 +220,12 @@ const FinancialExpense = () => {
             </div>
 
             <div className="row border mx-2 mb-2 add_expense_heading">
-              <div className="col-2 py-2"><h6 className='text-start fw-bold'>Title</h6></div>
-              <div className="col-3 py-2"><h6 className='text-start fw-bold'>Description</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Date</h6></div>
-              <div className="col-1 py-2"><h6 className="text-center fw-bold">Amount</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Bill Format</h6></div>
-              <div className="col-2 py-2"><h6 className="text-center fw-bold">Action</h6></div>
+              <div className="col-2 py-2"><h6 className='text-start admin-pages-styling'>Title</h6></div>
+              <div className="col-3 py-2"><h6 className='text-start admin-pages-styling'>Description</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Date</h6></div>
+              <div className="col-1 py-2"><h6 className="text-center admin-pages-styling">Amount</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Bill Format</h6></div>
+              <div className="col-2 py-2"><h6 className="text-center admin-pages-styling">Action</h6></div>
             </div>
 
             {expenses.map((expense, index) => (
@@ -236,32 +236,13 @@ const FinancialExpense = () => {
                 <div className="col-1 py-2"><p className="text-center amount-column">₹ {expense.amount}</p></div>
                 <div className="col-2 py-2"><p className="text-center fs-6">   {expense.billFormat ? expense.billFormat : "N/A"}</p></div>
                 <div className="col-2 py-2 d-flex gap-3 justify-content-center action_btn_main">
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleEdit(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#addExpenseModal"
-                  >
-                    <RiEditBoxFill className="action_icon edit_icon_size" />
-                  </button>
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleView(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewExpenseModal"
-                  >
-                    <GrView className="action_icon view_icon" />
-                  </button>
+                  
 
-                  {/* delete */}
-                  <button
-                    className="px-2 action_btn"
-                    onClick={() => handleDeleteClick(index)}
-                    data-bs-toggle="modal"
-                    data-bs-target="#deleteExpenseModal"  // Add this line
-                  >
-                    <RiDeleteBin2Fill className="action_icon delete_icon" />
-                  </button>
+                  <img src="/Images/Edit_btn.png" onClick={() => handleEdit(index)} data-bs-toggle="modal" data-bs-target="#addExpenseModal" height={40} />
+
+                  <img src="/Images/View_btn.png" onClick={() => handleView(index)} data-bs-toggle="modal" data-bs-target="#viewExpenseModal" height={40} />
+
+                  <img src="/Images/Delete_btn.png" onClick={() => handleDeleteClick(index)} data-bs-toggle="modal" data-bs-target="#deleteExpenseModal"  height={40} />
 
 
                 </div>
@@ -277,34 +258,34 @@ const FinancialExpense = () => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal ">
             <div className="modal-header">
-              <h5 className="modal-title" id="addExpenseModalLabel">
+              <h5 className="modal-title admin-pages-styling" id="addExpenseModalLabel">
                 {isEditing ? 'Edit Expenses Details' : 'Add Expenses Details'}
               </h5>
             </div>
             <div className="modal-body">
               <form onSubmit={handleSave}> {/* Add onSubmit here */}
                 <div className="mb-3">
-                  <label htmlFor="title" className="form-label">Title <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="title" className="form-label admin-pages-styling">Title <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="title" placeholder="Enter Title" value={form.title} onChange={handleInputChange} autoComplete='off' required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="description" className="form-label">Description <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="description" className="form-label admin-pages-styling">Description <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <input type="text" className="form-control" name="description" placeholder="Enter Description" value={form.description} onChange={handleInputChange} autoComplete='off' required />
                 </div>
                 <div className="row">
                   <div className="col-6 mb-3">
-                    <label htmlFor="date" className="form-label">Date <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="date" className="form-label admin-pages-styling">Date <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <div className="input-group">
                       <input type="date" className="form-control" name="date" value={form.date} onChange={handleInputChange} required />
                     </div>
                   </div>
                   <div className="col-6 mb-3">
-                    <label htmlFor="amount" className="form-label">Amount <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                    <label htmlFor="amount" className="form-label admin-pages-styling">Amount <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                     <input type="number" className="form-control " name="amount" placeholder="₹ 0000" value={form.amount} onChange={handleInputChange} autoComplete='off' required />
                   </div>
                 </div>
                 <div className="mb-0">
-                  <label htmlFor="billFormat" className="form-label">Upload Bill <FaStarOfLife className='star_icon_modal  mb-2' /></label>
+                  <label htmlFor="billFormat" className="form-label admin-pages-styling">Upload Bill <FaStarOfLife className='star_icon_modal  mb-2' /></label>
                   <div className="file-upload-box file-upload-box-border">
                     <input
                       type="file"
@@ -324,7 +305,7 @@ const FinancialExpense = () => {
                   <div className="col-6 ">
                     <button
                       type="button"
-                      className="btn btn-outline-secondary expense_cancel_btn_modal py-2  me-2"
+                      className="btn btn-outline-secondary expense_cancel_btn_modal py-2 fw-bold me-2"
                       data-bs-dismiss="modal"
                       onClick={handleCancel}
 
@@ -359,7 +340,7 @@ const FinancialExpense = () => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content custom-modal">
             <div className="modal-header  mb-0">
-              <h5 className="modal-title" id="viewExpenseModalLabel "> View Expense Details</h5>
+              <h5 className="modal-title admin-pages-styling" id="viewExpenseModalLabel "> View Expense Details</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <hr className="no-margin-hr" />
@@ -369,22 +350,22 @@ const FinancialExpense = () => {
               {viewExpense && (
                 <div>
                   <div className="col-12">
-                    <p><strong className='viewPageLabel'>Title </strong><br /> {viewExpense.title}</p>
+                    <p className='admin-pages-styling' ><strong className='viewPageLabel admin-pages-styling'>Title </strong><br /> {viewExpense.title}</p>
                   </div>
 
-                  <p><strong className='viewPageLabel'>Description</strong> <br />{viewExpense.description}</p>
+                  <p className='admin-pages-styling'><strong className='viewPageLabel admin-pages-styling'>Description</strong> <br />{viewExpense.description}</p>
                   <div className='d-flex '>
                     <div className="col-5">
-                      <p><strong className='viewPageLabel'>Date</strong><br /> {formatDate(viewExpense.date)}</p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabel admin-pages-styling'>Date</strong><br /> {formatDate(viewExpense.date)}</p>
                     </div>
                     <div className="col-5">
-                      <p><strong className='viewPageLabel '>Amount</strong> <br /> <span className='amount-view-deatils' > ₹ {viewExpense.amount} </span></p>
+                      <p className='admin-pages-styling'><strong className='viewPageLabel admin-pages-styling '>Amount</strong> <br /> <span className='amount-view-deatils' > ₹ {viewExpense.amount} </span></p>
                     </div>
 
 
                   </div>
                   <div className="col-12">
-                    <p><strong className='viewPageLabel '>Bill </strong><br /> {viewExpense.billFormat} </p>
+                    <p className='admin-pages-styling'><strong className='viewPageLabel admin-pages-styling'>Bill </strong><br /> {viewExpense.billFormat} </p>
                   </div>
 
                 </div>
@@ -419,7 +400,7 @@ const FinancialExpense = () => {
 
                 <button
                   type="button"
-                  className="btn btn-outline-secondary w-50 ms-2"
+                  className="btn btn-outline-secondary w-50 ms-2 fw-bold"
                   data-bs-dismiss="modal" // Add this attribute to close the modal on cancel
                   onClick={() => setShowDeleteModal(false)}
                 >

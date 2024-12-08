@@ -1,0 +1,15 @@
+.status-pending-item{
+    color: #FFC313;
+    border-radius: 40px;
+    background-color: #ffc41317;
+ }
+ .status-open-item{
+   color: #5678E9;
+   border-radius: 40px;
+   background-color: #5678e917;
+ }
+ .status-solve-item{
+    color: #33973D;
+    background-color: #33973d18;
+    border-radius: 40px;
+ }
