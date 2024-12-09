@@ -66,9 +66,9 @@ const SecuritySidebar = ({ toggleSidebar }) => {
                   fontSize: '17px',
                   fontWeight: '500',
                 }}
-                className="ms-2  font_color"
+                className="ms-2  font_color security-pages-styling"
               >
-              <AiOutlineSecurityScan className='me-2 fs-4 font_color' /> Security
+              <AiOutlineSecurityScan className='me-2 fs-4 font_color ' /> Security
               </p>
               {/* Use arrow class directly on the img element */}
               <img
@@ -88,7 +88,7 @@ const SecuritySidebar = ({ toggleSidebar }) => {
                   `text-decoration-none d-flex  ${isActive ? "active-link" : "default-link"}`
                 }
               >
-                <p className="menu-item-security font_color1 ">Visotor Tracking</p>
+                <p className="menu-item-security  security-pages-styling">Visotor Tracking</p>
               </NavLink>
 
               <NavLink
@@ -98,7 +98,7 @@ const SecuritySidebar = ({ toggleSidebar }) => {
                   `text-decoration-none d-flex ${isActive ? "active-link" : "default-link"}`
                 }
               >
-                <p className="menu-item-security font_color1">Emergency Management</p>
+                <p className="menu-item-security  security-pages-styling">Emergency Management</p>
               </NavLink>
 
             </div>

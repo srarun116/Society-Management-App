@@ -70,12 +70,12 @@ const MaintenanceInvoices = () => {
           <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
             <div className="col-12 col-lg-4 col-sm-12 col-md-4 col-xl-6 text-start mb-3 mb-sm-2 mb-md-0">
-                   <h4 style={{fontSize:"20px"}}>Show Maintenance Details</h4>
+                   <h4 style={{fontSize:"20px"}} className="admin-pages-styling">Show Maintenance Details</h4>
             </div>
                 <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4">
                     <div className="balance-card balance-card-green mb-3 mb-sm-0">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3 maintenance_text">Maintenance Amount</p>
+                            <p className="mb-0 text-muted mt-3 maintenance_text admin-pages-styling">Maintenance Amount</p>
                             <p className="balance-amount text-success">₹ 1,500</p>
                         </div>
                     </div>
@@ -83,7 +83,7 @@ const MaintenanceInvoices = () => {
                 <div className="col-12  col-sm-6 col-xl-3  col-lg-4 col-md-4  ">
                     <div className="balance-card balance-card-danger">
                         <div className="balance-info">
-                            <p className="mb-0 text-muted mt-3 penalty_text">Penalty Amount</p>
+                            <p className="mb-0 text-muted mt-3 penalty_text admin-pages-styling">Penalty Amount</p>
                             <p className="balance-amount text-danger">₹ 500</p>
                         </div>
                     </div>
@@ -94,47 +94,47 @@ const MaintenanceInvoices = () => {
           <div className="border rounded shadow bg-white mt-3 p-4">
             <div className="row align-items-center">
               <div className="d-flex justify-content-between align-items-center mb-3">
-                <h2 style={{ fontSize: "20px" }}>Pending Maintenance</h2>
-                <Link to="/Invoices" className="btn btn-primary">
+                <h2 style={{ fontSize: "20px" }} className="admin-pages-styling">Pending Maintenance</h2>
+                <Link to="/Invoices" className="btn btn-primary admin-pages-styling">
                   View Invoice
                 </Link>
               </div>
               <div className="row">
                 {maintenanceData.map((note, index) => (
-                  <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4" key={index}>
+                  <div className=" col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mb-4 admin-pages-styling" key={index}>
                     <div className="card shadow-sm border-0 note-card bg-white">
                       {/* Card Header */}
                       <div
                         className="card-header d-flex justify-content-between align-items-center text-white"
                         style={{ backgroundColor: "#5678e9" }}
                       >
-                        <h5 className="mb-0" style={{ fontSize: "14px" }}>{note.title}</h5>
-                        <span className="badge1 Owner1 fw-normal">Pending</span>
+                        <h5 className="mb-0 admin-pages-styling" style={{ fontSize: "14px" }}>{note.title}</h5>
+                        <span className="badge1 Owner1 fw-normal admin-pages-styling">Pending</span>
                       </div>
                       {/* Card Body */}
                       <div className="card-body">
                         <div className="d-flex justify-content-between mb-2">
-                          <span className="text-muted" style={{ fontSize: "12px" }}>Bill Date</span>
-                          <span className="text-secondary" style={{ fontSize: "12px" }}>{note.BDate}</span>
+                          <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}>Bill Date</span>
+                          <span className="text-secondary admin-pages-styling" style={{ fontSize: "12px" }}>{note.BDate}</span>
                         </div>
                         <div className="d-flex justify-content-between mb-2">
-                          <span className="text-muted" style={{ fontSize: "12px" }}>Pending Date</span>
-                          <span className="text-secondary" style={{ fontSize: "12px" }}>{note.PDate}</span>
+                          <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}>Pending Date</span>
+                          <span className="text-secondary admin-pages-styling" style={{ fontSize: "12px" }}>{note.PDate}</span>
                         </div>
                         <div className="d-flex justify-content-between mb-2 border-top">
-                          <span className="text-muted" style={{ fontSize: "12px" }}>Maintenance Amount</span>
-                          <span className="text-danger" style={{ fontSize: "12px" }}>{note.Amount}</span>
+                          <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}>Maintenance Amount</span>
+                          <span className="text-danger admin-pages-styling" style={{ fontSize: "12px" }}>{note.Amount}</span>
                         </div>
                         <div className="d-flex justify-content-between mb-2">
-                          <span className="text-muted" style={{ fontSize: "12px" }}>Penalty Amount</span>
-                          <span className="text-danger" style={{ fontSize: "12px" }}>{note.PAmount}</span>
+                          <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}>Penalty Amount</span>
+                          <span className="text-danger admin-pages-styling" style={{ fontSize: "12px" }}>{note.PAmount}</span>
                         </div>
                         <div className="d-flex justify-content-between mb-2 border-top">
-                          <span className="text-muted fw-bold" style={{ fontSize: "12px" }}>Grand Total</span>
-                          <span className="text-success" style={{ fontSize: "12px" }}>{note.Total}</span>
+                          <span className="text-muted  admin-pages-styling" style={{ fontSize: "12px" }}>Grand Total</span>
+                          <span className="text-success admin-pages-styling" style={{ fontSize: "12px" }}>{note.Total}</span>
                         </div>
                         <button
-                          className="btn btn-primary col-12"
+                          className="btn btn-primary col-12 admin-pages-styling"
                           onClick={() => setShowPaymentModal1(true)}
                         >
                           Pay Now
@@ -327,7 +327,7 @@ const MaintenanceInvoices = () => {
                     <div className="border rounded shadow bg-white mt-3 p-4">
                         <div className="row align-items-center">
                             <div className="d-flex justify-content-between align-items-center ">
-                                <h2 style={{ fontSize: "20px" }}>Due Maintanance</h2>
+                                <h2 style={{ fontSize: "20px" }} className="admin-pages-styling">Due Maintanance</h2>
                             </div>
                             <div className="row">
                                 {DMaintenance.map((note , index) => (
@@ -338,26 +338,26 @@ const MaintenanceInvoices = () => {
                                                 <h5 className="mb-0" style={{ fontSize: "14px" }}>
                                                     {note.title}
                                                 </h5>
-                                                <span className="badge1 Owner1 fw-normal">Pending</span>
+                                                <span className="badge1 Owner1 fw-normal admin-pages-styling">Pending</span>
                                             </div>
                                             {/* Card Body */}
 
                                             <div className="card-body">
                                                 {/* Request Date */}
                                                 <div className="d-flex justify-content-between mb-2">
-                                                    <span className="text-muted" style={{ fontSize: "12px" }}> Date</span>
-                                                    <span className="text-secondary" style={{ fontSize: "12px" }} > {note.Date} </span>
+                                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}> Date</span>
+                                                    <span className="text-secondary admin-pages-styling" style={{ fontSize: "12px" }} > {note.Date} </span>
                                                 </div>
                                                 <div className="d-flex justify-content-between mb-2 border-top">
-                                                    <span className="text-muted" style={{ fontSize: "12px" }}> Amount</span>
-                                                    <span className="text-danger" style={{ fontSize: "12px" }} > {note.Amount} </span>
+                                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}> Amount</span>
+                                                    <span className="text-danger admin-pages-styling" style={{ fontSize: "12px" }} > {note.Amount} </span>
                                                 </div>
                                                 <div className="d-flex justify-content-between mb-2">
-                                                    <span className="text-muted" style={{ fontSize: "12px" }}>Due Maintenance Amount</span>
-                                                    <span className="text-danger" style={{ fontSize: "12px" }} > {note.PAmount} </span>
+                                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}>Due Maintenance Amount</span>
+                                                    <span className="text-danger admin-pages-styling" style={{ fontSize: "12px" }} > {note.PAmount} </span>
                                                 </div>
                                                 <div className=" border-top pt-2">
-                                                    <button className="btn-primary btn col-12 "
+                                                    <button className="btn-primary btn col-12 admin-pages-styling"
                                                        onClick={() => setShowPaymentModal1(true)}
                                                     >Pay Now</button>
                                                 </div>

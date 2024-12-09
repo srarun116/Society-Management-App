@@ -65,7 +65,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
           <div className="d-flex flex-column align-items-start align-items-md-center ">
             <div className="col-md-11 mt-2 mb-2 background_color sidebar_link ">
               <NavLink to="/resident/dashboard" onClick={handleSidebarItemClick}>
-                <p className="ps-2 font_color">
+                <p className="ps-2 font_color sidebar-item-styling">
                   <MdDashboard className="me-2 fs-4 font_color" /> Dashboard
                 </p>
               </NavLink>
@@ -73,7 +73,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
 
             <div className="col-md-11 mt-2 mb-2 sidebar_link ">
               <NavLink to="/resident/personaldetails" onClick={handleSidebarItemClick}>
-                <p className="ps-2 font_color">
+                <p className="ps-2 font_color sidebar-item-styling">
                   <BsFillPersonVcardFill className="me-2 fs-4 font_color" />
                   Personal Details
                 </p>
@@ -82,7 +82,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
 
             <div className="col-md-11 mt-2 mb-2 sidebar_link">
               <NavLink to="/resident/serviceandcomplaint" onClick={handleSidebarItemClick}>
-                <p className="ps-2 font_color">
+                <p className="ps-2 font_color sidebar-item-styling">
                   <TbMessageQuestion className="me-2 fs-4 font_color" />
                   {/* <img src="/Images/Resident-Service.png" className="me-2 fs-4 font_color sidebar_img" height={26}/> */}
                   Service And Complaints
@@ -92,7 +92,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
 
             <div className="col-md-11 mt-2 mb-2 sidebar_link">
               <NavLink to="/resident/eventparticipation" onClick={handleSidebarItemClick}>
-                <p className="ps-2 font_color">
+                <p className="ps-2 font_color sidebar-item-styling">
                   <BiCalendarEvent className="me-2 fs-4 font_color" />
                   Events Participations
                 </p>
@@ -103,7 +103,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
             <div className="col-md-11 mt-2 mb-2  financial_management_main">
               <div onClick={toggleFinancialDropdown} style={{ cursor: "pointer" }}>
                 <div className="sidebar_link d-flex">
-                  <p className="ms-2 font_color" style={{
+                  <p className="ms-2 font_color sidebar-item-styling" style={{
                     cursor: "pointer",
                     fontSize: "17px",
                     fontWeight: "500",
@@ -128,7 +128,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
                     }`
                   }
                    >
-                    <p className="menu-item-resident font_color1">Access Forums</p>
+                    <p className="menu-item-resident font_color1 sidebar-item-styling">Access Forums</p>
                   </NavLink>
                   <NavLink to="/resident/Polls"
                    onClick={handleSidebarItemClick}
@@ -137,7 +137,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
                     }`
                   }
                    >
-                    <p className="menu-item-resident font_color1">Polls</p>
+                    <p className="menu-item-resident font_color1 sidebar-item-styling">Polls</p>
                   </NavLink>
                   <NavLink to="/resident/cd"
                    onClick={handleSidebarItemClick}
@@ -146,7 +146,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
                     }`
                   }
                    >
-                    <p className="menu-item-resident font_color1">Community Discussion</p>
+                    <p className="menu-item-resident font_color1 sidebar-item-styling">Community Discussion</p>
                   </NavLink>
                 </div>
               </Collapse>
@@ -156,7 +156,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
             <div className="col-md-11 mt-2 mb-2  financial_management_main">
               <div onClick={toggleComplaintDropdown} style={{ cursor: "pointer" }}>
                 <div className="sidebar_link d-flex">
-                  <p className="ms-2 font_color" style={{
+                  <p className="ms-2 font_color sidebar-item-styling" style={{
                     cursor: "pointer",
                     fontSize: "17px",
                     fontWeight: "500",
@@ -181,7 +181,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
                       }`
                     }
                   >
-                    <p className="menu-item-resident font_color1">Maintanance Invoice</p>
+                    <p className="menu-item-resident font_color1 sidebar-item-styling">Maintanance Invoice</p>
                   </NavLink>
                   <NavLink to="/resident/OtherIncomeInvoice"
                    onClick={handleSidebarItemClick}
@@ -190,7 +190,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
                     }`
                   }
                    >
-                    <p className="menu-item-resident font_color1">Other Invoice</p>
+                    <p className="menu-item-resident font_color1 sidebar-item-styling">Other Invoice</p>
                   </NavLink>
                 </div>
               </Collapse>
@@ -198,7 +198,7 @@ const ResidentSidebar = ({ toggleSidebar }) => {
 
             <div className="col-md-11 mt-2 mb-2 sidebar_link ">
               <NavLink to="/resident/residentsecurityprotocols" onClick={handleSidebarItemClick}>
-                <p className="ps-2 font_color">
+                <p className="ps-2 font_color sidebar-item-styling">
                   <SiSpringsecurity className="me-2 fs-4 font_color" />
                   
                   Security Protocol

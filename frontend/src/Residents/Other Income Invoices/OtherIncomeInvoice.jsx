@@ -55,8 +55,8 @@ function OtherIncomeInvoice() {
                     <div className="border rounded shadow bg-white mt-3 p-4">
                         <div className="row align-items-center">
                             <div className="d-flex justify-content-between align-items-center mb-3 ">
-                                <h2 style={{ fontSize: "20px" }} >Due Event Payment</h2>
-                                <button className="btn btn-primary " onClick={() => handleShowModal(true)}>
+                                <h2 style={{ fontSize: "20px" }} className='admin-pages-styling'>Due Event Payment</h2>
+                                <button className="btn btn-primary admin-pages-styling" onClick={() => handleShowModal(true)}>
                                     View Invoice
                                 </button>
                             </div>
@@ -74,7 +74,7 @@ function OtherIncomeInvoice() {
                                         <div className="modal-content">
                                             {/* Modal Header */}
                                             <div className="modal-header">
-                                                <h5 >Event Invoices List</h5>
+                                                <h5 className='admin-pages-styling'>Event Invoices List</h5>
                                                 <button
                                                     className="btn-close"
                                                     onClick={handleCloseModal}
@@ -89,38 +89,38 @@ function OtherIncomeInvoice() {
                                                <div className="mb-2">
                                                     <div className="row g-2">
                                                         <div className="col-6">
-                                                            <strong>Invoice Id</strong>
+                                                            <strong className='admin-pages-styling'>Invoice Id</strong>
                                                             <p>125465</p>
                                                         </div>
                                                         <div className="col-6">
-                                                            <strong>Owner Name</strong>
+                                                            <strong className='admin-pages-styling'>Owner Name</strong>
                                                             <p>Terry Rhiel Madsen</p>
                                                         </div>
                                                         <div className="col-6">
-                                                            <strong>Bill Date</strong>
+                                                            <strong className='admin-pages-styling'>Bill Date</strong>
                                                             <p>10/02/2024</p>
                                                         </div>
                                                         <div className="col-6">
-                                                            <strong>Payment Date</strong>
+                                                            <strong className='admin-pages-styling'>Payment Date</strong>
                                                             <p>10/02/2024</p>
                                                         </div>
                                                         <div className="col-6">
-                                                            <strong>Event Date</strong>
+                                                            <strong className='admin-pages-styling'>Event Date</strong>
                                                             <p>6549873521</p>
                                                         </div>
                                                         <div className="col-6">
-                                                            <strong>Phone Number</strong>
+                                                            <strong className='admin-pages-styling'>Phone Number</strong>
                                                             <p>6549873521</p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div className="mb-3 ">
-                                                    <strong>Email</strong>
+                                                    <strong className='admin-pages-styling'>Email</strong>
                                                     <p>MaryDHurst@jourrapide.com</p>
-                                                    <strong>Event Name</strong>
+                                                    <strong className='admin-pages-styling'>Event Name</strong>
                                                     <p>Ganesh Chaturthi</p>
-                                                    <strong>Description</strong>
+                                                    <strong className='admin-pages-styling'>Description</strong>
                                                     <p>
                                                         The celebration of Ganesh Chaturthi involves the
                                                         installation of clay idols of Lord Ganesa in OurResident.
@@ -131,18 +131,18 @@ function OtherIncomeInvoice() {
                                                 {/* Amount Section */}
                                                 <div className=" p-3 mt-3 rounded"  style={{backgroundColor:"#F6F8FB"}}>
                                                     <div className="d-flex justify-content-between">
-                                                        <strong>Maintenance Amount</strong>
-                                                        <p className="text-success">₹ 1500.00</p>
+                                                        <strong className='admin-pages-styling'>Maintenance Amount</strong>
+                                                        <p className="text-success admin-pages-styling">₹ 1500.00</p>
                                                     </div>
                                                     <div className="d-flex justify-content-between border-top pt-2 mt-2">
-                                                        <strong>Grand Total</strong>
-                                                        <p>₹ 1850.00</p>
+                                                        <strong className='admin-pages-styling'>Grand Total</strong>
+                                                        <p className='admin-pages-styling'>₹ 1850.00</p>
                                                     </div>
                                                 </div>
 
                                                 {/* Note Section */}
                                                 <div className="p-2 mt-3 rounded"  style={{backgroundColor:"#F6F8FB"}}>
-                                                    <strong>Note</strong>
+                                                    <strong className='admin-pages-styling'>Note</strong>
                                                     <p>
                                                         A visual representation of your spending categories visual
                                                         representation.
@@ -168,26 +168,26 @@ function OtherIncomeInvoice() {
                                         <div className="card shadow-sm border-0 note-card bg-white">
                                             {/* Card Header */}
                                             <div className="card-header d-flex justify-content-between align-items-center   text-white" style={{ backgroundColor: "#5678e9" }}>
-                                                <h5 className="mb-0" style={{ fontSize: "14px" }}>
+                                                <h5 className="mb-0 admin-pages-styling" style={{ fontSize: "14px" }}>
                                                     {note.title}
                                                 </h5>
-                                                <span className="badge1 Owner1 fw-normal">Pending</span>
+                                                <span className="badge1 Owner1 fw-normal admin-pages-styling">Pending</span>
                                             </div>
                                             {/* Card Body */}
 
                                             <div className="card-body">
                                                 {/* Request Date */}
                                                 <div className="d-flex justify-content-between mb-2">
-                                                    <span className="text-muted" style={{ fontSize: "12px" }}> Event Name</span>
-                                                    <span className="text-secondary" style={{ fontSize: "12px" }} > {note.name} </span>
+                                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}> Event Name</span>
+                                                    <span className="text-secondary admin-pages-styling" style={{ fontSize: "12px" }} > {note.name} </span>
                                                 </div>
                                                 <div className="d-flex justify-content-between mb-2">
-                                                    <span className="text-muted" style={{ fontSize: "12px" }}> Event Due Date  </span>
-                                                    <span className="text-secondary" style={{ fontSize: "12px" }} > {note.Date} </span>
+                                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}> Event Due Date  </span>
+                                                    <span className="text-secondary admin-pages-styling" style={{ fontSize: "12px" }} > {note.Date} </span>
                                                 </div>
                                                 <div className="d-flex justify-content-between mb-2">
-                                                    <span className="text-muted" style={{ fontSize: "12px" }}> Amount</span>
-                                                    <span className="text-danger" style={{ fontSize: "12px" }} > {note.Amount} </span>
+                                                    <span className="text-muted admin-pages-styling" style={{ fontSize: "12px" }}> Amount</span>
+                                                    <span className="text-danger admin-pages-styling" style={{ fontSize: "12px" }} > {note.Amount} </span>
                                                 </div>
                                                 <div className=" pt-2">
                                                     <button className="btn-primary btn col-12 "
@@ -207,7 +207,7 @@ function OtherIncomeInvoice() {
                                 <div className="modal-dialog modal-dialog-centered">
                                     <div className="modal-content" style={{ maxWidth: "350px" }}>
                                         <div className="modal-header">
-                                            <h5 className="modal-title">Payment Method</h5>
+                                            <h5 className="modal-title admin-pages-styling">Payment Method</h5>
                                             <button type="button" className="btn-close" onClick={() => setShowPaymentModal1(false)}></button>
                                         </div>
                                         <div className="modal-body">
@@ -218,12 +218,12 @@ function OtherIncomeInvoice() {
                                                 >
                                                     <div className="d-flex align-items-center">
                                                         <img
-                                                            src={method.icon}
+                                                            src=""
                                                             alt={method.name}
                                                             className="me-2"
                                                             style={{ width: "40px", height: "40px" }}
                                                         />
-                                                        <span>{method.name}</span>
+                                                        <span className='admin-pages-styling'>{method.name}</span>
                                                     </div>
                                                     <input
                                                         type="radio"
@@ -235,7 +235,7 @@ function OtherIncomeInvoice() {
                                             ))}
                                         </div>
                                         <div className="d-flex justify-content-between ps-3 pe-3 mb-3">
-                                            <button className="btn btn-outline-secondary" onClick={() => setShowPaymentModal1(false)} style={{ width: "48%" }}>
+                                            <button className="btn btn-outline-secondary fw-bold" onClick={() => setShowPaymentModal1(false)} style={{ width: "48%" }}>
                                                 Cancel
                                             </button>
                                             <button
@@ -265,7 +265,7 @@ function OtherIncomeInvoice() {
                                     <div className="modal-content" style={{ maxWidth: "350px", margin: "auto" }}>
                                         {/* Modal Header */}
                                         <div className="modal-header">
-                                            <h5 className="modal-title">Payment Method</h5>
+                                            <h5 className="modal-title admin-pages-styling">Payment Method</h5>
                                             <button
                                                 type="button"
                                                 className="btn-close"
@@ -278,7 +278,7 @@ function OtherIncomeInvoice() {
                                             <form>
                                                 {/* Card Name */}
                                                 <div className="mb-3">
-                                                    <label htmlFor="cardName" className="form-label">
+                                                    <label htmlFor="cardName" className="form-label admin-pages-styling">
                                                         Card Name<span className="text-danger">*</span>
                                                     </label>
                                                     <input
@@ -294,7 +294,7 @@ function OtherIncomeInvoice() {
 
                                                 {/* Card Number */}
                                                 <div className="mb-3">
-                                                    <label htmlFor="cardNumber" className="form-label">
+                                                    <label htmlFor="cardNumber" className="form-label admin-pages-styling">
                                                         Card Number<span className="text-danger">*</span>
                                                     </label>
                                                     <div className="input-group">
@@ -321,7 +321,7 @@ function OtherIncomeInvoice() {
                                                 {/* Expiry Date and CVV */}
                                                 <div className="row">
                                                     <div className="col-6 mb-3">
-                                                        <label htmlFor="expiryDate" className="form-label">
+                                                        <label htmlFor="expiryDate" className="form-label admin-pages-styling">
                                                             Expiry Date<span className="text-danger">*</span>
                                                         </label>
                                                         <input
@@ -336,7 +336,7 @@ function OtherIncomeInvoice() {
                                                         />
                                                     </div>
                                                     <div className="col-6 mb-3">
-                                                        <label htmlFor="cvv" className="form-label">
+                                                        <label htmlFor="cvv" className="form-label admin-pages-styling">
                                                             CVV<span className="text-danger">*</span>
                                                         </label>
                                                         <input

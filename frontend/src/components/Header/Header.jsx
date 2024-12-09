@@ -227,7 +227,7 @@ const Header = ({ toggleSidebar }) => {
                     <div className="d-none d-md-block">
                       <span>{profile.firstName} {profile.lastName} </span>
                       <br />
-                      <small className="text-muted">{profile.role}</small>
+                      <small className="text-muted">Admin</small>
                     </div>
                   </button>
                 </Link>

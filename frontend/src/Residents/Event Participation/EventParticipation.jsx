@@ -49,7 +49,7 @@ const EventParticipation = () => {
               to={"/resident/eventparticipation"}
             >
               <button className="participatebtn text-white hovermaincolor mainColor2 rounded-top bg-white text-dark btn ">
-                <span className="participatebtnspan">Events Participate</span>
+                <span className="participatebtnspan admin-pages-styling">Events Participate</span>
               </button>
             </Link>
             <Link
@@ -57,15 +57,15 @@ const EventParticipation = () => {
               to="/resident/activityparticipate"
             >
               <button className="participatebtn hovermaincolor  text-dark bg-white rounded-top btn">
-                <span className="participatebtnspan">Activity Participate</span>
+                <span className="participatebtnspan admin-pages-styling">Activity Participate</span>
               </button>
             </Link>
           </div>
           <div className='container-fluid'>
         <div className='row justify-content-center'>
         <div className="container-fluid row bg-white">
-  <div>
-    <h4 className="mt-3">Event Participation</h4>
+  <div className="mt-2">
+    <h5 className="mt-3 admin-pages-styling">Event Participation</h5>
   </div>
   <div className="eventtable" style={{ overflowX: "auto" }}>
     {/* Header Row */}

@@ -322,8 +322,24 @@
   #Red {
     accent-color: #fd6208 ;
   }
-
-
+.complaintPriorityHigh {
+  background-color: #E74C3C;
+  border-radius: 30px;
+  color: white;
+  padding: 5px 30px;
+}
+.complaintPriorityMedium{
+  background-color: #5678E9;
+  border-radius: 30px;
+  color: white;
+  padding: 5px 15px;
+}
+.complaintPriorityLow{
+  background-color: #39973D;
+  border-radius: 30px;
+  color: white;
+  padding: 5px 30px;
+}
 
 
 

@@ -138,8 +138,8 @@ const FacilityManagement = () => {
                       </p>
                       {openDropdown === index && (
                         <div className="dropdown-menu show">
-                          <button className="dropdown-item" onClick={() => handleEditBox(index)}>Edit</button>
-                          <button className="dropdown-item" onClick={() => handleDeleteBox(index)}>Delete</button>
+                          <button className="dropdown-item admin-pages-styling" onClick={() => handleEditBox(index)}>Edit</button>
+                          <button className="dropdown-item admin-pages-styling" onClick={() => handleDeleteBox(index)}>Delete</button>
                         </div>
                       )}
                     </div>

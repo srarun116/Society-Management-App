@@ -1,3 +1,11 @@
+.sidebar-item-styling {
+  font-family: poppins;
+  font-weight: 500;
+}
+.sidebar-item-styling {
+  font-family: poppins;
+  font-weight: 500;
+}
 
 
  a , .dropdown_title{
@@ -48,10 +56,12 @@
 /* Default styles */
 .font_color {
  color: dimgray;
+ font-size: 16px;
 }
 
 .font_color1 {
  color: dimgray !important;
+ font-size: 16px;
 
 
 }
@@ -120,8 +130,8 @@
 }
 .menu-item-security{
   margin: 0;
- padding: 5px 5px; /* Add vertical spacing between items */
- font-size: 17px;
+ padding: 5px 0px; /* Add vertical spacing between items */
+ font-size: 15px;
  font-weight: 500; /* Slightly bold text for better readability */
  color: #4F4F4F;
  border-radius: 2px;

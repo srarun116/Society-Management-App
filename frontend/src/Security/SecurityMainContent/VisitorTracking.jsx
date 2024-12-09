@@ -1,132 +1,3 @@
-// import React, { useState } from 'react'
-// import "./VisitorTracking.css"
-
-// const VisitorTracking = () => {
-
-//     const [visitors, setVisitors] = useState([
-//         {  name: "Evelyn Harper", phone: "97852 12369", date: "2024-01-10", unit: "A", unitNumber: "1001", time: "15:45" },
-//         {  name: "Wade Warren", phone: "97852 25893", date: "2024-01-11", unit: "B", unitNumber: "1002", time: "02:45" },
-//         {  name: "Guy Hawkins", phone: "97589 55563", date: "2024-01-15", unit: "C", unitNumber: "1003", time: "15:00" },
-//         {  name: "Evelyn Harper", phone: "97589 55563", date: "2024-01-01", unit: "C", unitNumber: "1003", time: "03:00" },
-//         {  name: "Wade Warren", phone: "97589 55563", date: "2024-01-05", unit: "D", unitNumber: "1004", time: "14:00" },
-//         {  name: "Guy Hawkins", phone: "97589 55563", date: "2024-01-14", unit: "C", unitNumber: "1003", time: "03:00" },
-//         {  name: "Sam Dorsey", phone: "97852 22345", date: "2024-01-23", unit: "B", unitNumber: "1005", time: "13:15" },
-
-//     ]);
-//     const [selectedWeek, setSelectedWeek] = useState("All"); // Default to "Week All"
-
-//     const getWeekDates = (weekNumber) => {
-//         const startOfYear = new Date("2024-01-01");
-//         const startOfWeek = new Date(startOfYear.setDate(startOfYear.getDate() + (weekNumber - 1) * 7));
-//         const endOfWeek = new Date(startOfWeek);
-//         endOfWeek.setDate(endOfWeek.getDate() + 6);
-//         return { startOfWeek, endOfWeek };
-//     };
-
-//     const filteredVisitors =
-//         selectedWeek === "All"
-//             ? visitors
-//             : visitors.filter((visitor) => {
-//                 const visitorDate = new Date(visitor.date);
-//                 const { startOfWeek, endOfWeek } = getWeekDates(Number(selectedWeek));
-//                 return visitorDate >= startOfWeek && visitorDate <= endOfWeek;
-//             });
-
-
-
-
-//     const formatTime = (time) => {
-//         const [hour, minute] = time.split(":").map(Number);
-//         const isPM = hour >= 12;
-//         const formattedHour = hour % 12 || 12; 
-//         const meridiem = isPM ? "PM" : "AM";
-//         return `${formattedHour}:${minute.toString().padStart(2, "0")} ${meridiem}`;
-//     };
-
-
-
-//   return (
-//     <div className="visitor-tracking-container container-fluid p-4" style={{ backgroundColor: "#f5f8fb" }}>
-//             <div className="row ">
-//                 <div className="col-12 bg-white rounded shadow p-4">
-//                     <div className="d-flex justify-content-between align-items-center mb-4">
-//                         <h4 style={{ fontSize: "20px" }}>Visitor Tracking</h4>
-//                         <div className="">
-//                             <select
-//                                 className="btn border me-2 select-week"
-//                                 value={selectedWeek}
-//                                 onChange={(e) => setSelectedWeek(e.target.value)}
-//                             >
-//                                 <option value="All">Week All</option>
-//                                 <option value="1">Week 1</option>
-//                                 <option value="2">Week 2</option>
-//                                 <option value="3">Week 3</option>
-//                                 <option value="4">Week 4</option>
-
-
-//                             </select>
-//                             <button className="btn btn-primary" >
-//                                 + Add Visitor Details
-//                             </button>
-//                         </div>
-//                     </div>
-
-
-
-//                     {/* Table for Visitors */}
-//                     <div className="table-responsive scrollable">
-//                         <table className="table align-middle">
-//                             <thead className="table-light table_header_radius">
-//                                 <tr >
-//                                     <th className="text-start" style={{ backgroundColor: "#5678e91b" }}>Visitor Name</th>
-//                                     <th className="text-start" style={{ backgroundColor: "#5678e91b" }}>Phone Number</th>
-//                                     <th className="text-start" style={{ backgroundColor: "#5678e91b" }}>Date</th>
-//                                     <th className="text-start" style={{ backgroundColor: "#5678e91b" }}>Unit Number</th>
-//                                     <th className="text-start" style={{ backgroundColor: "#5678e91b" }}>Time</th>
-
-//                                 </tr>
-//                             </thead>
-//                             <tbody>
-//                                 {filteredVisitors.length > 0 ? (
-//                                     filteredVisitors.map((visitor, index) => (
-//                                         <tr key={index}>
-//                                             <td>
-//                                                 <div className="d-flex align-items-center ps-2">
-//                                                     <img
-//                                                         src="../../../Images/Profileimg.png"
-//                                                         alt="visitor"
-//                                                         className="rounded-circle me-2"
-//                                                         style={{ width: "40px", height: "40px" }}
-//                                                     />
-//                                                     <span>{visitor.name}</span>
-//                                                 </div>
-//                                             </td>
-//                                             <td>{visitor.phone}</td>
-//                                             <td>{visitor.date}</td>
-//                                             <td><span className="status open" style={{ fontSize: "14px" }}>{visitor.unit}</span>{visitor.unitNumber}</td>
-//                                             <td><span className="status time">{formatTime(visitor.time)}</span></td>
-
-//                                         </tr>
-//                                     ))
-//                                 ) : (
-//                                     <tr>
-//                                         <td colSpan="7" className="text-center">
-//                                             No visitors found.
-//                                         </td>
-//                                     </tr>
-//                                 )}
-//                             </tbody>
-//                         </table>
-//                     </div>
-
-
-//                 </div>
-//             </div>
-//         </div>
-//   )
-// }
-
-// export default VisitorTracking
 
 import React, { useState } from "react";
 import styles from "./VisitorTracking.module.css";
@@ -232,11 +103,11 @@ const VisitorTracking = () => {
                         <table className="table  rounded-table">
                             <thead className={`${styles.tableLightTh}`}>
                                 <tr className="text-start" style={{ fontFamily: "poppins" , fontWeight: "bold" , fontSize:"14px" }}>
-                                    <th className="text-start">Visitor Name</th>
-                                    <th  >Phone Number</th>
-                                    <th >Date</th>
-                                    <th >Unit Number</th>
-                                    <th className="text-center">Time</th>
+                                    <th className="text-start security-pages-styling">Visitor Name</th>
+                                    <th className="security-pages-styling" >Phone Number</th>
+                                    <th className="security-pages-styling">Date</th>
+                                    <th className="security-pages-styling">Unit Number</th>
+                                    <th className="text-center security-pages-styling">Time</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -254,7 +125,7 @@ const VisitorTracking = () => {
                                     ))
                                 ) : (
                                     <tr>
-                                        <td colSpan="5" className="text-center">
+                                        <td colSpan="5" className="text-center security-pages-styling">
                                             No visitors found.
                                         </td>
                                     </tr>
@@ -278,7 +149,7 @@ const VisitorTracking = () => {
                                 <div className="modal-body">
 
                                     <div className="mb-3">
-                                        <label className="form-label">Visitor Name</label>
+                                        <label className="form-label security-pages-styling">Visitor Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -289,7 +160,7 @@ const VisitorTracking = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label className="form-label">Phone Number</label>
+                                        <label className="form-label security-pages-styling">Phone Number</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -302,7 +173,7 @@ const VisitorTracking = () => {
                                     <div className="row">
                                         <div className="col-6">
                                             <div className="mb-3">
-                                                <label className="form-label">Wing</label>
+                                                <label className="form-label security-pages-styling">Wing</label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
@@ -315,7 +186,7 @@ const VisitorTracking = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="mb-3">
-                                                <label className="form-label">Unit</label>
+                                                <label className="form-label security-pages-styling">Unit</label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
@@ -332,7 +203,7 @@ const VisitorTracking = () => {
                                     <div className="row">
                                         <div className="col-6">
                                             <div className="mb-3">
-                                                <label className="form-label">Date</label>
+                                                <label className="form-label security-pages-styling">Date</label>
                                                 <input
                                                     type="date"
                                                     className="form-control"
@@ -344,7 +215,7 @@ const VisitorTracking = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="mb-3">
-                                                <label className="form-label">Time</label>
+                                                <label className="form-label security-pages-styling">Time</label>
                                                 <input
                                                     type="time"
                                                     className="form-control"

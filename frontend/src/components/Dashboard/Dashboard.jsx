@@ -287,11 +287,11 @@ const Dashboard = () => {
   const getPriorityClass = (priority) => {
     switch (priority) {
       case "High":
-        return "bg-danger text-white rounded-pill py-1"; // Bootstrap class for red
+        return "complaintPriorityHigh "; // Bootstrap class for red
       case "Medium":
-        return "bg-primary text-white rounded-pill py-1"; // Bootstrap class for blue
+        return "complaintPriorityMedium  "; // Bootstrap class for blue
       case "Low":
-        return "bg-success text-white rounded-pill py-1"; // Bootstrap class for green
+        return "complaintPriorityLow "; // Bootstrap class for green
       default:
         return ""; // No background
     }
@@ -604,7 +604,7 @@ const Dashboard = () => {
                       </td>
                       <td>{complaint.complaintName}</td>
                       <td>{moment(complaint.createdAt).format('DD-MM-YYYY')}</td>
-                      <td><span className={`text-center priotty-data-styling ${getPriorityClass(complaint.priority)}`}>{complaint.priority}</span></td>
+                      <td><span className={`text-center ${getPriorityClass(complaint.priority)}`}>{complaint.priority}</span></td>
                       <td><span className="status open">{complaint.status}</span></td>
                       <td className="actions d-flex justify-content-center">
                         <button className="btn-action mb-2">

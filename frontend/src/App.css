@@ -43,7 +43,7 @@
   border-radius: 10px;
 }
 
-.admin-pages-styling{
+.admin-pages-styling , .security-pages-styling{
   font-family: poppins;
   font-weight: 600;
 }

@@ -65,7 +65,7 @@ const ResidentSecurityProtocols = () => {
       <div className='row justify-content-center'>
         <div className="container-fluid row bg-white ">
           <div>
-            <h4 className="mt-3">Security Protocol</h4>
+            <h4 className="mt-3 admin-pages-styling">Security Protocol</h4>
           </div>
           <div className="eventtable" style={{ overflowX: "auto" }}>
             {/* Header Row */}
@@ -73,10 +73,10 @@ const ResidentSecurityProtocols = () => {
               className="row head   text-center align-items-center"
 
             >
-              <div className="col-3 fw-bold text-start ">Title</div>
-              <div className="col-3 fw-bold text-center">Description</div>
-              <div className="col-3 fw-bold text-center">Date</div>
-              <div className="col-3 fw-bold text-center">Time</div>
+              <div className="col-3 admin-pages-styling text-start ">Title</div>
+              <div className="col-3 admin-pages-styling text-center">Description</div>
+              <div className="col-3 admin-pages-styling text-center">Date</div>
+              <div className="col-3 admin-pages-styling text-center">Time</div>
 
             </div>
 
