@@ -43,6 +43,11 @@ mongoose.connect(process.env.MONGO_URL).then(()=> {
   console.log("MongoDb Not Connected" , error);
 })
 
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the Society Management App!');
+});
+
 // Routes
 app.use("/user", userRoutes);
 app.use('/api/announcements', announcementRoutes);
