@@ -634,9 +634,6 @@ const ResidentDashBoard = () => {
                     </tr>
 
                   ))}
-
-
-
                 </tbody>
               </table>
             </div>
@@ -680,7 +677,6 @@ const ResidentDashBoard = () => {
                       <div className="col-3">
                         <p className='dashboard-styling'><strong className='viewPageLabelData dashboard-styling'>Status</strong> <br /> <span className='statusDataStyle '>  {viewCreateComplaint.status} </span> </p>
                       </div>
-
                     </div>
 
 
@@ -910,8 +906,6 @@ const ResidentDashBoard = () => {
             </div>
           </div>
         </div>
-
-
 
         {/* Upcoming Activity */}
         <div className="col-md-6 col-lg-6 col-xl-3 mt-3 mt-md-0">
