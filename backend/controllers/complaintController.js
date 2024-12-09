@@ -5,7 +5,6 @@ exports.createComplaint = async (req, res) => {
   try {
     const complaint = new Complaint(req.body);
     await complaint.save();
-
     res.status(201).json({ message: 'Complaint created successfully', complaint });
   } catch (error) {
     res.status(500).json({ error: 'Error creating complaint' });

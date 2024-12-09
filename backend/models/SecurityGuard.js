@@ -1,13 +1,30 @@
 const mongoose = require('mongoose');
 
 const securityGuardSchema = new mongoose.Schema({
-    fullName: { type: String, required: true },
-    phoneNumber: { type: String, required: true },
-    selectShift: { type: String, enum: ['day', 'night'], required: true },
-    date: { type: Date, required: true },
-    time: { type: String, required: true },
-    gender: { type: String, enum: ['male', 'female'], required: true },
-    aadhaarCard: { type: String } 
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    shift: { type: String, enum: ['Day', 'Night'], required: true },
+    shiftDate: { type: Date, required: true },
+    shiftTime: { type: String, required: true },
+    gender: { type: String, enum: ['Male', 'Female'], required: true },
+    aadhaarCard: { type: String },
+    role: {
+        type: String,
+        default: "security",
+    },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 });
 
-module.exports = mongoose.model('SecurityGuard', securityGuardSchema);
+// Hash password before saving
+securityGuardSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+// module.exports = mongoose.model('SecurityGuard', securityGuardSchema);
+
+// Prevent OverwriteModelError by checking if the model exists
+const SecurityGuard = mongoose.models.SecurityGuard || mongoose.model('SecurityGuard', securityGuardSchema);
+
+module.exports = SecurityGuard;

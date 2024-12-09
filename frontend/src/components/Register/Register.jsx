@@ -90,7 +90,7 @@ const Register = () => {
     society: "",
     password: "",
     confirmPassword: "",
-    role: "",
+   
   });
 
 
@@ -111,7 +111,6 @@ const Register = () => {
     if (!user.state) formErrors.state = "State is required";
     if (!user.city) formErrors.city = "City is required";
     if (!user.society) formErrors.society = "Society is required";
-    if (!user.role) formErrors.role = "Role is required"; 
     if (!user.password || user.password.length < 8) formErrors.password = "Password must be at least 8 characters";
     if (user.password !== user.confirmPassword) formErrors.confirmPassword = "Passwords do not match";
 
@@ -127,7 +126,7 @@ const Register = () => {
       return; // Stop submission if there are validation errors
     }
 
-    const { firstName, lastName, email, phoneNumber, country, state, city, society, password, confirmPassword , role} = user;
+    const { firstName, lastName, email, phoneNumber, country, state, city, society, password, confirmPassword } = user;
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
@@ -137,7 +136,7 @@ const Register = () => {
     try {
       const response = await fetch(apis().registerUser, {
         method: "POST",
-        body: JSON.stringify({ firstName, lastName, email, phoneNumber, country, state, city, society, password , role }),
+        body: JSON.stringify({ firstName, lastName, email, phoneNumber, country, state, city, society, password  }),
         headers: { "Content-Type": "application/json" }
       })
 
@@ -169,7 +168,7 @@ const Register = () => {
       society: "",
       password: "",
       confirmPassword: "",
-      role: ""
+      
     })
   }
   return (

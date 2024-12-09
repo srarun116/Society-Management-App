@@ -6,7 +6,7 @@ const User = require("../models/userModel");
 const register = async(req, res, next)=> {
   const {error : validationError} = validateUser(req.body);
 
-  const {firstName, lastName , email , phoneNumber , country, state, city , society , password , role} = req.body 
+  const {firstName, lastName , email , phoneNumber , country, state, city , society , password } = req.body 
 
   try {
       if(validationError){
@@ -22,7 +22,7 @@ const register = async(req, res, next)=> {
       const formattedState = state.toLowerCase();
       const formattedCity = city.toLowerCase();
       const formattedSociety = society.toLowerCase();
-      const formattedRole = role.toLowerCase();
+      
      
 
       const findedUser = await User.findOne({email: formattedEmail});
@@ -44,7 +44,7 @@ const register = async(req, res, next)=> {
         city: formattedCity,
         society: formattedSociety,
         password: hashedPassword,
-        role: formattedRole,
+      
       })
 
       const savedUser = await newUser.save();
@@ -69,7 +69,7 @@ function validateUser(data){
     city: joi.string().min(2).required(),
     society: joi.string().min(2).required(),
     password: joi.string().min(8).max(15).required(),
-    role: joi.string().valid('resident', 'society-manager', 'security').required(), // Validate role
+   
   })
 
   return userSchema.validate(data)

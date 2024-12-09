@@ -37,12 +37,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
    },
+   GuardIds: { type: Array, ref: 'SecurityGuard'},
+   ResidentIds: { type: Array, ref: 'Resident'},
    otp : {
       otp: {type:String},
       sendTime : {type:Number},
       token: {type:String}
     },
-    role: { type: String, enum: ['resident', 'society-manager', 'security'], required: true }
+    
 
  
 }, {timestamps: true});

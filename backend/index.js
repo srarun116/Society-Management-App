@@ -15,6 +15,10 @@ const otherIncomeRoutes = require('./routes/otherIncomeRoutes');
 const residentRoutes = require('./routes/residentManagement');
 const importantNumberRoutes = require('./routes/importantNumberRoutes');
 const profileRoutes = require('./routes/profile');
+const alertRoutes = require('./routes/alertRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const maintenanceRoutes = require('./routes/maintenanceRoutes');
+const visitorLogsRoutes = require('./routes/visitorLogs');
 const path = require('path');
 
 
@@ -49,6 +53,10 @@ app.use('/api/other-income', otherIncomeRoutes);
 app.use('/api/resident-management', residentRoutes);
 app.use('/api/important-number', importantNumberRoutes);
 app.use('/api/userProfile', profileRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/alerts', alertRoutes);
+app.use('/api/maintenance', maintenanceRoutes);
+app.use('/api/visitor-logs', visitorLogsRoutes);
 
 // Error
 app.use((error, req, res, next)=> {

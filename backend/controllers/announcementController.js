@@ -1,5 +1,5 @@
 const Announcement = require('../models/announcement');
-
+const Notification = require('../models/notification'); 
 
 // Create Announcement
 exports.createAnnouncement = async (req, res) => {
@@ -7,7 +7,11 @@ exports.createAnnouncement = async (req, res) => {
     const { title, description, date, time } = req.body;
     const announcement = await Announcement.create({ title, description, date, time });
 
-  
+    await Notification.create({
+      message: `New Announcement Created: ${title}`,
+      date: new Date(),
+      type: 'announcement'
+    });
     
     res.status(201).json(announcement);
   } catch (error) {
@@ -23,7 +27,12 @@ exports.updateAnnouncement = async (req, res) => {
     const { title, description, date, time } = req.body;
     const announcement = await Announcement.findByIdAndUpdate(id, { title, description, date, time }, { new: true });
 
- 
+    // notification
+    await Notification.create({
+      message: `Announcement Updated: ${title}`,
+      date: new Date(),
+      type: 'announcement'
+    });
 
     res.status(200).json(announcement);
   } catch (error) {

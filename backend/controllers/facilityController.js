@@ -1,19 +1,19 @@
 const Facility = require('../models/facility');
-// const Notification = require('../models/notification');
+const Notification = require('../models/notification');
 
 exports.createFacility = async (req, res) => {
     try {
-        const { title, description, date, remindBefore } = req.body;
+        const { name, description, scheduleServiceDate, remindBeforeDays } = req.body;
         
-        const facility = new Facility({ title, description, date, remindBefore });
+        const facility = new Facility({ name, description, scheduleServiceDate, remindBeforeDays });
         await facility.save();
 
         // notification 
-        // const notificationMessage = `New Facility Created: ${name} - Schedule Date: ${scheduleServiceDate}`;
-        // const notification = new Notification({ message: notificationMessage, facilityId: facility._id });
-        // await notification.save();
+        const notificationMessage = `New Facility Created: ${name} - Schedule Date: ${scheduleServiceDate}`;
+        const notification = new Notification({ message: notificationMessage, facilityId: facility._id });
+        await notification.save();
 
-        res.status(201).json({ message: 'Facility created and notification sent.', facility });
+        res.status(201).json({ message: 'Facility created and notification sent.', facility, notification });
     } catch (error) {
         res.status(500).json({ error: 'Failed to create facility' });
     }
@@ -21,7 +21,7 @@ exports.createFacility = async (req, res) => {
 
 exports.getFacilities = async (req, res) => {
     try {
-        const facilities = await Facility.find().sort({ date: 1 });
+        const facilities = await Facility.find();
         res.status(200).json(facilities);
     } catch (error) {
         res.status(500).json({ error: 'Failed to retrieve facilities' });

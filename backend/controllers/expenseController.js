@@ -2,44 +2,32 @@ const Expense = require('../models/Expense');
 const path = require('path');
 const fs = require('fs');
 
-// Helper function to clean the file name
-const cleanFileName = (fileName) => {
-    // Remove numbers and hyphen at the start of the file name
-    return fileName.replace(/^\d+-/, '');
-};
-
 // Create Expense
 exports.createExpense = async (req, res) => {
     try {
         const { title, description, date, amount } = req.body;
         const billFile = req.file ? req.file.filename : null;
 
-        if (!billFile) {
-            return res.status(400).json({ error: "File is required." });
-        }
-
-          // Clean the file name before saving
-          const cleanedFileName = cleanFileName(billFile);
-
         const expense = new Expense({
             title,
             description,
             date,
             amount,
-            billFormat: cleanedFileName, // Save the filename
+            billFormat: billFile,
+            createdBy: req.user.id
         });
 
         await expense.save();
-        res.status(201).json({ message: "Expense created successfully", expense });
+        res.status(201).json({ message: 'Expense created successfully', expense });
     } catch (error) {
-        res.status(500).json({ error: "Failed to create expense" });
+        res.status(500).json({ error: 'Failed to create expense' });
     }
 };
 
 // Get All Expenses
 exports.getExpenses = async (req, res) => {
     try {
-        const expenses = await Expense.find();
+        const expenses = await Expense.find({ createdBy: req.user.id });
         res.status(200).json(expenses);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch expenses' });
@@ -47,30 +35,22 @@ exports.getExpenses = async (req, res) => {
 };
 
 // Update Expense
-
-
 exports.updateExpense = async (req, res) => {
     try {
         const { title, description, date, amount } = req.body;
         const billFile = req.file ? req.file.filename : null;
 
         const expenseData = { title, description, date, amount };
-
-        if (billFile) {
-            // Clean the file name before updating
-            const cleanedFileName = cleanFileName(billFile);
-            expenseData.billFormat = cleanedFileName; // Update the file with cleaned name
-        }
+        if (billFile) expenseData.billFormat = billFile;
 
         const expense = await Expense.findByIdAndUpdate(req.params.id, expenseData, { new: true });
-        if (!expense) return res.status(404).json({ error: "Expense not found" });
+        if (!expense) return res.status(404).json({ error: 'Expense not found' });
 
-        res.status(200).json({ message: "Expense updated successfully", expense });
+        res.status(200).json({ message: 'Expense updated successfully', expense });
     } catch (error) {
-        res.status(500).json({ error: "Failed to update expense" });
+        res.status(500).json({ error: 'Failed to update expense' });
     }
 };
-
 
 // Delete Expense
 exports.deleteExpense = async (req, res) => {

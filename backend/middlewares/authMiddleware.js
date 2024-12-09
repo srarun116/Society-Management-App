@@ -24,11 +24,4 @@ exports.protect = async (req, res, next) => {
     }
 };
 
-// Middleware to check for specific roles
-exports.isAdmin = (req, res, next) => {
-    if (req.user.role === 'society-manager') {
-        next();
-    } else {
-        res.status(403).json({ message: 'Access denied, only society managers can perform this action' });
-    }
-};
+
