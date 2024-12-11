@@ -95,7 +95,7 @@ const MaintenanceInvoices = () => {
             <div className="row align-items-center">
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2 style={{ fontSize: "20px" }} className="admin-pages-styling">Pending Maintenance</h2>
-                <Link to="/Invoices" className="btn btn-primary admin-pages-styling">
+                <Link to="/resident/viewMaintenanceInvoices" className="btn btn-primary admin-pages-styling">
                   View Invoice
                 </Link>
               </div>

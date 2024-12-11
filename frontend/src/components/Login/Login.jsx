@@ -87,11 +87,6 @@ const Login = () => {
             </div>
           </div>
           {/* right side start */}
-
-
-
-
-
           <div className="col-12 col-md-6  right-side-main border">
             <div className="right-side-content">
               <form onSubmit={handleLoginSubmit}>

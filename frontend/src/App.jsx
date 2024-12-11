@@ -51,6 +51,7 @@ import CommunityQuestion from "./Residents/c d/CommunityQuestion";
 import MaintenanceInvoices from "./Residents/Maintanance Invoice/MaintananceInvoice";
 import OtherIncomeInvoice from "./Residents/Other Income Invoices/OtherIncomeInvoice";
 import ResidentSecurityProtocols from "./Residents/Security Protocol/SecurityProtocol";
+import Invoices from "./Residents/Maintanance Invoice/Invoices";
 
 
 
@@ -225,6 +226,10 @@ const App = () => {
           path:"OtherIncomeInvoice",
           element:<OtherIncomeInvoice/>
           
+        },
+        {
+          path: "viewMaintenanceInvoices",
+          element: <Invoices/>
         }
         ,
         {

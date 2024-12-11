@@ -287,11 +287,11 @@ const Dashboard = () => {
   const getPriorityClass = (priority) => {
     switch (priority) {
       case "High":
-        return "complaintPriorityHigh "; // Bootstrap class for red
+        return "complaintPriorityHigh "; 
       case "Medium":
-        return "complaintPriorityMedium  "; // Bootstrap class for blue
+        return "complaintPriorityMedium  "; 
       case "Low":
-        return "complaintPriorityLow "; // Bootstrap class for green
+        return "complaintPriorityLow "; 
       default:
         return ""; // No background
     }
@@ -531,9 +531,6 @@ const Dashboard = () => {
                           Delete
                         </button>
                       </div>
-
-
-
                     </div>
                   </div>
                 </div>

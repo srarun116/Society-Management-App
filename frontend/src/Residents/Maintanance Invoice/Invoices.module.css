@@ -1,0 +1,128 @@
+.invoicesMain{
+    background-color: white;
+    padding: 16px 16px;
+    border-radius: 15px;
+}
+
+.table-responsive {
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    background-color: #ffffff;
+   
+  }
+ /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Container */
+.modalContainer {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.modalHeaderTitle {
+    margin: 0;
+    font-size: 18px;
+}
+
+.closebtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Modal Body */
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.details-grid div {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-grid div p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.details-grid .full-width {
+    grid-column: span 2;
+}
+
+.amountDetails {
+   
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.amount-details div {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.amount.positive {
+    color: green;
+}
+
+.amount.negative {
+    color: red;
+}
+
+.total {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Note Section */
+.note {
+    margin-top: 10px;
+}
+
+.note strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.note p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary{
+    background: linear-gradient(90deg, #FE512E 0%, #F09619 100%);
+  }
+  

@@ -12,11 +12,7 @@ const SecurityHeader = ({ toggleSidebar }) => {
         firstName: '',
         lastName: '',
         role: ''
-      });
-      
-    
-    
-     
+      });     
     
       const [notifications, setNotifications] = useState([
         {
